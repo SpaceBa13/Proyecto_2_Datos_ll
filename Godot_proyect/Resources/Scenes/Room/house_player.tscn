@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c258l0u3p5ef"]
+[gd_scene load_steps=7 format=3 uid="uid://c258l0u3p5ef"]
 
 [ext_resource type="PackedScene" uid="uid://drxyd11sv7n0v" path="res://Resources/Scenes/Player/player.tscn" id="1_p8qs4"]
 [ext_resource type="PackedScene" uid="uid://bi88wpwagvvax" path="res://Resources/Scenes/tilemap/dungeon_room.tscn" id="1_pgdho"]
 [ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Resources/Scenes/Room/enemy.tscn" id="3_qg8yt"]
 [ext_resource type="Script" path="res://Resources/Scenes/Room/Path.gd" id="5_0vy67"]
-[ext_resource type="Script" path="res://Resources/Scenes/Room/Path2.gd" id="5_6ytc0"]
 [ext_resource type="Script" path="res://Resources/Scenes/Room/enemy_astar.gd" id="5_vb5c2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a01lr"]
@@ -23,7 +22,7 @@ position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_a01lr")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.7, 0.7)
 
 [node name="enemy" parent="." instance=ExtResource("3_qg8yt")]
 position = Vector2(234, -63)
@@ -34,6 +33,3 @@ script = ExtResource("5_0vy67")
 [node name="enemy2" parent="." instance=ExtResource("3_qg8yt")]
 position = Vector2(196, 197)
 script = ExtResource("5_vb5c2")
-
-[node name="Path2" type="Node2D" parent="."]
-script = ExtResource("5_6ytc0")
