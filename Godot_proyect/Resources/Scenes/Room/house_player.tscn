@@ -16,22 +16,23 @@ position = Vector2(5, 10)
 [node name="DungeonRoom" parent="." instance=ExtResource("1_pgdho")]
 
 [node name="Player" parent="." instance=ExtResource("1_p8qs4")]
-position = Vector2(170.871, 60.8917)
+position = Vector2(149.407, 101.704)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_a01lr")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.5, 0.5)
 
 [node name="enemy" parent="." instance=ExtResource("3_qg8yt")]
-position = Vector2(96, 97)
+position = Vector2(234, -63)
 
 [node name="Path" type="Node2D" parent="."]
 script = ExtResource("5_0vy67")
 
 [node name="enemy2" parent="." instance=ExtResource("3_qg8yt")]
-position = Vector2(154, 266)
+position = Vector2(196, 197)
 script = ExtResource("5_vb5c2")
 
 [node name="Path2" type="Node2D" parent="."]
