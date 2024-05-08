@@ -1,6 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://drxyd11sv7n0v"]
+[gd_scene load_steps=10 format=3 uid="uid://drxyd11sv7n0v"]
 
-[ext_resource type="Texture2D" uid="uid://bahvv4i2frlju" path="res://Resources/Player/SpriteSheet.png" id="1_extvw"]
+[ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_5511m"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0lthi"]
+load_path = "res://.godot/imported/SpriteSheet.png-96043199a52002a122ae2fc2fb8f24b8.ctex"
 
 [sub_resource type="Animation" id="Animation_vl6cq"]
 length = 0.001
@@ -107,12 +110,14 @@ _data = {
 "idle": SubResource("Animation_hfe8u")
 }
 
-[node name="Player" type="PlayerController"]
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(0, 15.0117)
+script = ExtResource("1_5511m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(7.62939e-06, 7.62939e-06)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_extvw")
+texture = SubResource("CompressedTexture2D_0lthi")
 hframes = 4
 vframes = 4
 
