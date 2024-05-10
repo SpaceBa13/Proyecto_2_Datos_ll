@@ -4,7 +4,6 @@ var dataNode
 
 @onready var lbCoin = $UIStats/Panel/Label
 @onready var health = $UIHealthContainer/FullLife
-#@onready var map = 
 
 func _ready():
 	dataNode = get_node("/root/MainRoom/DataController")

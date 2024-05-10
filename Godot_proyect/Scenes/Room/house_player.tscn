@@ -229,19 +229,19 @@ idItem = 3
 value = 1
 
 [node name="Mini Map" type="CanvasLayer" parent="."]
-scale = Vector2(0.07, 0.07)
-transform = Transform2D(0.07, 0, 0, 0.07, 0, 0)
+scale = Vector2(0.06, 0.06)
+transform = Transform2D(0.06, 0, 0, 0.06, 0, 0)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Mini Map"]
-offset_left = 2728.57
-offset_right = 3652.57
+offset_left = 3350.0
+offset_right = 4274.0
 offset_bottom = 669.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Mini Map/SubViewportContainer"]
 self_modulate = Color(0.990041, 0.134757, 0.094839, 1)
 position = Vector2(464, 336)
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 texture = ExtResource("6_axi4h")
 script = ExtResource("7_n637b")
 

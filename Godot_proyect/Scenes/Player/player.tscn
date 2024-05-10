@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://drxyd11sv7n0v"]
+[gd_scene load_steps=11 format=3 uid="uid://drxyd11sv7n0v"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_5511m"]
 
@@ -110,9 +110,14 @@ _data = {
 "idle": SubResource("Animation_hfe8u")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nj8u8"]
+radius = 7.0
+height = 22.0
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, 15.0117)
 script = ExtResource("1_5511m")
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(7.62939e-06, 7.62939e-06)
@@ -125,3 +130,16 @@ vframes = 4
 libraries = {
 "": SubResource("AnimationLibrary_ap1lp")
 }
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Marker2D"]
+position = Vector2(0, 0.9883)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marker2D/Area2D"]
+position = Vector2(0, 10)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_nj8u8")
+debug_color = Color(0.952941, 0, 0.54902, 0.419608)
