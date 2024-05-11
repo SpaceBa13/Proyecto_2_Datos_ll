@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3dp8ylayhynt"]
-
-[ext_resource type="Script" path="res://Scripts/Importants/dataController.gd" id="1_gpdf2"]
-
-[node name="DataController" type="Node2D"]
-script = ExtResource("1_gpdf2")

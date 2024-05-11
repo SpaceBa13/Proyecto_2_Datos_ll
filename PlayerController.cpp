@@ -44,15 +44,15 @@ void PlayerController::animatedMovement(){
     else {
         String dire_anim = "Walk_down";
         sprite->set_flip_h(false);
-        if (get_velocity().x > 0) {
-            dire_anim = "Walk_left";
+        if (get_velocity().x < 0) {
+            dire_anim = "Walk_right";
             sprite->set_flip_h(true);
         }
-        else if (get_velocity().y < 0) {
-            dire_anim = "Walk_up";
+        else if (get_velocity().y > 0) {
+            dire_anim = "Walk_right";
         }
         else if (get_velocity().x < 0) {
-            dire_anim = "Walk_left";
+            dire_anim = "Walk_up";
         }
         animation->play(dire_anim);
     }

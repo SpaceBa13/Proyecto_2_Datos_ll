@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb3mf1qlbt3ue"]
+
+[ext_resource type="Script" path="res://Resources/Scenes/Room/enemy.gd" id="1_tqnhw"]
+[ext_resource type="Texture2D" uid="uid://d2sm0pieuf8q6" path="res://icon.svg" id="2_sgf3i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0iok"]
+size = Vector2(71.2349, 70.017)
+
+[node name="enemy" type="CharacterBody2D"]
+position = Vector2(77, 133)
+script = ExtResource("1_tqnhw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, -1)
+scale = Vector2(0.140625, 0.140625)
+texture = ExtResource("2_sgf3i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, -1)
+scale = Vector2(0.224609, 0.228516)
+shape = SubResource("RectangleShape2D_l0iok")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.137
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
