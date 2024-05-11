@@ -176,7 +176,6 @@ layer_0/tile_data = PackedInt32Array(0, 65539, 1, 65536, 65539, 2, 131072, 65539
 
 [node name="Player" parent="." instance=ExtResource("1_p8qs4")]
 position = Vector2(409, 310)
-speed = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, 6)
@@ -190,10 +189,14 @@ zoom = Vector2(0.7, 0.7)
 script = SubResource("GDScript_ya27b")
 
 [node name="enemy" parent="." instance=ExtResource("3_qg8yt")]
-position = Vector2(602, 262)
+position = Vector2(271, 256)
 
 [node name="enemy2" parent="." instance=ExtResource("3_qg8yt")]
 position = Vector2(445, 422)
+script = SubResource("GDScript_8i3us")
+
+[node name="enemy3" parent="." instance=ExtResource("3_qg8yt")]
+position = Vector2(289, 382)
 script = SubResource("GDScript_8i3us")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
