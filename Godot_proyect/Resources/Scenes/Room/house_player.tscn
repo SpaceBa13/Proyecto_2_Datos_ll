@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://drxyd11sv7n0v" path="res://Resources/Scenes/Player/player.tscn" id="1_p8qs4"]
 [ext_resource type="PackedScene" uid="uid://bi88wpwagvvax" path="res://Resources/Scenes/tilemap/dungeon_room.tscn" id="1_pgdho"]
-[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Resources/Scenes/Room/enemy.tscn" id="3_qg8yt"]
+[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/Room/enemy.tscn" id="3_qg8yt"]
 [ext_resource type="Script" path="res://Resources/Scenes/Room/Path.gd" id="5_0vy67"]
 [ext_resource type="Script" path="res://Resources/Scenes/Room/enemy_astar.gd" id="5_vb5c2"]
 
