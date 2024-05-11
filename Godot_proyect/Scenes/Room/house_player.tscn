@@ -169,6 +169,7 @@ script/source = "extends SubViewport
 
 [node name="HousePlayer" type="Node2D"]
 position = Vector2(2, 0)
+scale = Vector2(1, 1.00346)
 
 [node name="DungeonRoom" parent="." instance=ExtResource("1_pgdho")]
 position = Vector2(0, 1)
@@ -224,7 +225,7 @@ idItem = 2
 value = 1
 
 [node name="RecolectableItem4" parent="." instance=ExtResource("5_32rle")]
-position = Vector2(342, 294)
+position = Vector2(323, 250.133)
 idItem = 3
 value = 1
 
