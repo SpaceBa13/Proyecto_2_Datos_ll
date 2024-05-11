@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://4fvu5mhw2p6s"]
+
+[ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_plm8k"]
+[ext_resource type="PackedScene" uid="uid://c258l0u3p5ef" path="res://Scenes/Room/house_player.tscn" id="2_n6yeg"]
+
+[node name="MainRoom" type="Node2D"]
+
+[node name="DataController" parent="." instance=ExtResource("1_plm8k")]
+
+[node name="HousePlayer" parent="." instance=ExtResource("2_n6yeg")]
+position = Vector2(-48, 26)

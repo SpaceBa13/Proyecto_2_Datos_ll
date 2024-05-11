@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ui7euo81all"]
+
+[ext_resource type="Script" path="res://Scripts/UI/uiController.gd" id="1_2ex64"]
+[ext_resource type="PackedScene" uid="uid://crf6lcgn2loml" path="res://Scenes/UI/ui_stats.tscn" id="1_a7vph"]
+[ext_resource type="PackedScene" uid="uid://duplxbkhc008u" path="res://Scenes/UI/ui_health_container.tscn" id="2_0umku"]
+
+[node name="UIGeneral" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ex64")
+
+[node name="UIStats" parent="." instance=ExtResource("1_a7vph")]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 20.0
+offset_bottom = 18.0
+
+[node name="UIHealthContainer" parent="." instance=ExtResource("2_0umku")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 16.0
