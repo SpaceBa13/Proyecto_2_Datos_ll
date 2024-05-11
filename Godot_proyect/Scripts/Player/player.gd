@@ -33,26 +33,3 @@ func _physics_process(delta):
 	validateInput()
 	animateMovement()
 	move_and_slide()
-	
-func check_actionables() -> void:
-	var areas: Array[Area2D] = actionArea.get_overlapping_areas()
-	var shortDistance: float = INF
-	var nextActionable: ActionArea = null
-	
-	for area in areas:
-		var distance: float = area.global_position.distance_to(global_position)
-		if distance < shortDistance:
-			shortDistance = distance
-			nextActionable = area
-	
-	if nextActionable != null:
-		if nextActionable != nearestActionable or not is_instance_valid(nextActionable):
-			nearestActionable = nextActionable
-			print(nearestActonable)		
-	else:
-		nearestActionable = null
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept") && nearestActionable != null:
-		if is_instance_valid(nearestActionable):
-			nearestActionable.emit_signal("actionated")
