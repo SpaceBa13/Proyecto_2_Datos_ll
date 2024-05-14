@@ -25,25 +25,31 @@ func make_astar_path():
 
 		
 
-
 func _physics_process(delta):
-	if current_id_path.is_empty():
-		return
-
 	var tile_data = tile_map.get_cell_tile_data(0, tile_map.local_to_map(player.global_position))
+
+	if current_id_path.is_empty():
+		if tile_data.get_custom_data("safe_zone") != true:
+			make_astar_path()
+			return
+		else:
+			return
+			
 	var target_position = tile_map.map_to_local(current_id_path.front())
+
 	
 	#Si la informacion de la celda es diferente de null
 	if tile_data != null:
 		#Obtiene si el jugador esta o no en zona segura
 		if tile_data.get_custom_data("safe_zone") != true:
-			
+			chasing = true
 			make_astar_path()
 			global_position = global_position.move_toward(target_position, speed)
 			if global_position.x == target_position.x and global_position.y == target_position.y:
 				current_id_path.pop_front()
 		else:
 			if chasing == true:
+				chasing = false
 				current_id_path.clear()
 				var own_position = tile_map.local_to_map(global_position)
 				make_backtrack_path(own_position)
@@ -51,11 +57,10 @@ func _physics_process(delta):
 				current_id_path.pop_front()
 				print(name, current_id_path)
 			else:
-				chasing = false
-				current_id_path.clear()
 				global_position = global_position.move_toward(target_position, speed)
-				current_id_path.pop_front()
-				print(name, current_id_path)
+				if global_position.x == target_position.x and global_position.y == target_position.y:
+					current_id_path.pop_front()
+					print(name, current_id_path)
 
 
 	
@@ -65,48 +70,47 @@ var cell_size = Vector2i(16,16)
 func get_id_path(start_pos: Vector2i, end_pos: Vector2i, tile_map: TileMap) -> Array:
 	# Convertir las posiciones iniciales y finales a posiciones de celda en el TileMap
 	var start_cell = start_pos
-
 	var end_cell = end_pos
 	
 	# Lista abierta de nodos por explorar
-	var open_set = [start_cell]
+	var not_visited = [start_cell]
 	
 	# Diccionario para almacenar el nodo padre de cada nodo
 	var came_from = {}
 	
 	# Diccionario para almacenar el costo acumulado desde el inicio hasta cada nodo
-	var g_score = {start_cell: 0}
+	var cost = {start_cell: 0}
 	
 	# Diccionario para almacenar el costo estimado desde el inicio hasta cada nodo, más una estimación del costo desde el nodo hasta el objetivo
-	var f_score = {start_cell: heuristic(start_cell, end_cell)}
+	var cost_with_heuristic = {start_cell: heuristic(start_cell, end_cell)}
 	
 	# Mientras haya nodos por explorar en la lista abierta
-	while open_set.size() > 0:
+	while not_visited.size() > 0:
 		# Obtener el nodo actual como el nodo con el menor f_score
-		var current = get_lowest_f_score(open_set, f_score)
+		var current = get_lowest_f_score(not_visited, cost_with_heuristic)
 		
 		# Si el nodo actual es igual al nodo objetivo, reconstruir y devolver la ruta
 		if current == end_cell:
 			return reconstruct_path(came_from, current)
 		
 		# Remover el nodo actual de la lista abierta
-		open_set.erase(current)
+		not_visited.erase(current)
 		
 		# Explorar los vecinos del nodo actual
 		for neighbor in get_neighbors(current):
 			# Calcular el costo acumulado desde el inicio hasta el vecino
-			var tentative_g_score = g_score[current] + 1
+			var tentative_g_score = cost[current] + 1
 			
 			# Si el vecino no ha sido visitado o el nuevo costo es menor que el anteriormente calculado
-			if !g_score.has(neighbor) or tentative_g_score < g_score[neighbor]:
+			if !cost.has(neighbor) or tentative_g_score < cost[neighbor]:
 				# Actualizar el nodo padre y el costo acumulado del vecino
 				came_from[neighbor] = current
-				g_score[neighbor] = tentative_g_score
+				cost[neighbor] = tentative_g_score
 				# Calcular el costo estimado desde el inicio hasta el vecino, más una estimación del costo desde el vecino hasta el objetivo
-				f_score[neighbor] = g_score[neighbor] + heuristic(neighbor, end_cell)
+				cost_with_heuristic[neighbor] = cost[neighbor] + heuristic(neighbor, end_cell)
 				# Agregar el vecino a la lista abierta si no está presente
-				if !open_set.has(neighbor):
-					open_set.append(neighbor)
+				if !not_visited.has(neighbor):
+					not_visited.append(neighbor)
 	
 	# Si no se encuentra una ruta, devolver una lista vacía
 	return []
