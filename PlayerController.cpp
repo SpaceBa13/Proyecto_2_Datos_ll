@@ -24,6 +24,7 @@ void PlayerController::_process(float delta) {
     validate_input();
     animatedMovement();
     move_and_slide();
+
 }
 
 void PlayerController::validate_input() {
