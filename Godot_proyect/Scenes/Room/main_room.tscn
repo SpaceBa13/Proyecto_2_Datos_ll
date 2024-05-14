@@ -8,4 +8,4 @@
 [node name="DataController" parent="." instance=ExtResource("1_plm8k")]
 
 [node name="HousePlayer" parent="." instance=ExtResource("2_n6yeg")]
-position = Vector2(-48, 26)
+position = Vector2(0, 0)

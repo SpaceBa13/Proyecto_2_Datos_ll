@@ -5,10 +5,13 @@ extends CharacterBody2D
 @onready var player = $"../Player"
 var current_id_path: Array
 const speed = 1.3
-
-
+var spawn_position = Vector2i(0,0)
+var chasing: bool
 
 func _ready():
+	spawn_position = tile_map.local_to_map(global_position)
+	chasing = true
+	print(spawn_position)
 	make_path()
 
 func make_path():
@@ -27,20 +30,29 @@ func make_path():
 func _physics_process(delta):
 	if current_id_path.is_empty():
 		return
-	
-	print(tile_map.local_to_map(player.global_position))
-	var tile_data = tile_map.get_cell_tile_data(0, tile_map.local_to_map(player.global_position))
-	if tile_data != null:
-		if tile_data.get_custom_data("safe_zone") == true:
-			print("Zona segura")
-		else:
-			print("Zona no segura")
 
+	var tile_data = tile_map.get_cell_tile_data(0, tile_map.local_to_map(player.global_position))
 	var target_position = tile_map.map_to_local(current_id_path.front())
-	global_position = global_position.move_toward(target_position, speed)
 	
-	if global_position.x == target_position.x and global_position.y == target_position.y:
-		current_id_path.pop_front()
+	if tile_data != null:
+		if tile_data.get_custom_data("safe_zone") != true:
+			make_path()
+			global_position = global_position.move_toward(target_position, speed)
+			if global_position.x == target_position.x and global_position.y == target_position.y:
+				current_id_path.pop_front()
+		else:
+			if chasing == true:
+				current_id_path.clear()
+				make_backtrack_path()
+				global_position = global_position.move_toward(target_position, speed)
+				current_id_path.pop_front()
+			else:
+				chasing = false
+				current_id_path.clear()
+				global_position = global_position.move_toward(target_position, speed)
+				current_id_path.pop_front()
+
+
 	
 var INFINITY = 1000000
 var cell_size = Vector2i(16,16)
@@ -136,3 +148,54 @@ func reconstruct_path(came_from, current):
 		current = came_from[current]
 		total_path.insert(0, current)
 	return total_path
+
+
+#Backtraking zone
+func make_backtrack_path():
+	var own_position = tile_map.local_to_map(global_position)
+	# Resuelve el laberinto desde la posición inicial
+	current_id_path = get_backtrack_path(own_position, spawn_position)
+
+
+# Función para verificar si un vecino es válido
+func is_valid_move(neighbor) -> bool:
+	# Obtener el valor de la capa personalizada "walkable" en la celda vecina
+	var tile_data = tile_map.get_cell_tile_data(0, neighbor)
+	if tile_data == null or tile_data.get_custom_data("walkable") == false:
+		return false
+	else:
+		return true
+
+
+func get_backtrack_path(start: Vector2i, goal: Vector2i) -> Array:
+	var path = []
+	get_backtrack_path_aux(start, goal, [], path)
+	return path
+
+func get_backtrack_path_aux(pos: Vector2i, goal: Vector2i , current_path: Array, path: Array) -> bool:
+	if pos == goal:
+		for point in current_path:
+			path.append(point)
+		path.append(pos)
+		return true
+	
+	if is_valid_move(pos):
+		
+		current_path.append(pos)
+		
+		if pos.x < goal.x:
+			if get_backtrack_path_aux(pos + Vector2i(1,0), goal, current_path, path):
+				return true
+		if pos.x > goal.x:
+			if get_backtrack_path_aux(pos + Vector2i(-1,0), goal, current_path, path):
+				return true		
+		if pos.y > goal.y:
+			if get_backtrack_path_aux(pos + Vector2i(0,-1), goal, current_path, path):
+				return true			
+		if pos.y < goal.y:
+			if get_backtrack_path_aux(pos + Vector2i(0,1), goal, current_path, path):
+				return true
+
+		current_path.pop_back()
+
+	return false
