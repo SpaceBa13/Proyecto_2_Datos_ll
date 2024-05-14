@@ -11,10 +11,9 @@ var chasing: bool
 func _ready():
 	spawn_position = tile_map.local_to_map(global_position)
 	chasing = true
-	print(spawn_position)
-	make_path()
+	make_astar_path()
 
-func make_path():
+func make_astar_path():
 	var own_position = tile_map.local_to_map(global_position)
 	var player_position = tile_map.local_to_map(player.global_position)
 	
@@ -34,23 +33,29 @@ func _physics_process(delta):
 	var tile_data = tile_map.get_cell_tile_data(0, tile_map.local_to_map(player.global_position))
 	var target_position = tile_map.map_to_local(current_id_path.front())
 	
+	#Si la informacion de la celda es diferente de null
 	if tile_data != null:
+		#Obtiene si el jugador esta o no en zona segura
 		if tile_data.get_custom_data("safe_zone") != true:
-			make_path()
+			
+			make_astar_path()
 			global_position = global_position.move_toward(target_position, speed)
 			if global_position.x == target_position.x and global_position.y == target_position.y:
 				current_id_path.pop_front()
 		else:
 			if chasing == true:
 				current_id_path.clear()
-				make_backtrack_path()
+				var own_position = tile_map.local_to_map(global_position)
+				make_backtrack_path(own_position)
 				global_position = global_position.move_toward(target_position, speed)
 				current_id_path.pop_front()
+				print(name, current_id_path)
 			else:
 				chasing = false
 				current_id_path.clear()
 				global_position = global_position.move_toward(target_position, speed)
 				current_id_path.pop_front()
+				print(name, current_id_path)
 
 
 	
@@ -151,8 +156,7 @@ func reconstruct_path(came_from, current):
 
 
 #Backtraking zone
-func make_backtrack_path():
-	var own_position = tile_map.local_to_map(global_position)
+func make_backtrack_path(own_position):
 	# Resuelve el laberinto desde la posición inicial
 	current_id_path = get_backtrack_path(own_position, spawn_position)
 
@@ -180,9 +184,19 @@ func get_backtrack_path_aux(pos: Vector2i, goal: Vector2i , current_path: Array,
 		return true
 	
 	if is_valid_move(pos):
-		
 		current_path.append(pos)
-		
+		if  pos.x < goal.x and pos.y < pos.y:
+			if get_backtrack_path_aux(pos + Vector2i(1,1), goal, current_path, path):
+				return true
+		if  pos.x > goal.x and pos.y > pos.y:
+			if get_backtrack_path_aux(pos + Vector2i(-1,-1), goal, current_path, path):
+				return true
+		if  pos.x > goal.x and pos.y < pos.y:
+			if get_backtrack_path_aux(pos + Vector2i(-1,1), goal, current_path, path):
+				return true
+		if pos.x < goal.x and pos.y > pos.y:
+			if get_backtrack_path_aux(pos + Vector2i(1,-1), goal, current_path, path):
+				return true
 		if pos.x < goal.x:
 			if get_backtrack_path_aux(pos + Vector2i(1,0), goal, current_path, path):
 				return true
@@ -197,5 +211,5 @@ func get_backtrack_path_aux(pos: Vector2i, goal: Vector2i , current_path: Array,
 				return true
 
 		current_path.pop_back()
-
+	
 	return false
