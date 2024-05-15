@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c258l0u3p5ef"]
+[gd_scene load_steps=11 format=3 uid="uid://c258l0u3p5ef"]
 
 [ext_resource type="PackedScene" uid="uid://drxyd11sv7n0v" path="res://Scenes/Player/player.tscn" id="1_p8qs4"]
 [ext_resource type="PackedScene" uid="uid://bi88wpwagvvax" path="res://Scenes/tilemap/dungeon_room.tscn" id="1_pgdho"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="5_32rle"]
 [ext_resource type="Texture2D" uid="uid://bwbyik1tvdhki" path="res://Resources/UI/cursor.png" id="6_axi4h"]
 [ext_resource type="Script" path="res://Scripts/UI/Playerpointer.gd" id="7_n637b"]
+[ext_resource type="PackedScene" uid="uid://deod04gpnqvqj" path="res://Scenes/Enemies/Rat_enemy.tscn" id="8_outgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a01lr"]
 size = Vector2(14, 13)
@@ -42,7 +43,6 @@ position = Vector2(344, 104)
 script = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="UIGeneral" parent="CanvasLayer" instance=ExtResource("4_lqoo8")]
 offset_left = 2.0
@@ -76,7 +76,6 @@ idItem = 3
 value = 1
 
 [node name="Mini Map" type="CanvasLayer" parent="."]
-visible = false
 scale = Vector2(0.06, 0.06)
 transform = Transform2D(0.06, 0, 0, 0.06, 0, 0)
 
@@ -96,10 +95,19 @@ script = ExtResource("7_n637b")
 [node name="SubViewport" type="SubViewport" parent="Mini Map/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(924, 669)
-render_target_update_mode = 0
+render_target_update_mode = 4
 script = SubResource("GDScript_htm5d")
 
 [node name="Minimap" parent="Mini Map/SubViewportContainer/SubViewport" instance=ExtResource("1_pgdho")]
 
 [node name="Camera2D" type="Camera2D" parent="Mini Map/SubViewportContainer/SubViewport"]
 offset = Vector2(464, 336)
+
+[node name="RatEnemy" parent="." instance=ExtResource("8_outgg")]
+position = Vector2(352, 256)
+
+[node name="RatEnemy2" parent="." instance=ExtResource("8_outgg")]
+position = Vector2(712, 424)
+
+[node name="RatEnemy3" parent="." instance=ExtResource("8_outgg")]
+position = Vector2(96, 448)

@@ -54,13 +54,12 @@ func _physics_process(delta):
 				var own_position = tile_map.local_to_map(global_position)
 				make_backtrack_path(own_position)
 				global_position = global_position.move_toward(target_position, speed)
-				current_id_path.pop_front()
-				print(name, current_id_path)
+				if global_position.x == target_position.x and global_position.y == target_position.y:
+					current_id_path.pop_front()
 			else:
 				global_position = global_position.move_toward(target_position, speed)
 				if global_position.x == target_position.x and global_position.y == target_position.y:
 					current_id_path.pop_front()
-					print(name, current_id_path)
 
 
 	
