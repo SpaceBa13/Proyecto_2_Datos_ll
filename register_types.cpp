@@ -1,5 +1,4 @@
 #include "register_types.h"
-
 #include "VSTestGDnative.h"
 #include "PlayerController.h"
 
