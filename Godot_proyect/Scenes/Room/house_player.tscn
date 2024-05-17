@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c258l0u3p5ef"]
+[gd_scene load_steps=12 format=3 uid="uid://c258l0u3p5ef"]
 
 [ext_resource type="PackedScene" uid="uid://drxyd11sv7n0v" path="res://Scenes/Player/player.tscn" id="1_p8qs4"]
 [ext_resource type="PackedScene" uid="uid://bi88wpwagvvax" path="res://Scenes/tilemap/dungeon_room.tscn" id="1_pgdho"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bwbyik1tvdhki" path="res://Resources/UI/cursor.png" id="6_axi4h"]
 [ext_resource type="Script" path="res://Scripts/UI/Playerpointer.gd" id="7_n637b"]
 [ext_resource type="PackedScene" uid="uid://deod04gpnqvqj" path="res://Scenes/Enemies/Rat_enemy.tscn" id="8_outgg"]
+[ext_resource type="PackedScene" uid="uid://ddli300bkguue" path="res://Scenes/Enemies/Eye_enemy.tscn" id="9_1ednr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a01lr"]
 size = Vector2(14, 13)
@@ -43,6 +44,7 @@ position = Vector2(344, 104)
 script = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="UIGeneral" parent="CanvasLayer" instance=ExtResource("4_lqoo8")]
 offset_left = 2.0
@@ -51,26 +53,31 @@ offset_right = 1.0
 metadata/_edit_use_anchors_ = true
 
 [node name="RecolectableItem" parent="." instance=ExtResource("5_32rle")]
+visible = false
 position = Vector2(407, 244)
 idItem = 1
 value = 1
 
 [node name="RecolectableItem5" parent="." instance=ExtResource("5_32rle")]
+visible = false
 position = Vector2(465, 248)
 idItem = 1
 value = 1
 
 [node name="RecolectableItem2" parent="." instance=ExtResource("5_32rle")]
+visible = false
 position = Vector2(487, 374)
 idItem = 2
 value = 1
 
 [node name="RecolectableItem3" parent="." instance=ExtResource("5_32rle")]
+visible = false
 position = Vector2(514, 317)
 idItem = 2
 value = 1
 
 [node name="RecolectableItem4" parent="." instance=ExtResource("5_32rle")]
+visible = false
 position = Vector2(342, 294)
 idItem = 3
 value = 1
@@ -111,3 +118,9 @@ position = Vector2(712, 424)
 
 [node name="RatEnemy3" parent="." instance=ExtResource("8_outgg")]
 position = Vector2(96, 448)
+
+[node name="Eye_Enemy" parent="." instance=ExtResource("9_1ednr")]
+position = Vector2(552, 280)
+
+[node name="Eye_Enemy2" parent="." instance=ExtResource("9_1ednr")]
+position = Vector2(192, 232)
