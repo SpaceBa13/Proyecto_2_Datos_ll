@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @onready var tile_map = $"../DungeonRoom"
 @onready var player = $"../Player"
 var current_id_path: Array

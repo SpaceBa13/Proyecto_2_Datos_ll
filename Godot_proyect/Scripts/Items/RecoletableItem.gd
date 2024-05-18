@@ -4,7 +4,7 @@ extends Area2D
 @export var value: int = 0
 var minimap
 func _ready():
-	minimap = get_node("/root/MainRoom/HousePlayer/Mini Map")
+	minimap = get_node("../Mini Map")
 	minimap.hide()
 	
 	match idItem:

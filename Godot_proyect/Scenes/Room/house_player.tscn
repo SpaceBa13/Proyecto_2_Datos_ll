@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://drxyd11sv7n0v" path="res://Scenes/Player/player.tscn" id="1_p8qs4"]
 [ext_resource type="PackedScene" uid="uid://bi88wpwagvvax" path="res://Scenes/tilemap/dungeon_room.tscn" id="1_pgdho"]
-[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/Room/enemy.tscn" id="3_qg8yt"]
+[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/enemy.tscn" id="3_vbl6i"]
 [ext_resource type="PackedScene" uid="uid://ui7euo81all" path="res://Scenes/UI/ui_general.tscn" id="4_lqoo8"]
 [ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="5_32rle"]
 [ext_resource type="Texture2D" uid="uid://bwbyik1tvdhki" path="res://Resources/UI/cursor.png" id="6_axi4h"]
@@ -32,13 +32,13 @@ shape = SubResource("RectangleShape2D_a01lr")
 position = Vector2(0, 6)
 zoom = Vector2(0.7, 0.7)
 
-[node name="enemy" parent="." instance=ExtResource("3_qg8yt")]
+[node name="enemy" parent="." instance=ExtResource("3_vbl6i")]
 position = Vector2(271, 256)
 
-[node name="enemy2" parent="." instance=ExtResource("3_qg8yt")]
+[node name="enemy2" parent="." instance=ExtResource("3_vbl6i")]
 position = Vector2(646, 272)
 
-[node name="Espectral_eye" parent="." instance=ExtResource("3_qg8yt")]
+[node name="Espectral_eye" parent="." instance=ExtResource("3_vbl6i")]
 position = Vector2(344, 104)
 script = null
 

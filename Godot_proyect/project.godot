@@ -67,6 +67,7 @@ move={
 
 [layer_names]
 
+2d_physics/layer_1="Wall"
 2d_physics/layer_4="Accionables"
 
 [rendering]
