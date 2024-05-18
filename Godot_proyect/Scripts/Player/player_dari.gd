@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
-class_name Player
+class_name PlayerDar
 
 @export var speed: int = 100
 @onready var animation = $AnimationPlayer
 @onready var sprite = $Sprite2D
 @onready var marker = $Marker2D
 @onready var actionArea = $Marker2D/Area2D
-@onready var tile_map = $"../DungeonRoom"
+@onready var tile_map = $"../DariTileMap"
 var seen: bool
 
 func validateInput():

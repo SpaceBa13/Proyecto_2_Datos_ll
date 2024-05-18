@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dtbrqrqwv1jgm"]
+[gd_scene load_steps=16 format=3 uid="uid://dtbrqrqwv1jgm"]
 
 [ext_resource type="PackedScene" uid="uid://bb7e5iidudlea" path="res://Scenes/tilemap/dari_tile_map.tscn" id="1_678kc"]
 [ext_resource type="PackedScene" uid="uid://drxyd11sv7n0v" path="res://Scenes/Player/player.tscn" id="2_p7fj4"]
+[ext_resource type="Script" path="res://Scripts/Player/player_dari.gd" id="3_jvm16"]
 [ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/enemy.tscn" id="3_lyh63"]
 [ext_resource type="PackedScene" uid="uid://ui7euo81all" path="res://Scenes/UI/ui_general.tscn" id="4_45gmh"]
 [ext_resource type="Script" path="res://Scripts/Enemy/enemy_dari.gd" id="4_ytbmv"]
@@ -25,6 +26,7 @@ scale = Vector2(1.25236, 1.14436)
 
 [node name="Player" parent="." instance=ExtResource("2_p7fj4")]
 position = Vector2(402, 173)
+script = ExtResource("3_jvm16")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, 6)

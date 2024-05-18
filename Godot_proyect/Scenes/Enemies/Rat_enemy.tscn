@@ -3,9 +3,6 @@
 [ext_resource type="Script" path="res://Scenes/Enemies/Rat_enemy.gd" id="1_8mddx"]
 [ext_resource type="Texture2D" uid="uid://b62o3qtn8rbu" path="res://Resources/Enemies/Rat_Sprite_Sheet.png" id="2_3gitd"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_iaf22"]
-radius = 4.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_uuwwp"]
 atlas = ExtResource("2_3gitd")
 region = Rect2(0, 66, 32, 33)
@@ -113,13 +110,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_iaf22"]
+radius = 4.0
+
 [node name="RatEnemy" type="CharacterBody2D"]
 script = ExtResource("1_8mddx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_iaf22")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.625, 0.613636)
 sprite_frames = SubResource("SpriteFrames_3vb70")
 animation = &"Animation_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_iaf22")

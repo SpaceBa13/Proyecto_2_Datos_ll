@@ -57,25 +57,20 @@ func move():
 	if current_id_path.is_empty():
 		return
 	var target_position = tile_map.map_to_local(current_id_path.front() + tile_map.local_to_map(global_position))
+	global_position = global_position.move_toward(target_position, speed)
+	animate()
+	current_id_path.pop_front()
+	
+func animate():
 	if current_id_path.front() == Vector2i(1, 0):
 		animated_sprite_2d.play("Animation_right")
-		global_position = global_position.move_toward(target_position, speed)
-		current_id_path.pop_front()
 	if current_id_path.front() == Vector2i(-1, 0):
 		animated_sprite_2d.play("Animation_left")
-		global_position = global_position.move_toward(target_position, speed)
-		current_id_path.pop_front()
 	if current_id_path.front() == Vector2i(0, 1):
 		animated_sprite_2d.play("Animation_down")
-		global_position = global_position.move_toward(target_position, speed)
-		current_id_path.pop_front()
 	if current_id_path.front() == Vector2i(0, -1):
 		animated_sprite_2d.play("Animation_up")
-		global_position = global_position.move_toward(target_position, speed)
-		current_id_path.pop_front()
-	if current_id_path.front() == Vector2i(0,0):
-		current_id_path.pop_front()
-	
+
 	
 	
 
