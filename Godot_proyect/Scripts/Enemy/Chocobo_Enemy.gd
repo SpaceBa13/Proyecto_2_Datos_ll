@@ -18,9 +18,9 @@ func _ready():
 	
 func _physics_process(delta):
 	var own_position = tile_map.local_to_map(global_position)
-	if !player.bresenham.is_empty():
-		var target_position = player.bresenham.front()
-		current_id_path = Astar_path.get_id_path(own_position, target_position, tile_map)
+	var target_position = player.bresenham
+	current_id_path = Astar_path.get_id_path(own_position, target_position, tile_map)
+	print(player.bresenham)
 	move()
 
 func move():
@@ -30,11 +30,8 @@ func move():
 		global_position = global_position.move_toward(target_position, speed)
 		var direction = (target_position - global_position).normalized()
 		animate(direction)
-		print(target_position, global_position)
 		if tile_map.local_to_map(global_position) == tile_map.local_to_map(target_position) or global_position == target_position:
-			print(current_id_path)
 			current_id_path.pop_front()
-			print(current_id_path)
 	if !current_id_path.is_empty():
 		current_id_path.pop_front()
 	
