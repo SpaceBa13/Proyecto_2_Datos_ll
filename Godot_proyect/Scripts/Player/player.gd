@@ -43,6 +43,8 @@ func _physics_process(delta):
 	var random_pos = rng.randi_range(0, 30)
 	if random_pos == 5:
 		bresenham.append(tile_map.local_to_map(global_position))
+	if !bresenham.is_empty() and random_pos == 1:
+		bresenham.pop_front()
 	
 	validateInput()
 	animateMovement()

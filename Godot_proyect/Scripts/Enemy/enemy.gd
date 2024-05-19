@@ -30,14 +30,18 @@ func make_astar_path():
 func _physics_process(delta):
 	var tile_data = tile_map.get_cell_tile_data(0, tile_map.local_to_map(player.global_position))
 	if current_id_path.is_empty():
-		if tile_data.get_custom_data("safe_zone") != true and player.seen == true:
-			make_astar_path()
-			return
-		else:
-			return
+		if tile_data != null:
+			if tile_data.get_custom_data("safe_zone") != true and player.seen == true:
+				make_astar_path()
+				return
+			else:
+				return
 			
-	var target_position = tile_map.map_to_local(current_id_path.front())
-
+	var target_position: Vector2
+	if !current_id_path.is_empty():
+		target_position = tile_map.map_to_local(current_id_path.front())
+	else:
+		return
 	#Si la informacion de la celda es diferente de null
 	if tile_data != null:
 		#Obtiene si el jugador esta o no en zona segura
@@ -46,7 +50,9 @@ func _physics_process(delta):
 			make_astar_path()
 			global_position = global_position.move_toward(target_position, speed)
 			if global_position.x == target_position.x and global_position.y == target_position.y:
+				print(current_id_path)
 				current_id_path.pop_front()
+				
 		else:
 			if chasing == true:
 				chasing = false
