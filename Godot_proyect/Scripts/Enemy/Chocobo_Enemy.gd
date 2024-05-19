@@ -1,31 +1,28 @@
 extends CharacterBody2D
 
-class_name Eye_Enemy
+class_name Chocobo_Enemy
 
-
-@onready var sensor = $Eye_Sensor
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var tile_map: TileMap
+@onready var Astar_path: Astar
+var player: Player
 var rng = RandomNumberGenerator.new()
-const speed = 0.3
+const speed = 1.5
 var current_id_path: Array
-var positions_path: Array
 var prev_step: Vector2
 var blink: bool
 
 func _ready():
 	tile_map = $"../DungeonRoom"
+	player = $"../Player"
 	# Inicializar los arrays con vectores nulos
 	current_id_path = []
-	positions_path = []
 	prev_step = global_position
 	blink = false
 	
 func _physics_process(delta):
-	if sensor.player_detected == true:
-		print("jugador detectado")
-	if current_id_path.is_empty():
-		create_path()
+	if !player.bresenham.is_empty():
+		print(player.bresenham)
 	else:
 		move()
 	
@@ -39,14 +36,10 @@ func create_path():
 	
 	for i in range(3):
 		current_id_path.append(Vector2i(0, 0))
-		positions_path.append(Vector2i(0, 0))
 
 	if is_valid_move(target_position):
 		current_id_path[0] = target_direccion
-		positions_path[0] = target_position
-		
 		while is_valid_move(target_position):
-			positions_path.append(target_position)
 			current_id_path.append(target_direccion)
 			target_position =  target_position + target_direccion
 	
@@ -78,21 +71,16 @@ func move():
 	
 	
 func animate():
-	if blink:
-		animated_sprite_2d.play("Animation_Blink")
-	else:
-		animated_sprite_2d.play("Animation")
 	if current_id_path.front() == Vector2i(1, 0):
+		animated_sprite_2d.play("Animation_sides")
 		animated_sprite_2d.flip_h = false
 		animated_sprite_2d.rotation = 0
-		sensor.rotation = 0
 	if current_id_path.front() == Vector2i(-1, 0):
-		animated_sprite_2d.rotation = PI
-		animated_sprite_2d.flip_v = true
-		sensor.rotation = PI
+		animated_sprite_2d.play("Animation_sides")
+		animated_sprite_2d.flip_h = true
 	if current_id_path.front() == Vector2i(0, 1):
-		animated_sprite_2d.rotation = PI / 2
-		sensor.rotation = PI/2
+		animated_sprite_2d.play("Animation_down")
+		animated_sprite_2d.rotation = 0
 	if current_id_path.front() == Vector2i(0, -1):
-		animated_sprite_2d.rotation = -PI / 2
-		sensor.rotation = -PI/2
+		animated_sprite_2d.play("Animation_Up")
+		animated_sprite_2d.rotation = 0

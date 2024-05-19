@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c258l0u3p5ef"]
+[gd_scene load_steps=13 format=3 uid="uid://c258l0u3p5ef"]
 
 [ext_resource type="PackedScene" uid="uid://drxyd11sv7n0v" path="res://Scenes/Player/player.tscn" id="1_p8qs4"]
 [ext_resource type="PackedScene" uid="uid://bi88wpwagvvax" path="res://Scenes/tilemap/dungeon_room.tscn" id="1_pgdho"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/Playerpointer.gd" id="7_n637b"]
 [ext_resource type="PackedScene" uid="uid://deod04gpnqvqj" path="res://Scenes/Enemies/Rat_enemy.tscn" id="8_outgg"]
 [ext_resource type="PackedScene" uid="uid://ddli300bkguue" path="res://Scenes/Enemies/Eye_enemy.tscn" id="9_1ednr"]
+[ext_resource type="PackedScene" uid="uid://cwim8ftyaeoh6" path="res://Scenes/Enemies/Chocobo_enemy.tscn" id="10_623kk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a01lr"]
 size = Vector2(14, 13)
@@ -124,3 +125,6 @@ position = Vector2(552, 280)
 
 [node name="Eye_Enemy2" parent="." instance=ExtResource("9_1ednr")]
 position = Vector2(192, 232)
+
+[node name="Chocobo_Enemy" parent="." instance=ExtResource("10_623kk")]
+position = Vector2(448, 280)

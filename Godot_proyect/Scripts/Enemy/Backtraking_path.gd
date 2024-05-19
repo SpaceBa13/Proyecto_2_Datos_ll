@@ -1,20 +1,13 @@
-extends CharacterBody2D
+extends Node
 
+class_name Backtraking_path
 
-@onready var tile_map = $"../DungeonRoom"
-@onready var player = $"../Player"
-var current_path: Array
-const speed = 2
+var cell_size = Vector2i(16,16)
+var tile_map: TileMap
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	make_backtrack_path()
-	
-
-func make_backtrack_path():
-	var own_position = tile_map.local_to_map(global_position)
-	var player_position = tile_map.local_to_map(player.global_position)
-	# Resuelve el laberinto desde la posición inicial
-	current_path = get_backtrack_path(own_position, player_position)
+	pass # Replace with function body.
 
 
 # Función para verificar si un vecino es válido
@@ -41,6 +34,18 @@ func get_backtrack_path_aux(pos: Vector2i, goal: Vector2i , current_path: Array,
 	
 	if is_valid_move(pos):
 		current_path.append(pos)
+		if  pos.x < goal.x and pos.y < pos.y:
+			if get_backtrack_path_aux(pos + Vector2i(1,1), goal, current_path, path):
+				return true
+		if  pos.x > goal.x and pos.y > pos.y:
+			if get_backtrack_path_aux(pos + Vector2i(-1,-1), goal, current_path, path):
+				return true
+		if  pos.x > goal.x and pos.y < pos.y:
+			if get_backtrack_path_aux(pos + Vector2i(-1,1), goal, current_path, path):
+				return true
+		if pos.x < goal.x and pos.y > pos.y:
+			if get_backtrack_path_aux(pos + Vector2i(1,-1), goal, current_path, path):
+				return true
 		if pos.x < goal.x:
 			if get_backtrack_path_aux(pos + Vector2i(1,0), goal, current_path, path):
 				return true
@@ -55,15 +60,6 @@ func get_backtrack_path_aux(pos: Vector2i, goal: Vector2i , current_path: Array,
 				return true
 
 		current_path.pop_back()
-
+	
 	return false
 
-func _physics_process(delta):
-	if current_path.is_empty():
-		return
-
-	var target_position = tile_map.map_to_local(current_path.front())
-	global_position = global_position.move_toward(target_position, speed)
-	
-	if global_position.x == target_position.x and global_position.y == target_position.y:
-		current_path.pop_front()

@@ -13,9 +13,6 @@ func _ready():
 	body_exited.connect(set_player_detected_false)
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func set_player_detected_true(body):
 	print(body)

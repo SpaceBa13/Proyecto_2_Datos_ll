@@ -8,6 +8,7 @@ class_name Player
 @onready var marker = $Marker2D
 @onready var actionArea = $Marker2D/Area2D
 @onready var tile_map = $"../DungeonRoom"
+var bresenham: Array
 var seen: bool
 
 func validateInput():
@@ -38,7 +39,11 @@ func _physics_process(delta):
 	var tile_data = tile_map.get_cell_tile_data(0, position)
 	if tile_data == null or tile_data.get_custom_data("safe_zone") == true:
 		seen = false
-		
+	var rng = RandomNumberGenerator.new()
+	var random_pos = rng.randi_range(0, 30)
+	if random_pos == 5:
+		bresenham.append(tile_map.local_to_map(global_position))
+	
 	validateInput()
 	animateMovement()
 	move_and_slide()

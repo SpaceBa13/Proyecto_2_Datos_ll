@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://ddli300bkguue"]
 
-[ext_resource type="Script" path="res://Eye_Enemy.gd" id="1_pwnde"]
+[ext_resource type="Script" path="res://Scripts/Enemy/Eye_Enemy.gd" id="1_45uxa"]
 [ext_resource type="Texture2D" uid="uid://bjvu2cv7c5bie" path="res://Resources/Enemies/Spectral_Eye_Right.png" id="2_1n5kc"]
 [ext_resource type="PackedScene" uid="uid://ceqwn0whkpi55" path="res://Scenes/Enemies/Eye_Sensor.tscn" id="3_3mute"]
 
@@ -105,14 +105,14 @@ animations = [{
 radius = 5.0
 
 [node name="Eye_Enemy" type="CharacterBody2D"]
-script = ExtResource("1_pwnde")
+script = ExtResource("1_45uxa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2, -1)
 scale = Vector2(1, 0.99)
 sprite_frames = SubResource("SpriteFrames_0nul5")
 animation = &"Animation"
-frame_progress = 0.648722
+frame_progress = 0.879093
 offset = Vector2(1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
