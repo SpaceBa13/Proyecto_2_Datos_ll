@@ -11,6 +11,9 @@ class_name Player
 var bresenham: Vector2
 var seen: bool
 
+func _ready():
+	bresenham = tile_map.local_to_map(global_position)
+
 func validateInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = moveDirection * speed

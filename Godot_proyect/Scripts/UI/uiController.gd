@@ -4,9 +4,8 @@ var dataNode
 
 @onready var lbCoin = $UIStats/Panel/Label
 @onready var health = $UIHealthContainer/FullLife
-
 func _ready():
-	dataNode = get_node("/root/MainRoom/DataController")
+	dataNode = get_node("../../../DataController")
 	dataNode.dataChange.connect(updateData)
 	updateData()
 

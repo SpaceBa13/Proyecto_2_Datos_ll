@@ -6,7 +6,7 @@ class_name Chocobo_Enemy
 @onready var tile_map: TileMap
 @onready var Astar_path = $Astar
 var player: Player
-const speed = 1.5
+const speed = 1.2
 var current_id_path: Array
 
 func _ready():
@@ -20,7 +20,6 @@ func _physics_process(delta):
 	var own_position = tile_map.local_to_map(global_position)
 	var target_position = player.bresenham
 	current_id_path = Astar_path.get_id_path(own_position, target_position, tile_map)
-	print(player.bresenham)
 	move()
 
 func move():
