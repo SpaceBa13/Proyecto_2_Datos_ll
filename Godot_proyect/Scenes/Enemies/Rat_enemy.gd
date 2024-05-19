@@ -10,7 +10,7 @@ var current_id_path: Array
 
 
 func _ready():
-	tile_map = $"../DungeonRoom"
+	tile_map = $"../../DungeonRoom"
 	# Inicializar los arrays con vectores nulos
 	current_id_path = []
 	

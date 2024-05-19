@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@onready var tile_map = $"../DungeonRoom"
-@onready var player = $"../Player"
+@onready var tile_map = $"../../DungeonRoom"
+@onready var player = $"../../Player"
 var current_id_path: Array
 const speed = 1.3
 var spawn_position = Vector2i(0,0)

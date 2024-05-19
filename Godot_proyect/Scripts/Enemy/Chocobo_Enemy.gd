@@ -10,8 +10,8 @@ const speed = 1.2
 var current_id_path: Array
 
 func _ready():
-	tile_map = $"../DungeonRoom"
-	player = $"../Player"
+	tile_map = $"../../DungeonRoom"
+	player = $"../../Player"
 	# Inicializar los arrays con vectores nulos
 	current_id_path = []
 	Astar_path.tile_map = tile_map

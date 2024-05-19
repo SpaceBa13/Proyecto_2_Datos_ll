@@ -13,7 +13,7 @@ var prev_step: Vector2
 var blink: bool
 
 func _ready():
-	tile_map = $"../DungeonRoom"
+	tile_map = $"../../DungeonRoom"
 	# Inicializar los arrays con vectores nulos
 	current_id_path = []
 	prev_step = global_position
