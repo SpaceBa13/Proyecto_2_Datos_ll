@@ -1,6 +1,6 @@
 extends Area2D
 
-class_name Spike_Trap_Sensor
+class_name Trap_Sensor
 
 var player_detected: bool
 @onready var Spike_Trap = $".."
@@ -10,7 +10,6 @@ func _ready():
 	player_detected = false
 	body_entered.connect(set_player_detected_true)
 	body_exited.connect(set_player_detected_false)
-	
 
 func set_player_detected_true(body):
 	print(body)
