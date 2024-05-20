@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2b2xcqwtcurl"
-path="res://.godot/imported/trazo de luz.png-1fb88dc91567d8b44bbc52924fcb4b80.ctex"
+uid="uid://bedyg5gt0mh2w"
+path="res://.godot/imported/Spike Trap.png-b7113154b6a6403b03c34a6d4f58fe74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Ilumination/trazo de luz.png"
-dest_files=["res://.godot/imported/trazo de luz.png-1fb88dc91567d8b44bbc52924fcb4b80.ctex"]
+source_file="res://Resources/tiles/Brayan level/Traps/Spike Trap.png"
+dest_files=["res://.godot/imported/Spike Trap.png-b7113154b6a6403b03c34a6d4f58fe74.ctex"]
 
 [params]
 

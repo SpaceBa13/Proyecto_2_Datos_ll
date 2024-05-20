@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w3fxann5nu0o"
-path="res://.godot/imported/atlas_walls_low-16x16.png-eed750c5b8ac5b427db7a1bf7c3cb3e1.ctex"
+uid="uid://edp674je5vbv"
+path="res://.godot/imported/Water Effect and Bullet 16x16.png-52031cef1a97dcfedd403dd34394cd3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/tiles/Brayan level/atlas_walls_low-16x16.png"
-dest_files=["res://.godot/imported/atlas_walls_low-16x16.png-eed750c5b8ac5b427db7a1bf7c3cb3e1.ctex"]
+source_file="res://Resources/tiles/Brayan level/Particles/Water Effect and Bullet 16x16.png"
+dest_files=["res://.godot/imported/Water Effect and Bullet 16x16.png-52031cef1a97dcfedd403dd34394cd3e.ctex"]
 
 [params]
 

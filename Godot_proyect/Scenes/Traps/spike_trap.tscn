@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://deuob4bl8wc3r"]
+
+[ext_resource type="Texture2D" uid="uid://bedyg5gt0mh2w" path="res://Resources/tiles/Brayan level/Traps/Spike Trap.png" id="1_2uixt"]
+[ext_resource type="Script" path="res://Scenes/Traps/Spike_Trap_Sensor.gd" id="2_tjqlo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gck4b"]
+atlas = ExtResource("1_2uixt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4loys"]
+atlas = ExtResource("1_2uixt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsxmb"]
+atlas = ExtResource("1_2uixt")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3wy4"]
+atlas = ExtResource("1_2uixt")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_halyy"]
+atlas = ExtResource("1_2uixt")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vvl2"]
+atlas = ExtResource("1_2uixt")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbf1e"]
+atlas = ExtResource("1_2uixt")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ikh3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gck4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4loys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsxmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3wy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_halyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_halyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_halyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vvl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbf1e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0avq"]
+size = Vector2(13.5, 11.875)
+
+[node name="Spike_Trap" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_1ikh3")
+frame_progress = 0.590844
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_tjqlo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_b0avq")
