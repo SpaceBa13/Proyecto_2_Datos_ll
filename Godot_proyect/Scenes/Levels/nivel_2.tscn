@@ -2896,7 +2896,7 @@ layer_3/tile_data = PackedInt32Array(2031694, 65553, 805306372, 2097230, 131089,
 
 [node name="Player" parent="Nivel_2_Set" instance=ExtResource("6_7sjm3")]
 z_index = 5
-position = Vector2(776, 1448)
+position = Vector2(424, 1115)
 scale = Vector2(1.02209, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel_2_Set/Player"]
@@ -2948,7 +2948,6 @@ script = SubResource("GDScript_o3rea")
 offset = Vector2(464, 336)
 
 [node name="Ilumination" type="Node2D" parent="Nivel_2_Set"]
-visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Nivel_2_Set/Ilumination"]
 color = Color(0, 0, 0, 1)
@@ -2959,158 +2958,154 @@ color = Color(0.0117647, 0.027451, 0.0313726, 1)
 [node name="Enemies" type="Node2D" parent="Nivel_2_Set"]
 
 [node name="Eye_Enemy" parent="Nivel_2_Set/Enemies" instance=ExtResource("13_dtbev")]
-position = Vector2(680, 1432)
+position = Vector2(328, 1099)
 
 [node name="Eye_Enemy2" parent="Nivel_2_Set/Enemies" instance=ExtResource("13_dtbev")]
-position = Vector2(680, 1456)
+position = Vector2(328, 1123)
 
 [node name="RatEnemy" parent="Nivel_2_Set/Enemies" instance=ExtResource("14_b4qek")]
-position = Vector2(800, 1464)
+position = Vector2(448, 1131)
 
 [node name="Spectres" type="Node2D" parent="Nivel_2_Set"]
 
 [node name="Traps" type="Node2D" parent="Nivel_2_Set"]
 
 [node name="Torchs" type="Node2D" parent="Nivel_2_Set"]
-visible = false
 
 [node name="MegaTorch" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1739, 1009)
+position = Vector2(1432, 432)
 
 [node name="MegaTorch2" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1850, 1009)
+position = Vector2(1544, 432)
 
 [node name="MegaTorch3" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1628, 1201)
+position = Vector2(1320, 624)
 
 [node name="MegaTorch4" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1614, 1421)
+position = Vector2(1304, 848)
 
 [node name="MegaTorch5" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1754, 1295)
+position = Vector2(1448, 720)
 
 [node name="MegaTorch6" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1928, 1280)
+position = Vector2(1624, 704)
 
 [node name="MegaTorch7" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1866, 1121)
+position = Vector2(1560, 544)
 
 [node name="MegaTorch8" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1896, 1437)
+position = Vector2(1592, 864)
 
 [node name="MegaTorch9" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1046, 1923)
+position = Vector2(728, 1360)
 
 [node name="MegaTorch10" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(620, 1673)
+position = Vector2(296, 1104)
 
 [node name="MegaTorch11" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(732, 1735)
+position = Vector2(408, 1168)
 
 [node name="MegaTorch12" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(740, 1422)
+position = Vector2(416, 856)
 
 [node name="MegaTorch13" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(897, 1422)
+position = Vector2(576, 856)
 
 [node name="MegaTorch14" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1054, 1423)
-
-[node name="MegaTorch16" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1054, 1423)
+position = Vector2(736, 856)
 
 [node name="MegaTorch15" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1212, 1422)
+position = Vector2(896, 856)
 
 [node name="MegaTorch17" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1377, 1594)
+position = Vector2(1064, 1024)
 
 [node name="MegaTorch18" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1848, 1609)
+position = Vector2(1544, 1040)
 
 [node name="MegaTorch19" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1849, 1737)
+position = Vector2(1544, 1168)
 
 [node name="MegaTorch20" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1849, 1862)
+position = Vector2(1544, 1296)
 
 [node name="MegaTorch21" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1518, 839)
+position = Vector2(1208, 256)
 
 [node name="MegaTorch22" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1676, 839)
+position = Vector2(1368, 256)
 
 [node name="MegaTorch23" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1172, 1230)
+position = Vector2(856, 657)
 
 [node name="MegaTorch24" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1046, 993)
+position = Vector2(728, 416)
 
 [node name="MegaTorch25" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(983, 994)
+position = Vector2(664, 416)
 
 [node name="MegaTorch26" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1124, 1230)
+position = Vector2(808, 657)
 
 [node name="MegaTorch27" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(1219, 1229)
+position = Vector2(903, 656)
 
 [node name="MegaTorch28" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(842, 1309)
+position = Vector2(520, 736)
 
 [node name="MegaTorch29" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(794, 1309)
+position = Vector2(472, 736)
 
 [node name="MegaTorch30" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(637, 805)
+position = Vector2(312, 224)
 
 [node name="MegaTorch31" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(795, 806)
+position = Vector2(472, 224)
 
 [node name="MegaTorch32" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(653, 929)
+position = Vector2(328, 352)
 
 [node name="MegaTorch33" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
-position = Vector2(778, 930)
+position = Vector2(456, 352)
 
 [node name="Torch" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
-position = Vector2(653, 1895)
+position = Vector2(328, 1332)
 
 [node name="Torch2" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
-position = Vector2(732, 1895)
+position = Vector2(408, 1333)
 
 [node name="Torch3" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
-position = Vector2(826, 1895)
+position = Vector2(503, 1333)
 
 [node name="Torch4" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
-position = Vector2(905, 1895)
+position = Vector2(583, 1332)
 
 [node name="Torch5" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
-position = Vector2(1172, 1875)
+position = Vector2(855, 1313)
 
 [node name="Torch6" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
-position = Vector2(1220, 1875)
+position = Vector2(903, 1313)
 
 [node name="Torch7" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
-position = Vector2(1345, 1875)
+position = Vector2(1031, 1313)
 
 [node name="Torch8" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
-position = Vector2(1408, 1875)
+position = Vector2(1095, 1313)
 
 [node name="Torch9" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
-position = Vector2(1471, 1875)
+position = Vector2(1159, 1313)
 
 [node name="Torch10" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
-position = Vector2(1534, 1875)
+position = Vector2(1223, 1313)
 
 [node name="Torch11" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
-position = Vector2(1660, 1875)
+position = Vector2(1351, 1313)
 
 [node name="Torch12" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
-position = Vector2(1723, 1875)
+position = Vector2(1415, 1313)
 
 [node name="Torch13" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
-position = Vector2(1749, 1492)
+position = Vector2(1440, 920)
 
 [node name="Torch14" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
-position = Vector2(1798, 1492)
+position = Vector2(1488, 920)
