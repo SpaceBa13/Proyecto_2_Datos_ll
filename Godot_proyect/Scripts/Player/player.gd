@@ -4,7 +4,7 @@ class_name Player
 
 @export var speed: int = 100
 @onready var animation = $AnimationPlayer
-@onready var sprite = $Sprite2D
+@onready var sprite = $PlayerSprite
 @onready var marker = $Marker2D
 @onready var actionArea = $Marker2D/Area2D
 @onready var tile_map = $"../DungeonRoom"
@@ -23,10 +23,12 @@ func animateMovement():
 		animation.stop()
 	else:
 		var direAnim = "Walk_down"
+		$Swordsprite.visible = !$Swordsprite.visible
 		marker.rotation = deg_to_rad(0)
 		sprite.flip_h = false
 		if velocity.x < 0:
 			direAnim = "Walk_right"
+			$Swordsprite.visible = $Swordsprite.visible
 			marker.rotation = deg_to_rad(90)
 			sprite.flip_h = true
 		elif velocity.x > 0:
