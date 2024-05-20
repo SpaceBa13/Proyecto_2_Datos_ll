@@ -8,6 +8,10 @@ class_name Player
 @onready var marker = $Marker2D
 @onready var actionArea = $Marker2D/Area2D
 @onready var tile_map = $"../DungeonRoom"
+@onready var hitboxDamage = $DamageHitbox
+var direccionHitDamage = "DOWN"
+var hitboxDamageScript: PlayerHitboxDamage = PlayerHitboxDamage.new()
+
 var bresenham: Vector2
 var seen: bool
 
@@ -23,20 +27,26 @@ func animateMovement():
 		animation.stop()
 	else:
 		var direAnim = "Walk_down"
-		$Swordsprite.visible = !$Swordsprite.visible
+		direccionHitDamage = "DOWN"
 		marker.rotation = deg_to_rad(0)
+		hitboxDamage.rotation = deg_to_rad(0)
 		sprite.flip_h = false
 		if velocity.x < 0:
 			direAnim = "Walk_right"
-			$Swordsprite.visible = $Swordsprite.visible
+			direccionHitDamage = "LEFT"
 			marker.rotation = deg_to_rad(90)
+			hitboxDamage.rotation = deg_to_rad(90)
 			sprite.flip_h = true
 		elif velocity.x > 0:
 			direAnim = "Walk_right"
+			direccionHitDamage = "RIGHT"
 			marker.rotation = deg_to_rad(-90)
+			hitboxDamage.rotation = deg_to_rad(-90)
 		elif velocity.y < 0:
 			direAnim = "Walk_up"
+			direccionHitDamage = "UP"
 			marker.rotation = deg_to_rad(180)
+			hitboxDamage.rotation = deg_to_rad(180)
 		animation.play(direAnim)
 
 func _physics_process(delta):
@@ -52,3 +62,9 @@ func _physics_process(delta):
 	validateInput()
 	animateMovement()
 	move_and_slide()
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_select"):
+		hitboxDamageScript.setup(self, direccionHitDamage, 1)
+		hitboxDamageScript.createDamage()
