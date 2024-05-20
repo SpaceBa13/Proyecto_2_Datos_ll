@@ -1,15 +1,12 @@
 extends Area2D
 
-@onready var new_scene_path: String = "$HousePlayer"
+const FILE_BEGIN = "res://Scenes/Levels/nivel_"
 
 func _on_body_entered(body:Node2D):
 	if(body.name == "Player"):  
-		change_level()
+		var current_scene_file = get_tree().current_scene.scene_file_path
+		var next_level_number = current_scene_file.to_int() + 1
 		
-func change_level():
-	var new_scene = ResourceLoader.load(new_scene_path)
-	print("new_scene_path")
-	if new_scene:
-		get_tree().change_scene_to(new_scene)
-	else:
-		print("Error: La escena no se pudo cargar")
+		var next_level_path = FILE_BEGIN + str(next_level_number) + ".tscn"
+		get_tree().change_scene_to_file(next_level_path)
+	
