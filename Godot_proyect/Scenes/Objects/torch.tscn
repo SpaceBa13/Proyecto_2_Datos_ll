@@ -40,8 +40,6 @@ colors = PackedColorArray(1, 1, 1, 1, 0.353448, 0.353448, 0.353448, 1, 0.292207,
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dp5dt"]
 gradient = SubResource("Gradient_ei2lu")
-width = 256
-height = 256
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.7, 0.2)
@@ -110,12 +108,12 @@ frame_progress = 0.866142
 [node name="PointLight2D" type="PointLight2D" parent="."]
 material = SubResource("CanvasItemMaterial_teda0")
 color = Color(0.980392, 0.65098, 0.262745, 1)
-energy = 2.0
+energy = 2.2
 texture = SubResource("GradientTexture2D_dp5dt")
-texture_scale = 0.35
+texture_scale = 1.5
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -9)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_81cpr")
-frame_progress = 0.153911
+frame_progress = 0.441122
