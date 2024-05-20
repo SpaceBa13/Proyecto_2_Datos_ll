@@ -1,0 +1,123 @@
+[gd_scene load_steps=16 format=3 uid="uid://dtbrqrqwv1jgm"]
+
+[ext_resource type="PackedScene" uid="uid://bb7e5iidudlea" path="res://Scenes/tilemap/dari_tile_map.tscn" id="1_678kc"]
+[ext_resource type="PackedScene" uid="uid://drxyd11sv7n0v" path="res://Scenes/Player/player.tscn" id="2_p7fj4"]
+[ext_resource type="Script" path="res://Scripts/Player/player_dari.gd" id="3_jvm16"]
+[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/enemy.tscn" id="3_lyh63"]
+[ext_resource type="PackedScene" uid="uid://ui7euo81all" path="res://Scenes/UI/ui_general.tscn" id="4_45gmh"]
+[ext_resource type="Script" path="res://Scripts/Enemy/enemy_dari.gd" id="4_ytbmv"]
+[ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="5_rqgon"]
+[ext_resource type="Script" path="res://Scripts/Items/RecoletableItime_dari.gd" id="6_oc523"]
+[ext_resource type="Texture2D" uid="uid://bwbyik1tvdhki" path="res://Resources/UI/cursor.png" id="6_p8jar"]
+[ext_resource type="Script" path="res://Scripts/UI/Playerpointer.gd" id="7_vp5vk"]
+[ext_resource type="PackedScene" uid="uid://deod04gpnqvqj" path="res://Scenes/Enemies/Rat_enemy.tscn" id="8_ckmnw"]
+[ext_resource type="Script" path="res://Scripts/Enemy/Rat_enemy_dari.gd" id="11_sxxj1"]
+[ext_resource type="PackedScene" uid="uid://b1gtoh642r0qu" path="res://Scenes/Importants/Ladder.tscn" id="12_t55jk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a01lr"]
+size = Vector2(14, 13)
+
+[sub_resource type="GDScript" id="GDScript_htm5d"]
+
+[node name="DariPiso" type="Node2D"]
+
+[node name="DariTileMap" parent="." instance=ExtResource("1_678kc")]
+scale = Vector2(1.25236, 1.14436)
+
+[node name="Player" parent="." instance=ExtResource("2_p7fj4")]
+position = Vector2(402, 173)
+script = ExtResource("3_jvm16")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_a01lr")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, 6)
+zoom = Vector2(0.7, 0.7)
+
+[node name="enemy" parent="." instance=ExtResource("3_lyh63")]
+position = Vector2(700, 119)
+script = ExtResource("4_ytbmv")
+
+[node name="enemy2" parent="." instance=ExtResource("3_lyh63")]
+position = Vector2(1477, 779)
+script = ExtResource("4_ytbmv")
+
+[node name="Espectral_eye" parent="." instance=ExtResource("3_lyh63")]
+position = Vector2(131, 486)
+script = null
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UIGeneral" parent="CanvasLayer" instance=ExtResource("4_45gmh")]
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RecolectableItem5" parent="." instance=ExtResource("5_rqgon")]
+position = Vector2(1202, 741)
+scale = Vector2(1.4427, 0.890317)
+script = ExtResource("6_oc523")
+idItem = 1
+
+[node name="RecolectableItem2" parent="." instance=ExtResource("5_rqgon")]
+position = Vector2(648, 759)
+script = ExtResource("6_oc523")
+idItem = 2
+
+[node name="RecolectableItem3" parent="." instance=ExtResource("5_rqgon")]
+position = Vector2(704, 179)
+script = ExtResource("6_oc523")
+idItem = 1
+
+[node name="RecolectableItem4" parent="." instance=ExtResource("5_rqgon")]
+position = Vector2(390, 487)
+script = ExtResource("6_oc523")
+idItem = 3
+
+[node name="Mini Map" type="CanvasLayer" parent="."]
+scale = Vector2(0.06, 0.06)
+transform = Transform2D(0.06, 0, 0, 0.06, 0, 0)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Mini Map"]
+offset_left = 3350.0
+offset_right = 4274.0
+offset_bottom = 669.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Mini Map/SubViewportContainer"]
+self_modulate = Color(0.990041, 0.134757, 0.094839, 1)
+position = Vector2(464, 336)
+scale = Vector2(2, 2)
+texture = ExtResource("6_p8jar")
+script = ExtResource("7_vp5vk")
+
+[node name="SubViewport" type="SubViewport" parent="Mini Map/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(924, 669)
+render_target_update_mode = 4
+script = SubResource("GDScript_htm5d")
+
+[node name="Minimapa" parent="Mini Map/SubViewportContainer/SubViewport" instance=ExtResource("1_678kc")]
+
+[node name="Camera2D" type="Camera2D" parent="Mini Map/SubViewportContainer/SubViewport"]
+offset = Vector2(464, 336)
+
+[node name="RatEnemy" parent="." instance=ExtResource("8_ckmnw")]
+position = Vector2(941, 652)
+script = ExtResource("11_sxxj1")
+
+[node name="RatEnemy2" parent="." instance=ExtResource("8_ckmnw")]
+position = Vector2(1316, 1088)
+script = ExtResource("11_sxxj1")
+
+[node name="RatEnemy3" parent="." instance=ExtResource("8_ckmnw")]
+position = Vector2(725, 787)
+script = ExtResource("11_sxxj1")
+
+[node name="Ladder" parent="." instance=ExtResource("12_t55jk")]
+position = Vector2(389, 73)
+
+[connection signal="body_entered" from="Ladder" to="Ladder" method="_on_body_entered"]
