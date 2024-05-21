@@ -5,12 +5,24 @@ var parentNode
 var direccion: String
 var posicion: Vector2
 var idDamage: int
+var instance
 
-func setup(body, direct, id):
-	parentNode = body.get_parent()
-	posicion = Vector2(body.position)
+var hit = preload("res://Scenes/Player/ally_slash.tscn")
+
+func setup(parent, body, direct, id):
+	parentNode = parent
+	posicion = Vector2(body.global_position)
 	direccion = direct
 	idDamage = id
 	
 func createDamage():
-		pass
+	match idDamage:
+		1: 
+			instance = hit.instantiate()
+			instance.timer = 0.2
+			instance.canMove = false
+		2:
+			pass
+	instance.direccion  = direccion
+	instance.position = posicion
+	parentNode.add_child(instance)
