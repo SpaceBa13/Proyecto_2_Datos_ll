@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://co0fr6v7d4vk"]
+[gd_scene load_steps=11 format=3 uid="uid://co0fr6v7d4vk"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_5tp01"]
 [ext_resource type="PackedScene" uid="uid://bb7e5iidudlea" path="res://Scenes/tilemap/dari_tile_map.tscn" id="2_ab6vv"]
@@ -11,9 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="9_13d8b"]
 [ext_resource type="PackedScene" uid="uid://b1gtoh642r0qu" path="res://Scenes/Importants/Ladder.tscn" id="10_ofl4a"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3aox4"]
-size = Vector2(14, 13)
-
 [node name="Nivel_1" type="Node2D"]
 
 [node name="DataController" parent="." instance=ExtResource("1_5tp01")]
@@ -25,14 +22,6 @@ layer_1/tile_data = PackedInt32Array(786453, 2, 2, 262193, 65538, 2, 852017, 655
 
 [node name="Player" parent="Nivel_1_set" instance=ExtResource("3_fj4mw")]
 position = Vector2(224, 101)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel_1_set/Player"]
-position = Vector2(0, 6)
-shape = SubResource("RectangleShape2D_3aox4")
-
-[node name="Camera2D" type="Camera2D" parent="Nivel_1_set/Player"]
-position = Vector2(0, 6)
-zoom = Vector2(0.7, 0.7)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Nivel_1_set"]
 
