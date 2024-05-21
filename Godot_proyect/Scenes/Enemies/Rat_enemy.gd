@@ -8,6 +8,8 @@ var rng = RandomNumberGenerator.new()
 const speed = 1.8
 var current_id_path: Array
 
+@export var maxHealth = 2
+@onready var currentHealth: int = maxHealth
 
 func _ready():
 	tile_map = $"../../DungeonRoom"
@@ -69,6 +71,11 @@ func animate():
 		animated_sprite_2d.play("Animation_up")
 
 	
-	
 
-
+func _on_hitbox_area_entered(area):
+	if area.name == "Swordbox":
+		currentHealth -= 1
+		if currentHealth < 0:
+			currentHealth = maxHealth
+		print_debug(currentHealth)
+		print_debug(maxHealth)

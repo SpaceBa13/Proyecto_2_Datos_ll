@@ -4,9 +4,11 @@ class_name Player
 
 @export var speed: int = 100
 @export var typeDamage = 1
+
+
 @onready var animation = $AnimationPlayer
 @onready var sprite = $PlayerSprite
-@onready var marker = $Marker2D
+@onready var interactionmarker = $Marker2D
 @onready var actionArea = $Marker2D/Area2D
 @onready var tile_map = $"../DungeonRoom"
 @onready var hitboxDamage = $hurtbox
@@ -17,7 +19,8 @@ var canMove = true
 var direccionHitDamage = "DOWN"
 var hitboxDamageScript: PlayerHitboxDamage = PlayerHitboxDamage.new()
 
-var currentHealth: int = 5
+@export var maxHealth = 5
+@onready var currentHealth: int = maxHealth
 
 
 var bresenham: Vector2
@@ -36,17 +39,18 @@ func animateMovement():
 		animationTree["parameters/conditions/Idleing"] = true
 		animationTree["parameters/conditions/Walking"] = false
 	else:
-		direccionHitDamage = "DOWN"
-		marker.rotation = deg_to_rad(0)
+		if velocity.y > 0: 
+			direccionHitDamage = "DOWN"
+			interactionmarker.rotation = deg_to_rad(0)
 		if velocity.x < 0:
 			direccionHitDamage = "LEFT"
-			marker.rotation = deg_to_rad(90)
+			interactionmarker.rotation = deg_to_rad(90)
 		elif velocity.x > 0:
 			direccionHitDamage = "RIGHT"
-			marker.rotation = deg_to_rad(-90)
+			interactionmarker.rotation = deg_to_rad(-90)
 		elif velocity.y < 0:
 			direccionHitDamage = "UP"
-			marker.rotation = deg_to_rad(180)
+			interactionmarker.rotation = deg_to_rad(180)
 		animationTree["parameters/Idle/blend_position"] = moveDirection
 		animationTree["parameters/Walk/blend_position"] = moveDirection
 		animationTree["parameters/Attack/blend_position"] = moveDirection
@@ -67,7 +71,7 @@ func _physics_process(delta):
 		validateInput()
 		animateMovement()
 		move_and_slide()
-		check_accionables()
+		#check_accionables()
 
 func check_accionables() -> void:
 	var areas: Array[Area2D] = actionArea.get_overlapping_areas()
@@ -111,4 +115,7 @@ func attack_animation():
 
 func _on_hurtbox_area_entered(area):
 	if area.name == "hitbox":
-		print_debug(area.get_parent().name)
+		currentHealth -= 1
+		if currentHealth < 0:
+			currentHealth = maxHealth
+		print_debug(currentHealth)

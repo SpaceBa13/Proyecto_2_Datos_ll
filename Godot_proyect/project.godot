@@ -71,7 +71,6 @@ move={
 2d_physics/layer_2="enemies"
 2d_physics/layer_4="Accionables"
 2d_physics/layer_5="AllyDamage"
-2d_physics/layer_6="Enemy Damage"
 
 [rendering]
 
