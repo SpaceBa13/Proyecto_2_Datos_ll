@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://drxyd11sv7n0v"]
+[gd_scene load_steps=43 format=3 uid="uid://drxyd11sv7n0v"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_5511m"]
 [ext_resource type="Texture2D" uid="uid://blklggocd1c3y" path="res://Resources/Player/lonk-Sheet.png" id="2_516jd"]
@@ -662,6 +662,9 @@ _data = {
 radius = 7.0
 height = 28.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vo4rv"]
+size = Vector2(20.5001, 22)
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v72bm"]
 animation = &"Attack_Left"
 
@@ -775,6 +778,7 @@ size = Vector2(18, 16)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -7)
+collision_mask = 3
 script = ExtResource("1_5511m")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
@@ -815,17 +819,14 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_nj8u8")
 debug_color = Color(0.321569, 0.623529, 0, 0.419608)
 
-[node name="DamageHitbox" type="Marker2D" parent="."]
-
-[node name="Area2D" type="Area2D" parent="DamageHitbox"]
+[node name="hurtbox" type="Area2D" parent="."]
 position = Vector2(0, 0.9883)
-collision_layer = 0
-collision_mask = 0
+collision_mask = 3
 
-[node name="CollisionShape2Db" type="CollisionShape2D" parent="DamageHitbox/Area2D"]
-position = Vector2(0, 12.0117)
+[node name="CollisionShape2Db" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(-1.07288e-06, 5.26169)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_nj8u8")
+shape = SubResource("RectangleShape2D_vo4rv")
 debug_color = Color(0.623529, 0, 0.117647, 0.419608)
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -844,3 +845,5 @@ parameters/Walk/blend_position = Vector2(0, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_hd2qs")
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

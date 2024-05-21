@@ -17,6 +17,9 @@ var canMove = true
 var direccionHitDamage = "DOWN"
 var hitboxDamageScript: PlayerHitboxDamage = PlayerHitboxDamage.new()
 
+var currentHealth: int = 5
+
+
 var bresenham: Vector2
 var seen: bool
 
@@ -35,19 +38,15 @@ func animateMovement():
 	else:
 		direccionHitDamage = "DOWN"
 		marker.rotation = deg_to_rad(0)
-		hitboxDamage.rotation = deg_to_rad(0)
 		if velocity.x < 0:
 			direccionHitDamage = "LEFT"
 			marker.rotation = deg_to_rad(90)
-			hitboxDamage.rotation = deg_to_rad(90)
 		elif velocity.x > 0:
 			direccionHitDamage = "RIGHT"
 			marker.rotation = deg_to_rad(-90)
-			hitboxDamage.rotation = deg_to_rad(-90)
 		elif velocity.y < 0:
 			direccionHitDamage = "UP"
 			marker.rotation = deg_to_rad(180)
-			hitboxDamage.rotation = deg_to_rad(180)
 		animationTree["parameters/Idle/blend_position"] = moveDirection
 		animationTree["parameters/Walk/blend_position"] = moveDirection
 		animationTree["parameters/Attack/blend_position"] = moveDirection
@@ -107,3 +106,9 @@ func attack_animation():
 	await get_tree().create_timer(0.2).timeout
 	animationTree["parameters/conditions/Attacking"] = false
 	canMove = true
+
+
+
+func _on_hurtbox_area_entered(area):
+	if area.name == "hitbox":
+		print_debug(area.get_parent().name)
