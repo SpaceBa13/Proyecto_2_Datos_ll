@@ -793,7 +793,6 @@ vframes = 5
 [node name="Swordsprite" type="Sprite2D" parent="."]
 visible = false
 visibility_layer = 128
-z_index = 3
 position = Vector2(-4, 6)
 scale = Vector2(0.154808, 0.154808)
 texture = ExtResource("2_516jd")

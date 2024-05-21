@@ -9,7 +9,7 @@ class_name Player
 @onready var marker = $Marker2D
 @onready var actionArea = $Marker2D/Area2D
 @onready var tile_map = $"../DungeonRoom"
-@onready var hitboxDamage = $DamageHitbox
+@onready var hitboxDamage = $hurtbox
 @onready var animationTree = $AnimationTree
 var nearestActionable: ActionArea
 var moveDirection = Vector2.ZERO
