@@ -810,7 +810,7 @@ libraries = {
 [node name="Area2D" type="Area2D" parent="Marker2D"]
 position = Vector2(0, 0.9883)
 collision_layer = 0
-collision_mask = 16
+collision_mask = 8
 
 [node name="CollisionShape2Da" type="CollisionShape2D" parent="Marker2D/Area2D"]
 position = Vector2(0, 12.0117)
@@ -838,7 +838,7 @@ parameters/conditions/Attacking = false
 parameters/conditions/Idleing = false
 parameters/conditions/Walking = false
 parameters/Attack/blend_position = Vector2(0, 0)
-parameters/Idle/blend_position = Vector2(0.00492609, 0.0476191)
+parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

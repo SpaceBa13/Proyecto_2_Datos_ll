@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Items/chest.gd" id="1_2psl0"]
 [ext_resource type="Texture2D" uid="uid://tx8psjwo8es0" path="res://Resources/Items/Fantasy RPG (Toony) 32x32.png" id="1_vouwa"]
-[ext_resource type="PackedScene" uid="uid://b60i5c6h7tngt" path="res://Scenes/Importants/action_area.tscn" id="2_3grwk"]
+[ext_resource type="PackedScene" uid="uid://b07s0n4rru00k" path="res://Scenes/Importants/action_area.tscn" id="2_3grwk"]
 [ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="2_5vee3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86krl"]
@@ -21,7 +21,6 @@ hframes = 12
 vframes = 7
 
 [node name="ActionArea" parent="." instance=ExtResource("2_3grwk")]
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionArea"]
 position = Vector2(0, 0.5)

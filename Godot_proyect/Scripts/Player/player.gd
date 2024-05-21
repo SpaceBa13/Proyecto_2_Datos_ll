@@ -8,12 +8,14 @@ class_name Player
 
 @onready var animation = $AnimationPlayer
 @onready var sprite = $PlayerSprite
+@onready var animationTree = $AnimationTree
+
 @onready var interactionmarker = $Marker2D
 @onready var actionArea = $Marker2D/Area2D
+var nearestActionable: ActionArea
+
 @onready var tile_map = $"../DungeonRoom"
 @onready var hitboxDamage = $hurtbox
-@onready var animationTree = $AnimationTree
-var nearestActionable: ActionArea
 var moveDirection = Vector2.ZERO
 var canMove = true
 var direccionHitDamage = "DOWN"
@@ -71,7 +73,7 @@ func _physics_process(delta):
 		validateInput()
 		animateMovement()
 		move_and_slide()
-		#check_accionables()
+		check_accionables()
 
 func check_accionables() -> void:
 	var areas: Array[Area2D] = actionArea.get_overlapping_areas()
