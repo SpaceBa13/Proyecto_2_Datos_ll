@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://css1uf2p3235j"]
+
+[ext_resource type="Texture2D" uid="uid://c1ht4yw4hda60" path="res://Resources/tiles/Brayan level/Traps/Fire_Trap.png" id="2_wief5"]
+[ext_resource type="Script" path="res://Scenes/Traps/Trap_Sensor.gd" id="3_00qtd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddssl"]
+atlas = ExtResource("2_wief5")
+region = Rect2(0, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtdo0"]
+atlas = ExtResource("2_wief5")
+region = Rect2(224, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xd7f"]
+atlas = ExtResource("2_wief5")
+region = Rect2(256, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8va0a"]
+atlas = ExtResource("2_wief5")
+region = Rect2(288, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nbok"]
+atlas = ExtResource("2_wief5")
+region = Rect2(320, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n6sy"]
+atlas = ExtResource("2_wief5")
+region = Rect2(352, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usixa"]
+atlas = ExtResource("2_wief5")
+region = Rect2(384, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sah1"]
+atlas = ExtResource("2_wief5")
+region = Rect2(416, 0, 32, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ewubn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddssl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtdo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xd7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8va0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nbok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n6sy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usixa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sah1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp81d"]
+size = Vector2(13.5, 11.875)
+
+[node name="Fire_Trap" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ewubn")
+frame_progress = 0.187961
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_00qtd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_hp81d")

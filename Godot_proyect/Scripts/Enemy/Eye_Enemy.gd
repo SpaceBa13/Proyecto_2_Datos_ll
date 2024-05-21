@@ -49,7 +49,7 @@ func create_path():
 func is_valid_move(neighbor) -> bool:
 	# Obtener el valor de la capa personalizada "walkable" en la celda vecina
 	var tile_data = tile_map.get_cell_tile_data(0, neighbor)
-	if tile_data == null or tile_data.get_custom_data("walkable") == false:
+	if tile_data == null or tile_data.get_custom_data("walkable") == false or tile_data.get_custom_data("safe_zone") == true:
 		return false
 	else:
 		return true

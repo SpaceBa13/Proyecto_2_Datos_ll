@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb3mf1qlbt3ue"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy/enemy.gd" id="1_getaq"]
+[ext_resource type="Texture2D" uid="uid://bjvu2cv7c5bie" path="res://Resources/Enemies/Spectral_Eye_Right.png" id="2_vohen"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4b4ml"]
+radius = 23.79
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_getaq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vohen")
+offset = Vector2(-1, 2)
+hframes = 8
+vframes = 4
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.30271e-07, -2.23517e-08)
+scale = Vector2(0.225781, 0.223261)
+shape = SubResource("CircleShape2D_4b4ml")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.137
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

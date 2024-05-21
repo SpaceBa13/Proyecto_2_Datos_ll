@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1gtoh642r0qu"]
+
+[ext_resource type="Script" path="res://Scripts/Importants/Ladder.gd" id="1_xjviu"]
+[ext_resource type="Texture2D" uid="uid://b3s2omkjj1h54" path="res://Resources/tiles/Tileset/Jacob's_Ladder_App.png" id="2_g4bcl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4ass"]
+size = Vector2(9, 36.5)
+
+[node name="Ladder" type="Area2D"]
+script = ExtResource("1_xjviu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(21, 21)
+scale = Vector2(0.091978, 0.0651128)
+texture = ExtResource("2_g4bcl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(21, 20.25)
+shape = SubResource("RectangleShape2D_c4ass")
