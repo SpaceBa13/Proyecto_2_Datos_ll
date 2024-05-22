@@ -815,7 +815,7 @@ states/Walk/position = Vector2(544, 46)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_v0fky"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_36yky"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_xiuqh"), "Attack", "Walk", SubResource("AnimationNodeStateMachineTransition_vxrqy"), "Walk", "Attack", SubResource("AnimationNodeStateMachineTransition_jkycf"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_168bg"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_hm7g8")]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hd2qs"]
-size = Vector2(18, 16)
+size = Vector2(15, 15)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -7)
@@ -834,9 +834,7 @@ vframes = 5
 [node name="Swordsprite" type="Sprite2D" parent="."]
 visible = false
 visibility_layer = 128
-z_index = 1
 position = Vector2(-4, 6)
-rotation = 9.42478
 scale = Vector2(0.154808, 0.154808)
 texture = ExtResource("2_516jd")
 hframes = 6
@@ -885,7 +883,7 @@ parameters/Idle/blend_position = Vector2(0, 1)
 parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_hd2qs")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]

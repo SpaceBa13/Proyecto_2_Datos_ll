@@ -105,6 +105,7 @@ shape = SubResource("CircleShape2D_084at")
 z_index = 6
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_cb05k")
+frame_progress = 0.277107
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 material = SubResource("CanvasItemMaterial_inod4")

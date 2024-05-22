@@ -9,6 +9,9 @@ var player: Player
 const speed = 1.2
 var current_id_path: Array
 
+@export var maxHealth = 2
+@onready var currentHealth: int = maxHealth
+
 func _ready():
 	tile_map = $"../../DungeonRoom"
 	player = $"../../Player"
@@ -54,3 +57,10 @@ func animate(direction: Vector2):
 	elif direction.y < 0: 
 		animated_sprite_2d.play("Animation_Up")
 		animated_sprite_2d.rotation = 0
+		
+		
+func _on_hitbox_area_entered(area):
+	if area.name == "Swordbox":
+		currentHealth -= 1
+		if currentHealth == 0:
+			queue_free()

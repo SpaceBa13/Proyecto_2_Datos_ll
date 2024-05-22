@@ -2894,9 +2894,9 @@ script/source = "extends SubViewport
 
 [node name="DataController" parent="." instance=ExtResource("1_7khhh")]
 
-[node name="Nivel_2_Set" type="Node2D" parent="."]
+[node name="Nivel_Set" type="Node2D" parent="."]
 
-[node name="DungeonRoom" type="TileMap" parent="Nivel_2_Set"]
+[node name="DungeonRoom" type="TileMap" parent="Nivel_Set"]
 scale = Vector2(0.999, 1)
 tile_set = SubResource("TileSet_tc8g5")
 format = 2
@@ -2912,336 +2912,334 @@ layer_3/name = "4"
 layer_3/z_index = 3
 layer_3/tile_data = PackedInt32Array(2031694, 65553, 805306372, 2097230, 131089, 1342177283, 2162766, 65553, 268435460, 1966159, 65553, 805306372, 2031695, 196625, 536870915, 2162767, 196625, 3, 2228303, 131089, 1342177283, 2293839, 65553, 268435460, 1966160, 131089, 805306371, 2293840, 131089, 3, 2949200, 65553, 805306372, 3014736, 131089, 1342177283, 3080272, 131089, 1342177283, 3145808, 196625, 4, 1966161, 131089, 805306371, 2293841, 131089, 3, 2883665, 65553, 805306372, 2949201, 65553, 805306371, 3145809, 196625, 3, 3211345, 196625, 4, 1966162, 131089, 805306371, 2293842, 17, 1342177285, 2752594, 65553, 805306372, 2818130, 131089, 1342177283, 2883666, 65553, 805306371, 3211346, 196625, 3, 3276882, 65553, 268435460, 1966163, 65553, 536870916, 2031699, 196625, 805306371, 2228307, 196625, 268435459, 2293843, 65553, 4, 2752595, 131089, 805306371, 3276883, 131089, 3, 3407955, 65553, 805306372, 3473491, 131089, 1342177283, 3539027, 65553, 268435460, 2031700, 65553, 536870916, 2097236, 17, 536870917, 2162772, 131089, 1610612739, 2228308, 65553, 4, 2752596, 65553, 536870916, 2818132, 17, 5, 2883668, 65553, 536870915, 3276884, 131089, 3, 3407956, 131089, 805306371, 3539028, 65553, 1342177283, 3604564, 65553, 268435460, 2424917, 196625, 1342177284, 2490453, 17, 805306373, 2555989, 131089, 1879048195, 2621525, 196625, 4, 2883669, 65553, 536870916, 2949205, 65553, 536870915, 3276885, 131089, 3, 3342421, 65553, 805306372, 3407957, 65553, 805306371, 3604565, 131089, 3, 1638486, 131089, 1342177283, 1704022, 131089, 1342177283, 1769558, 131089, 1342177283, 1835094, 131089, 1342177283, 1900630, 131089, 1342177283, 1966166, 131089, 1342177283, 2031702, 196625, 4, 2293846, 196625, 1342177284, 2359382, 131089, 1342177283, 2424918, 65553, 805306371, 2621526, 65553, 268435459, 2687062, 196625, 4, 2949206, 65553, 536870916, 3014742, 131089, 1610612739, 3080278, 65553, 536870915, 3211350, 65553, 3, 3276886, 65553, 4, 3342422, 131089, 805306371, 3604566, 131089, 3, 2031703, 131089, 3, 2293847, 131089, 805306371, 2687063, 65553, 268435459, 2752599, 196625, 4, 3080279, 65553, 536870916, 3145815, 17, 536870917, 3211351, 65553, 4, 3342423, 131089, 805306371, 3604567, 131089, 3, 2031704, 131089, 3, 2228312, 196625, 1342177284, 2293848, 65553, 805306371, 2752600, 17, 1342177285, 3342424, 65553, 536870916, 3407960, 65553, 1610612739, 3539032, 65553, 3, 3604568, 65553, 4, 2031705, 131089, 3, 2228313, 131089, 805306371, 2687065, 65553, 3, 2752601, 65553, 4, 3407961, 65553, 536870916, 3473497, 17, 5, 3539033, 65553, 4, 2031706, 131089, 3, 2228314, 131089, 805306371, 2687066, 65553, 268435459, 2752602, 196625, 4, 2031707, 131089, 3, 2228315, 131089, 805306371, 2752603, 131089, 3, 2031708, 17, 1073741829, 2228316, 196625, 1073741828, 2293852, 131089, 1610612739, 2359388, 131089, 1610612739, 2424924, 65553, 536870915, 2621532, 17, 4, 2687068, 131089, 1610612739, 2752604, 65553, 4, 2031709, 17, 1073741829, 2424925, 131089, 536870915, 2555997, 17, 4, 2621533, 65553, 4, 2949213, 196625, 536870916, 3014749, 131089, 1342177283, 3080285, 196625, 4, 2031710, 131089, 3, 2424926, 196625, 1073741828, 2490462, 17, 536870917, 2555998, 65553, 4, 2883678, 196625, 536870916, 2949214, 196625, 536870915, 3080286, 131089, 268435459, 2031711, 131089, 3, 2818143, 196625, 536870916, 2883679, 196625, 536870915, 3080287, 196625, 3, 3145823, 196625, 4, 2031712, 131089, 3, 2818144, 17, 1610612741, 3145824, 17, 1073741829, 2031713, 131089, 3, 2818145, 196625, 805306372, 2883681, 196625, 805306371, 3080289, 196625, 268435459, 3145825, 196625, 268435460, 2031714, 131089, 3, 2883682, 196625, 805306372, 2949218, 131089, 1073741827, 3014754, 131089, 1073741827, 3080290, 196625, 268435460, 1638499, 131089, 1610612739, 1704035, 131089, 1610612739, 1769571, 131089, 1610612739, 1835107, 131089, 1610612739, 1900643, 131089, 1610612739, 1966179, 131089, 1610612739, 2031715, 196625, 268435460, 2359395, 196625, 536870916, 2424931, 131089, 1342177283, 2490467, 17, 805306373, 2556003, 131089, 1342177283, 2621539, 196625, 4, 2293860, 65553, 805306372, 2359396, 65553, 805306371, 2621540, 131089, 3, 3276900, 196625, 536870916, 3342436, 17, 268435461, 3407972, 196625, 4, 2293861, 131089, 536870915, 2621541, 65553, 268435459, 2687077, 196625, 4, 3276901, 131089, 805306371, 3407973, 196625, 3, 3473509, 131089, 1879048195, 3539045, 196625, 4, 2228326, 196625, 536870916, 2293862, 65553, 805306371, 2687078, 131089, 3, 3211366, 196625, 536870916, 3276902, 196625, 536870915, 3539046, 196625, 3, 3604582, 196625, 4, 2228327, 131089, 536870915, 2687079, 131089, 3, 3145831, 196625, 536870916, 3211367, 196625, 536870915, 3604583, 131089, 3, 2228328, 196625, 805306372, 2293864, 65553, 536870915, 2621544, 65553, 3, 2687080, 65553, 4, 3145832, 131089, 805306371, 3604584, 131089, 3, 2293865, 65553, 536870916, 2359401, 65553, 536870915, 2490473, 65553, 3, 2556009, 131089, 1073741827, 2621545, 65553, 4, 3145833, 196625, 805306372, 3211369, 131089, 1610612739, 3276905, 196625, 805306371, 3604585, 131089, 3, 2359402, 196625, 805306372, 2424938, 131089, 1610612739, 2490474, 65553, 4, 3276906, 196625, 805306372, 3342442, 131089, 1610612739, 3407978, 131089, 1610612739, 3473514, 131089, 1610612739, 3539050, 131089, 1610612739, 3604586, 196625, 268435460, 3670107, 17, 1610612741)
 
-[node name="Player" parent="Nivel_2_Set" instance=ExtResource("6_7sjm3")]
+[node name="Player" parent="Nivel_Set" instance=ExtResource("6_7sjm3")]
 z_index = 5
-position = Vector2(261, 1606)
+position = Vector2(1247, 1216)
 scale = Vector2(1.02209, 1)
 
-[node name="PointLight2D" type="PointLight2D" parent="Nivel_2_Set/Player"]
+[node name="PointLight2D" type="PointLight2D" parent="Nivel_Set/Player"]
 position = Vector2(0, -6)
 texture = SubResource("GradientTexture2D_j6mes")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Nivel_2_Set"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Nivel_Set"]
 
-[node name="UIGeneral" parent="Nivel_2_Set/CanvasLayer" instance=ExtResource("7_621as")]
+[node name="UIGeneral" parent="Nivel_Set/CanvasLayer" instance=ExtResource("7_621as")]
 offset_left = 2.0
 offset_top = -1.0
 offset_right = 1.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Mini Map" type="CanvasLayer" parent="Nivel_2_Set"]
+[node name="Mini Map" type="CanvasLayer" parent="Nivel_Set"]
 scale = Vector2(0.06, 0.06)
 transform = Transform2D(0.06, 0, 0, 0.06, 0, 0)
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Nivel_2_Set/Mini Map"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Nivel_Set/Mini Map"]
 offset_left = 3350.0
 offset_right = 4274.0
 offset_bottom = 669.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Nivel_2_Set/Mini Map/SubViewportContainer"]
+[node name="Sprite2D" type="Sprite2D" parent="Nivel_Set/Mini Map/SubViewportContainer"]
 self_modulate = Color(0.990041, 0.134757, 0.094839, 1)
 position = Vector2(464, 336)
 scale = Vector2(2, 2)
 texture = ExtResource("8_osnuw")
 script = ExtResource("9_5w2fj")
 
-[node name="SubViewport" type="SubViewport" parent="Nivel_2_Set/Mini Map/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="Nivel_Set/Mini Map/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(924, 669)
 render_target_update_mode = 4
 script = SubResource("GDScript_o3rea")
 
-[node name="Minimap" parent="Nivel_2_Set/Mini Map/SubViewportContainer/SubViewport" instance=ExtResource("10_8dfh3")]
+[node name="Minimap" parent="Nivel_Set/Mini Map/SubViewportContainer/SubViewport" instance=ExtResource("10_8dfh3")]
 
-[node name="Camera2D" type="Camera2D" parent="Nivel_2_Set/Mini Map/SubViewportContainer/SubViewport"]
+[node name="Camera2D" type="Camera2D" parent="Nivel_Set/Mini Map/SubViewportContainer/SubViewport"]
 offset = Vector2(464, 336)
 
-[node name="Ilumination" type="Node2D" parent="Nivel_2_Set"]
-visible = false
+[node name="Ilumination" type="Node2D" parent="Nivel_Set"]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="Nivel_2_Set/Ilumination"]
+[node name="CanvasModulate" type="CanvasModulate" parent="Nivel_Set/Ilumination"]
 color = Color(0, 0, 0, 1)
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Nivel_2_Set/Ilumination"]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Nivel_Set/Ilumination"]
 color = Color(0.0117647, 0.027451, 0.0313726, 1)
 
-[node name="Enemies" type="Node2D" parent="Nivel_2_Set"]
+[node name="Enemies" type="Node2D" parent="Nivel_Set"]
 z_index = 5
 
-[node name="Eye_Enemy" parent="Nivel_2_Set/Enemies" instance=ExtResource("13_dtbev")]
+[node name="Eye_Enemy" parent="Nivel_Set/Enemies" instance=ExtResource("13_dtbev")]
 z_index = 5
 position = Vector2(1450, 1349)
 
-[node name="Eye_Enemy2" parent="Nivel_2_Set/Enemies" instance=ExtResource("13_dtbev")]
+[node name="Eye_Enemy2" parent="Nivel_Set/Enemies" instance=ExtResource("13_dtbev")]
 z_index = 5
 position = Vector2(419, 934)
 
-[node name="Eye_Enemy3" parent="Nivel_2_Set/Enemies" instance=ExtResource("13_dtbev")]
+[node name="Eye_Enemy3" parent="Nivel_Set/Enemies" instance=ExtResource("13_dtbev")]
 z_index = 5
 position = Vector2(483, 430)
 
-[node name="Eye_Enemy4" parent="Nivel_2_Set/Enemies" instance=ExtResource("13_dtbev")]
+[node name="Eye_Enemy4" parent="Nivel_Set/Enemies" instance=ExtResource("13_dtbev")]
 z_index = 5
 position = Vector2(719, 800)
 
-[node name="Eye_Enemy5" parent="Nivel_2_Set/Enemies" instance=ExtResource("13_dtbev")]
+[node name="Eye_Enemy5" parent="Nivel_Set/Enemies" instance=ExtResource("13_dtbev")]
 z_index = 5
 position = Vector2(329, 586)
 
-[node name="Eye_Enemy6" parent="Nivel_2_Set/Enemies" instance=ExtResource("13_dtbev")]
+[node name="Eye_Enemy6" parent="Nivel_Set/Enemies" instance=ExtResource("13_dtbev")]
 z_index = 5
 position = Vector2(1557, 744)
 
-[node name="Eye_Enemy7" parent="Nivel_2_Set/Enemies" instance=ExtResource("13_dtbev")]
+[node name="Eye_Enemy7" parent="Nivel_Set/Enemies" instance=ExtResource("13_dtbev")]
 z_index = 5
 position = Vector2(1294, 521)
 
-[node name="Eye_Enemy8" parent="Nivel_2_Set/Enemies" instance=ExtResource("13_dtbev")]
+[node name="Eye_Enemy8" parent="Nivel_Set/Enemies" instance=ExtResource("13_dtbev")]
 z_index = 5
 position = Vector2(1664, 839)
 
-[node name="Eye_Enemy9" parent="Nivel_2_Set/Enemies" instance=ExtResource("13_dtbev")]
+[node name="Eye_Enemy9" parent="Nivel_Set/Enemies" instance=ExtResource("13_dtbev")]
 z_index = 5
 position = Vector2(255, 1422)
 
-[node name="RatEnemy" parent="Nivel_2_Set/Enemies" instance=ExtResource("14_b4qek")]
+[node name="RatEnemy" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
 z_index = 5
 position = Vector2(685, 1461)
 
-[node name="RatEnemy2" parent="Nivel_2_Set/Enemies" instance=ExtResource("14_b4qek")]
+[node name="RatEnemy2" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
 z_index = 5
 position = Vector2(786, 1292)
 
-[node name="RatEnemy3" parent="Nivel_2_Set/Enemies" instance=ExtResource("14_b4qek")]
+[node name="RatEnemy3" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
 z_index = 5
 position = Vector2(656, 1272)
 
-[node name="RatEnemy4" parent="Nivel_2_Set/Enemies" instance=ExtResource("14_b4qek")]
+[node name="RatEnemy4" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
 z_index = 5
 position = Vector2(329, 1190)
 
-[node name="RatEnemy5" parent="Nivel_2_Set/Enemies" instance=ExtResource("14_b4qek")]
+[node name="RatEnemy5" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
 z_index = 5
 position = Vector2(411, 1123)
 
-[node name="RatEnemy6" parent="Nivel_2_Set/Enemies" instance=ExtResource("14_b4qek")]
+[node name="RatEnemy6" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
 z_index = 5
 position = Vector2(707, 369)
 
-[node name="RatEnemy7" parent="Nivel_2_Set/Enemies" instance=ExtResource("14_b4qek")]
+[node name="RatEnemy7" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
 z_index = 5
 position = Vector2(1642, 610)
 
-[node name="RatEnemy8" parent="Nivel_2_Set/Enemies" instance=ExtResource("14_b4qek")]
+[node name="RatEnemy8" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
 z_index = 5
 position = Vector2(716, 1133)
 
-[node name="Chocobo_Enemy" parent="Nivel_2_Set/Enemies" instance=ExtResource("15_gfu6d")]
+[node name="Chocobo_Enemy" parent="Nivel_Set/Enemies" instance=ExtResource("15_gfu6d")]
 z_index = 5
 position = Vector2(1258, 1124)
 
-[node name="Chocobo_Enemy2" parent="Nivel_2_Set/Enemies" instance=ExtResource("15_gfu6d")]
+[node name="Chocobo_Enemy2" parent="Nivel_Set/Enemies" instance=ExtResource("15_gfu6d")]
 z_index = 5
 position = Vector2(449, 1090)
 
-[node name="Chocobo_Enemy3" parent="Nivel_2_Set/Enemies" instance=ExtResource("15_gfu6d")]
+[node name="Chocobo_Enemy3" parent="Nivel_Set/Enemies" instance=ExtResource("15_gfu6d")]
 z_index = 5
 position = Vector2(1061, 252)
 
-[node name="Spectres" type="Node2D" parent="Nivel_2_Set"]
+[node name="Spectres" type="Node2D" parent="Nivel_Set"]
 
-[node name="Blue_Spectre" parent="Nivel_2_Set/Spectres" instance=ExtResource("17_05e7y")]
+[node name="Blue_Spectre" parent="Nivel_Set/Spectres" instance=ExtResource("17_05e7y")]
 position = Vector2(776, 1406)
 
-[node name="Blue_Spectre2" parent="Nivel_2_Set/Spectres" instance=ExtResource("17_05e7y")]
+[node name="Blue_Spectre2" parent="Nivel_Set/Spectres" instance=ExtResource("17_05e7y")]
 position = Vector2(357, 1108)
 
-[node name="Traps" type="Node2D" parent="Nivel_2_Set"]
+[node name="Traps" type="Node2D" parent="Nivel_Set"]
 
-[node name="Fire_Trap" parent="Nivel_2_Set/Traps" instance=ExtResource("15_xwkn2")]
+[node name="Fire_Trap" parent="Nivel_Set/Traps" instance=ExtResource("15_xwkn2")]
 position = Vector2(1175, 1156)
 
-[node name="Fire_Trap2" parent="Nivel_2_Set/Traps" instance=ExtResource("15_xwkn2")]
+[node name="Fire_Trap2" parent="Nivel_Set/Traps" instance=ExtResource("15_xwkn2")]
 position = Vector2(1176, 1188)
 
-[node name="Fire_Trap3" parent="Nivel_2_Set/Traps" instance=ExtResource("15_xwkn2")]
+[node name="Fire_Trap3" parent="Nivel_Set/Traps" instance=ExtResource("15_xwkn2")]
 position = Vector2(1239, 1187)
 
-[node name="Fire_Trap4" parent="Nivel_2_Set/Traps" instance=ExtResource("15_xwkn2")]
+[node name="Fire_Trap4" parent="Nivel_Set/Traps" instance=ExtResource("15_xwkn2")]
 position = Vector2(1239, 1156)
 
-[node name="Spike_Trap2" parent="Nivel_2_Set/Traps" instance=ExtResource("16_57qo6")]
+[node name="Spike_Trap2" parent="Nivel_Set/Traps" instance=ExtResource("16_57qo6")]
 position = Vector2(1207, 1142)
 
-[node name="Spike_Trap4" parent="Nivel_2_Set/Traps" instance=ExtResource("16_57qo6")]
+[node name="Spike_Trap4" parent="Nivel_Set/Traps" instance=ExtResource("16_57qo6")]
 position = Vector2(1207, 1174)
 
-[node name="Spike_Trap3" parent="Nivel_2_Set/Traps" instance=ExtResource("16_57qo6")]
+[node name="Spike_Trap3" parent="Nivel_Set/Traps" instance=ExtResource("16_57qo6")]
 position = Vector2(1208, 1207)
 
-[node name="Spike_Trap8" parent="Nivel_2_Set/Traps" instance=ExtResource("16_57qo6")]
+[node name="Spike_Trap8" parent="Nivel_Set/Traps" instance=ExtResource("16_57qo6")]
 position = Vector2(392, 296)
 
-[node name="Fire_Trap5" parent="Nivel_2_Set/Traps" instance=ExtResource("15_xwkn2")]
+[node name="Fire_Trap5" parent="Nivel_Set/Traps" instance=ExtResource("15_xwkn2")]
 position = Vector2(726, 292)
 
-[node name="Fire_Trap6" parent="Nivel_2_Set/Traps" instance=ExtResource("15_xwkn2")]
+[node name="Fire_Trap6" parent="Nivel_Set/Traps" instance=ExtResource("15_xwkn2")]
 position = Vector2(727, 324)
 
-[node name="Fire_Trap7" parent="Nivel_2_Set/Traps" instance=ExtResource("15_xwkn2")]
+[node name="Fire_Trap7" parent="Nivel_Set/Traps" instance=ExtResource("15_xwkn2")]
 position = Vector2(790, 323)
 
-[node name="Fire_Trap8" parent="Nivel_2_Set/Traps" instance=ExtResource("15_xwkn2")]
+[node name="Fire_Trap8" parent="Nivel_Set/Traps" instance=ExtResource("15_xwkn2")]
 position = Vector2(790, 292)
 
-[node name="Spike_Trap5" parent="Nivel_2_Set/Traps" instance=ExtResource("16_57qo6")]
+[node name="Spike_Trap5" parent="Nivel_Set/Traps" instance=ExtResource("16_57qo6")]
 position = Vector2(758, 278)
 
-[node name="Spike_Trap6" parent="Nivel_2_Set/Traps" instance=ExtResource("16_57qo6")]
+[node name="Spike_Trap6" parent="Nivel_Set/Traps" instance=ExtResource("16_57qo6")]
 position = Vector2(758, 310)
 
-[node name="Spike_Trap7" parent="Nivel_2_Set/Traps" instance=ExtResource("16_57qo6")]
+[node name="Spike_Trap7" parent="Nivel_Set/Traps" instance=ExtResource("16_57qo6")]
 position = Vector2(759, 343)
 
-[node name="Torchs" type="Node2D" parent="Nivel_2_Set"]
-visible = false
+[node name="Torchs" type="Node2D" parent="Nivel_Set"]
 z_index = 7
 
-[node name="MegaTorch" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(1432, 432)
 
-[node name="MegaTorch2" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch2" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(1544, 432)
 
-[node name="MegaTorch3" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch3" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(1320, 624)
 
-[node name="MegaTorch4" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch4" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(1304, 848)
 
-[node name="MegaTorch5" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch5" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(1448, 720)
 
-[node name="MegaTorch6" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch6" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(1624, 704)
 
-[node name="MegaTorch7" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch7" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(1560, 544)
 
-[node name="MegaTorch8" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch8" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(1592, 864)
 
-[node name="MegaTorch9" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch9" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(728, 1360)
 
-[node name="MegaTorch10" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch10" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(296, 1104)
 
-[node name="MegaTorch11" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch11" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(408, 1168)
 
-[node name="MegaTorch12" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch12" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(416, 856)
 
-[node name="MegaTorch13" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch13" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(576, 856)
 
-[node name="MegaTorch14" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch14" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(736, 856)
 
-[node name="MegaTorch15" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch15" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(896, 856)
 
-[node name="MegaTorch17" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch17" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(1064, 1024)
 
-[node name="MegaTorch18" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch18" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(1544, 1040)
 
-[node name="MegaTorch19" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch19" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(1544, 1168)
 
-[node name="MegaTorch20" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch20" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(1544, 1296)
 
-[node name="MegaTorch21" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch21" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(1208, 256)
 
-[node name="MegaTorch22" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch22" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(1368, 256)
 
-[node name="MegaTorch23" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch23" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(856, 657)
 
-[node name="MegaTorch24" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch24" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(728, 416)
 
-[node name="MegaTorch25" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch25" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(664, 416)
 
-[node name="MegaTorch26" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch26" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(808, 657)
 
-[node name="MegaTorch27" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch27" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(903, 656)
 
-[node name="MegaTorch28" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch28" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(520, 736)
 
-[node name="MegaTorch29" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch29" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(472, 736)
 
-[node name="MegaTorch30" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch30" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(312, 224)
 
-[node name="MegaTorch31" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch31" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(472, 224)
 
-[node name="MegaTorch32" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch32" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(328, 352)
 
-[node name="MegaTorch33" parent="Nivel_2_Set/Torchs" instance=ExtResource("13_bmpxr")]
+[node name="MegaTorch33" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
 position = Vector2(456, 352)
 
-[node name="Torch" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
+[node name="Torch" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(328, 1332)
 
-[node name="Torch2" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
+[node name="Torch2" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(408, 1333)
 
-[node name="Torch3" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
+[node name="Torch3" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(503, 1333)
 
-[node name="Torch4" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
+[node name="Torch4" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(583, 1332)
 
-[node name="Torch5" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
+[node name="Torch5" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(855, 1313)
 
-[node name="Torch6" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
+[node name="Torch6" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(903, 1313)
 
-[node name="Torch7" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
+[node name="Torch7" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(1031, 1313)
 
-[node name="Torch8" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
+[node name="Torch8" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(1095, 1313)
 
-[node name="Torch9" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
+[node name="Torch9" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(1159, 1313)
 
-[node name="Torch10" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
+[node name="Torch10" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(1223, 1313)
 
-[node name="Torch11" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
+[node name="Torch11" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(1351, 1313)
 
-[node name="Torch12" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
+[node name="Torch12" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(1415, 1313)
 
-[node name="Torch13" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
+[node name="Torch13" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(1440, 920)
 
-[node name="Torch14" parent="Nivel_2_Set/Torchs" instance=ExtResource("17_lvd8a")]
+[node name="Torch14" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(1488, 920)

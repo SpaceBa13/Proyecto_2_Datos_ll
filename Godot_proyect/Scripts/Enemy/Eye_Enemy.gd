@@ -11,6 +11,8 @@ const speed = 0.3
 var current_id_path: Array
 var prev_step: Vector2
 var blink: bool
+@export var maxHealth = 2
+@onready var currentHealth: int = maxHealth
 
 func _ready():
 	tile_map = $"../../DungeonRoom"
@@ -89,3 +91,12 @@ func animate():
 	if current_id_path.front() == Vector2i(0, -1):
 		animated_sprite_2d.rotation = -PI / 2
 		sensor.rotation = -PI/2
+
+
+func _on_hitbox_area_entered(area):
+	if area.name == "Swordbox":
+		currentHealth -= 1
+		if currentHealth == 0:
+			queue_free()
+		print_debug(currentHealth)
+		print_debug(maxHealth)

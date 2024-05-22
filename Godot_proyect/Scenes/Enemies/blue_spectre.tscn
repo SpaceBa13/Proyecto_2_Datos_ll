@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://q7cvmif46wjl"]
+[gd_scene load_steps=7 format=3 uid="uid://q7cvmif46wjl"]
 
 [ext_resource type="Texture2D" uid="uid://bjvu2cv7c5bie" path="res://Resources/Enemies/Spectral_Eye_Right.png" id="2_hagas"]
 [ext_resource type="Script" path="res://Scripts/Enemy/Astar.gd" id="3_cwgsw"]
@@ -18,6 +18,8 @@ var chasing: bool
 @onready var Astar_path = $Astar
 @onready var Backtrack_path = $Backtraking_path
 var teleport = false
+@export var maxHealth = 2
+@onready var currentHealth: int = maxHealth
 
 func _ready():
 	spawn_position = tile_map.local_to_map(global_position)
@@ -93,10 +95,21 @@ func _physics_process(delta):
 func make_backtrack_path(own_position):
 	# Resuelve el laberinto desde la posición inicial
 	current_id_path = Backtrack_path.get_backtrack_path(own_position, spawn_position)
+
+
+
+func _on_hitbox_area_entered(area):
+	if area.name == \"Swordbox\":
+		currentHealth -= 1
+		if currentHealth == 0:
+			queue_free()
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kkro7"]
 radius = 23.79
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_shsp5"]
+radius = 7.56637
 
 [node name="Blue_Spectre" type="CharacterBody2D"]
 script = SubResource("GDScript_pup0s")
@@ -122,3 +135,14 @@ script = ExtResource("3_cwgsw")
 
 [node name="Backtraking_path" type="Node" parent="."]
 script = ExtResource("4_g6oup")
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+scale = Vector2(0.8, 1)
+shape = SubResource("CircleShape2D_shsp5")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

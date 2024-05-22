@@ -30,19 +30,15 @@ func get_id_path(start_pos: Vector2i, end_pos: Vector2i, tile_map: TileMap) -> A
 	while not_visited.size() > 0:
 		# Obtener el nodo actual como el nodo con el menor f_score
 		var current = get_lowest_f_score(not_visited, cost_with_heuristic)
-		
 		# Si el nodo actual es igual al nodo objetivo, reconstruir y devolver la ruta
 		if current == end_cell:
 			return reconstruct_path(came_from, current)
-		
 		# Remover el nodo actual de la lista abierta
 		not_visited.erase(current)
-		
 		# Explorar los vecinos del nodo actual
 		for neighbor in get_neighbors(current):
 			# Calcular el costo acumulado desde el inicio hasta el vecino
 			var tentative_g_score = cost[current] + 1
-			
 			# Si el vecino no ha sido visitado o el nuevo costo es menor que el anteriormente calculado
 			if !cost.has(neighbor) or tentative_g_score < cost[neighbor]:
 				# Actualizar el nodo padre y el costo acumulado del vecino
