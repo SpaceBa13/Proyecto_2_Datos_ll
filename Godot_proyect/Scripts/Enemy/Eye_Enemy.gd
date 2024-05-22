@@ -64,9 +64,10 @@ func move():
 	if global_position == target_position:
 			current_id_path.pop_front()
 			prev_step = global_position
-	if current_id_path.front() == Vector2i(0,0):
-		current_id_path.pop_front()
-		prev_step = global_position
+	if !current_id_path.is_empty():
+		if current_id_path.front() == Vector2i(0,0):
+			current_id_path.pop_front()
+			prev_step = global_position
 	
 	
 func animate():

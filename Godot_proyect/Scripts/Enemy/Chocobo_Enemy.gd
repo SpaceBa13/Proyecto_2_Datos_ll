@@ -20,8 +20,11 @@ func _physics_process(delta):
 	var own_position = tile_map.local_to_map(global_position)
 	var target_position = player.bresenham
 	var tile_data = tile_map.get_cell_tile_data(0, target_position)
-	if tile_data != null and tile_data.get_custom_data("safe_zone") == false:
-		current_id_path = Astar_path.get_id_path(own_position, target_position, tile_map)
+	if tile_data != null:
+		if tile_data.get_custom_data("safe_zone") == false:
+			var heuristic = Astar_path.heuristic(own_position, target_position)
+			if heuristic < 40:
+				current_id_path = Astar_path.get_id_path(own_position, target_position, tile_map)
 	if !current_id_path.is_empty():
 		move()
 

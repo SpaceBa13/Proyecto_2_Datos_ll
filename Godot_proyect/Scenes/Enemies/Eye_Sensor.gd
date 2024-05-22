@@ -7,7 +7,6 @@ var player_detected: bool
 @onready var enemy_eye = $".."
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var player_script = load("res://Scripts/Player/player.gd")
 	player_detected = false
 	body_entered.connect(set_player_detected_true)
 	body_exited.connect(set_player_detected_false)
