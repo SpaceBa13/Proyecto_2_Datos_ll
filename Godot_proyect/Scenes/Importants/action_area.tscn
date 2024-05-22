@@ -1,12 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://i0vuftk0j3n4"]
+[gd_scene load_steps=2 format=3 uid="uid://b07s0n4rru00k"]
 
-[sub_resource type="GDScript" id="GDScript_5m0ry"]
-script/source = "extends Area2D
-class_name ActionArea
-
-signal actionated()
-"
+[ext_resource type="Script" path="res://Scripts/Importants/Accionable.gd" id="1_3bpa1"]
 
 [node name="ActionArea" type="Area2D"]
 collision_layer = 8
-script = SubResource("GDScript_5m0ry")
+script = ExtResource("1_3bpa1")

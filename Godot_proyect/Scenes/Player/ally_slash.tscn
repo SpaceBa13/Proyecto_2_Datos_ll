@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bac7lda7nhfie"]
+
+[ext_resource type="Script" path="res://Scripts/Player/AllyDamage.gd" id="1_s550v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qykc4"]
+size = Vector2(22, 14)
+
+[node name="AllySlash" type="CharacterBody2D"]
+script = ExtResource("1_s550v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.42109e-14, -4)
+scale = Vector2(0.167308, 0.167308)
+hframes = 6
+vframes = 5
+frame = 22
+
+[node name="Swordbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Swordbox"]
+shape = SubResource("RectangleShape2D_qykc4")
+debug_color = Color(1, 0, 0, 0.368627)

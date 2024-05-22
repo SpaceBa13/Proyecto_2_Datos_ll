@@ -2873,9 +2873,6 @@ sources/17 = SubResource("TileSetAtlasSource_7n37y")
 sources/1 = SubResource("TileSetAtlasSource_ldthf")
 sources/6 = SubResource("TileSetAtlasSource_f0xnw")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nerst"]
-size = Vector2(14, 13)
-
 [sub_resource type="Gradient" id="Gradient_umx3g"]
 offsets = PackedFloat32Array(0, 0.146552, 0.405172, 0.568965, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.714156, 0.714156, 0.714156, 1, 0.482759, 0.482759, 0.482759, 1, 0.293103, 0.293103, 0.293103, 1, 0, 0, 0, 1)
@@ -2919,14 +2916,6 @@ layer_3/tile_data = PackedInt32Array(2031694, 65553, 805306372, 2097230, 131089,
 z_index = 5
 position = Vector2(261, 1606)
 scale = Vector2(1.02209, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel_2_Set/Player"]
-position = Vector2(0, 6)
-shape = SubResource("RectangleShape2D_nerst")
-
-[node name="Camera2D" type="Camera2D" parent="Nivel_2_Set/Player"]
-position = Vector2(0, 6)
-zoom = Vector2(0.7, 0.7)
 
 [node name="PointLight2D" type="PointLight2D" parent="Nivel_2_Set/Player"]
 position = Vector2(0, -6)

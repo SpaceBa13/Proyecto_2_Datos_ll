@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://brv2pjx8luurg"]
+[gd_scene load_steps=33 format=3 uid="uid://brv2pjx8luurg"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_q4phd"]
 [ext_resource type="Texture2D" uid="uid://c1sns0r3g5koe" path="res://Resources/tiles/Tileset/Alter/Secrets.png" id="2_bgyvv"]
@@ -2293,9 +2293,6 @@ sources/4 = SubResource("TileSetAtlasSource_03xem")
 sources/5 = SubResource("TileSetAtlasSource_l5ici")
 sources/0 = SubResource("TileSetAtlasSource_r0vll")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyeku"]
-size = Vector2(14, 13)
-
 [sub_resource type="GDScript" id="GDScript_xwscr"]
 script/source = "extends SubViewport
 "
@@ -2315,14 +2312,6 @@ layer_0/tile_data = PackedInt32Array(983055, 393218, 4, 1048591, 196610, 6, 9830
 
 [node name="Player" parent="Nivel_3_Set" instance=ExtResource("3_4trbs")]
 position = Vector2(422, 336)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel_3_Set/Player"]
-position = Vector2(0, 6)
-shape = SubResource("RectangleShape2D_jyeku")
-
-[node name="Camera2D" type="Camera2D" parent="Nivel_3_Set/Player"]
-position = Vector2(0, 6)
-zoom = Vector2(0.7, 0.7)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Nivel_3_Set"]
 
