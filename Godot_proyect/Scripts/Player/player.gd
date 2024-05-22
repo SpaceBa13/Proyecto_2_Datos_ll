@@ -96,9 +96,9 @@ func check_accionables() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if canMove == true:
 		if event.is_action_pressed("ui_select"):
+			attack_animation()
 			hitboxDamageScript.setup(self.get_parent(), hitboxDamage, direccionHitDamage, 1)
 			hitboxDamageScript.createDamage()
-			attack_animation()
 		if event.is_action_pressed("ui_accept") && nearestActionable != null:
 			if is_instance_valid(nearestActionable):
 				nearestActionable.emit_signal("actionated")
