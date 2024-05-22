@@ -4655,11 +4655,6 @@ script = ExtResource("5_tdo5j")
 position = Vector2(640, 552)
 shape = SubResource("RectangleShape2D_jaop3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4/CollisionShape2D"]
-position = Vector2(647.578, 135)
-rotation = -1.54514
-shape = SubResource("RectangleShape2D_jaop3")
-
 [node name="Area2D5" type="Area2D" parent="."]
 script = ExtResource("5_tdo5j")
 
@@ -4711,10 +4706,20 @@ position = Vector2(1072, 1352)
 shape = SubResource("RectangleShape2D_jaop3")
 
 [node name="Area2D11" type="Area2D" parent="."]
+position = Vector2(9, -2)
 script = ExtResource("5_tdo5j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D11"]
 position = Vector2(1289, 1487)
+rotation = -1.58257
+shape = SubResource("RectangleShape2D_jaop3")
+
+[node name="Area2D13" type="Area2D" parent="."]
+position = Vector2(2, -805)
+script = ExtResource("5_tdo5j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D13"]
+position = Vector2(1287, 1493)
 rotation = -1.58257
 shape = SubResource("RectangleShape2D_jaop3")
 
@@ -4740,3 +4745,5 @@ shape = SubResource("RectangleShape2D_jaop3")
 [connection signal="body_exited" from="Area2D10" to="Area2D10" method="_on_body_exited"]
 [connection signal="body_entered" from="Area2D11" to="Area2D11" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D11" to="Area2D11" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D13" to="Area2D13" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D13" to="Area2D13" method="_on_body_exited"]
