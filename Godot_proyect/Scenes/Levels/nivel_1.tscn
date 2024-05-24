@@ -1,11 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://co0fr6v7d4vk"]
+[gd_scene load_steps=14 format=3 uid="uid://co0fr6v7d4vk"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_5tp01"]
 [ext_resource type="PackedScene" uid="uid://bb7e5iidudlea" path="res://Scenes/tilemap/dari_tile_map.tscn" id="2_ab6vv"]
 [ext_resource type="PackedScene" uid="uid://drxyd11sv7n0v" path="res://Scenes/Player/player.tscn" id="3_fj4mw"]
 [ext_resource type="PackedScene" uid="uid://ui7euo81all" path="res://Scenes/UI/ui_general.tscn" id="4_sc8pv"]
 [ext_resource type="Texture2D" uid="uid://bwbyik1tvdhki" path="res://Resources/UI/cursor.png" id="5_re7sp"]
-[ext_resource type="Script" path="res://Scripts/UI/Playerpointer.gd" id="6_t58sf"]
+[ext_resource type="Script" path="res://Scripts/UI/minimap.gd" id="6_u6y21"]
 [ext_resource type="PackedScene" uid="uid://cwim8ftyaeoh6" path="res://Scenes/Enemies/Chocobo_enemy.tscn" id="7_nktad"]
 [ext_resource type="PackedScene" uid="uid://ddli300bkguue" path="res://Scenes/Enemies/Eye_enemy.tscn" id="8_p2dea"]
 [ext_resource type="PackedScene" uid="uid://deod04gpnqvqj" path="res://Scenes/Enemies/Rat_enemy.tscn" id="9_3s5fr"]
@@ -13,8 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://q7cvmif46wjl" path="res://Scenes/Enemies/blue_spectre.tscn" id="10_h7pj2"]
 [ext_resource type="PackedScene" uid="uid://b1gtoh642r0qu" path="res://Scenes/Importants/Ladder.tscn" id="10_ofl4a"]
 [ext_resource type="PackedScene" uid="uid://dwcgn1pshovcx" path="res://Scenes/Items/chest.tscn" id="11_peoyd"]
-[ext_resource type="PackedScene" uid="uid://deuob4bl8wc3r" path="res://Scenes/Traps/spike_trap.tscn" id="13_5go1q"]
-[ext_resource type="PackedScene" uid="uid://css1uf2p3235j" path="res://Scenes/Traps/fire_trap.tscn" id="14_bv1f4"]
 
 [node name="Nivel_1" type="Node2D"]
 
@@ -57,12 +55,12 @@ self_modulate = Color(0.990041, 0.134757, 0.094839, 1)
 position = Vector2(464, 336)
 scale = Vector2(2, 2)
 texture = ExtResource("5_re7sp")
-script = ExtResource("6_t58sf")
 
 [node name="SubViewport" type="SubViewport" parent="Nivel_Set/Mini Map/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(924, 669)
 render_target_update_mode = 4
+script = ExtResource("6_u6y21")
 
 [node name="DungeonRoom" parent="Nivel_Set/Mini Map/SubViewportContainer/SubViewport" instance=ExtResource("2_ab6vv")]
 
@@ -150,20 +148,10 @@ idItem = 1
 position = Vector2(1149, 290)
 idItem = 1
 
-[node name="RecolectableItem11" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
-position = Vector2(-323, -155)
-idItem = 2
-
 [node name="Ladder" parent="Nivel_Set" instance=ExtResource("10_ofl4a")]
 position = Vector2(1468, 1359)
 
 [node name="Traps" type="Node2D" parent="Nivel_Set"]
-
-[node name="Fire_Trap" parent="Nivel_Set/Traps" instance=ExtResource("14_bv1f4")]
-position = Vector2(134, 144)
-
-[node name="Spike_Trap" parent="Nivel_Set/Traps" instance=ExtResource("13_5go1q")]
-position = Vector2(317, 140)
 
 [node name="Chest" parent="." instance=ExtResource("11_peoyd")]
 position = Vector2(271, 74)

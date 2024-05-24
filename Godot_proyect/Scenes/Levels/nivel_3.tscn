@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://b8vbmyy2xrfq5" path="res://Resources/tiles/Brayan level/Dungeon/Set 1.png" id="4_ppgo4"]
 [ext_resource type="Texture2D" uid="uid://jcuo5vfj0sr2" path="res://Resources/tiles/Brayan level/Dungeon/Set 1.2.png" id="5_2odvy"]
 [ext_resource type="Texture2D" uid="uid://bwbyik1tvdhki" path="res://Resources/UI/cursor.png" id="5_aey58"]
-[ext_resource type="Script" path="res://Scripts/UI/Playerpointer.gd" id="6_bidsh"]
 [ext_resource type="PackedScene" uid="uid://cwim8ftyaeoh6" path="res://Scenes/Enemies/Chocobo_enemy.tscn" id="8_bpx4a"]
 [ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="9_87qsu"]
+[ext_resource type="Script" path="res://Scripts/UI/minimap.gd" id="10_nrfw6"]
 [ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/enemy.tscn" id="12_7rgpe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0vll"]
@@ -2464,10 +2464,6 @@ sources/5 = SubResource("TileSetAtlasSource_l5ici")
 sources/0 = SubResource("TileSetAtlasSource_r0vll")
 sources/2 = SubResource("TileSetAtlasSource_sh4ko")
 
-[sub_resource type="GDScript" id="GDScript_xwscr"]
-script/source = "extends SubViewport
-"
-
 [node name="nivel_3" type="Node2D"]
 
 [node name="DataController" parent="." instance=ExtResource("1_q4phd")]
@@ -2513,13 +2509,12 @@ self_modulate = Color(0.990041, 0.134757, 0.094839, 1)
 position = Vector2(464, 336)
 scale = Vector2(2, 2)
 texture = ExtResource("5_aey58")
-script = ExtResource("6_bidsh")
 
 [node name="SubViewport" type="SubViewport" parent="Nivel_Set/Mini Map/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(924, 669)
 render_target_update_mode = 4
-script = SubResource("GDScript_xwscr")
+script = ExtResource("10_nrfw6")
 
 [node name="Camera2D" type="Camera2D" parent="Nivel_Set/Mini Map/SubViewportContainer/SubViewport"]
 offset = Vector2(464, 336)

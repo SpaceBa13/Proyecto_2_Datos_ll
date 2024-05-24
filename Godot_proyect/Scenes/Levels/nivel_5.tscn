@@ -1,0 +1,492 @@
+[gd_scene load_steps=14 format=3 uid="uid://bbp8ol7sw4ief"]
+
+[ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_bwd7u"]
+[ext_resource type="PackedScene" uid="uid://b2mb1mi2wd3gc" path="res://Scenes/tilemap/nivel5_tile_map.tscn" id="2_spxmu"]
+[ext_resource type="PackedScene" uid="uid://drxyd11sv7n0v" path="res://Scenes/Player/player.tscn" id="2_x7k4w"]
+[ext_resource type="PackedScene" uid="uid://ui7euo81all" path="res://Scenes/UI/ui_general.tscn" id="3_g3dxr"]
+[ext_resource type="Texture2D" uid="uid://bwbyik1tvdhki" path="res://Resources/UI/cursor.png" id="4_4e5tw"]
+[ext_resource type="PackedScene" uid="uid://cwim8ftyaeoh6" path="res://Scenes/Enemies/Chocobo_enemy.tscn" id="7_4wfcn"]
+[ext_resource type="Script" path="res://Scripts/UI/minimap.gd" id="7_uoybn"]
+[ext_resource type="PackedScene" uid="uid://q7cvmif46wjl" path="res://Scenes/Enemies/blue_spectre.tscn" id="8_noq3x"]
+[ext_resource type="PackedScene" uid="uid://ddli300bkguue" path="res://Scenes/Enemies/Eye_enemy.tscn" id="9_q4r1e"]
+[ext_resource type="PackedScene" uid="uid://deod04gpnqvqj" path="res://Scenes/Enemies/Rat_enemy.tscn" id="10_0qs8q"]
+[ext_resource type="PackedScene" uid="uid://betskp6y3f52w" path="res://Scenes/Enemies/red_spectre.tscn" id="11_8nwwx"]
+[ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="12_6bqgh"]
+[ext_resource type="PackedScene" uid="uid://css1uf2p3235j" path="res://Scenes/Traps/fire_trap.tscn" id="13_r5lsj"]
+
+[node name="Nivel_5" type="Node2D"]
+
+[node name="DataController" parent="." instance=ExtResource("1_bwd7u")]
+
+[node name="Nivel_Set" type="Node2D" parent="."]
+
+[node name="DungeonRoom" parent="Nivel_Set" instance=ExtResource("2_spxmu")]
+
+[node name="Player" parent="Nivel_Set" instance=ExtResource("2_x7k4w")]
+position = Vector2(224, 139)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Nivel_Set"]
+
+[node name="UIGeneral" parent="Nivel_Set/CanvasLayer" instance=ExtResource("3_g3dxr")]
+anchors_preset = -1
+anchor_left = -0.214844
+anchor_top = -0.276042
+anchor_right = 0.332031
+anchor_bottom = 0.140625
+offset_left = 55.0001
+offset_top = 53.0001
+offset_right = 54.0001
+offset_bottom = 54.0001
+metadata/_edit_use_anchors_ = true
+
+[node name="Mini Map" type="CanvasLayer" parent="Nivel_Set"]
+scale = Vector2(0.06, 0.06)
+transform = Transform2D(0.06, 0, 0, 0.06, 0, 0)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Nivel_Set/Mini Map"]
+offset_left = 3350.0
+offset_right = 4274.0
+offset_bottom = 669.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Nivel_Set/Mini Map/SubViewportContainer"]
+self_modulate = Color(0.990041, 0.134757, 0.094839, 1)
+position = Vector2(464, 336)
+scale = Vector2(2, 2)
+texture = ExtResource("4_4e5tw")
+
+[node name="SubViewport" type="SubViewport" parent="Nivel_Set/Mini Map/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(924, 669)
+render_target_update_mode = 4
+script = ExtResource("7_uoybn")
+
+[node name="DungeonRoom2" parent="Nivel_Set/Mini Map/SubViewportContainer/SubViewport" instance=ExtResource("2_spxmu")]
+
+[node name="Camera2D" type="Camera2D" parent="Nivel_Set/Mini Map/SubViewportContainer/SubViewport"]
+offset = Vector2(464, 336)
+zoom = Vector2(2, 2)
+
+[node name="Enemies" type="Node2D" parent="Nivel_Set"]
+
+[node name="Chocobo_Enemy" parent="Nivel_Set/Enemies" instance=ExtResource("7_4wfcn")]
+position = Vector2(788, 164)
+
+[node name="Chocobo_Enemy2" parent="Nivel_Set/Enemies" instance=ExtResource("7_4wfcn")]
+position = Vector2(706, 86)
+
+[node name="Chocobo_Enemy3" parent="Nivel_Set/Enemies" instance=ExtResource("7_4wfcn")]
+position = Vector2(1196, 474)
+
+[node name="Chocobo_Enemy4" parent="Nivel_Set/Enemies" instance=ExtResource("7_4wfcn")]
+position = Vector2(1622, 465)
+
+[node name="Chocobo_Enemy5" parent="Nivel_Set/Enemies" instance=ExtResource("7_4wfcn")]
+position = Vector2(549, 1021)
+
+[node name="Chocobo_Enemy6" parent="Nivel_Set/Enemies" instance=ExtResource("7_4wfcn")]
+position = Vector2(2025, 1025)
+
+[node name="Chocobo_Enemy7" parent="Nivel_Set/Enemies" instance=ExtResource("7_4wfcn")]
+position = Vector2(2691, 643)
+
+[node name="Blue_Spectre" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(545, 367)
+
+[node name="Blue_Spectre2" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(752, 468)
+
+[node name="Blue_Spectre3" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(544, 461)
+
+[node name="Blue_Spectre4" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(754, 370)
+
+[node name="Blue_Spectre5" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(813, 969)
+
+[node name="Blue_Spectre8" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(1088, 941)
+
+[node name="Blue_Spectre9" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(1069, 958)
+
+[node name="Blue_Spectre10" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(1087, 978)
+
+[node name="Blue_Spectre11" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(1106, 959)
+
+[node name="Blue_Spectre12" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(1951, 959)
+
+[node name="Blue_Spectre13" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(2038, 415)
+
+[node name="Blue_Spectre14" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(1853, 414)
+
+[node name="Blue_Spectre15" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(1952, 348)
+
+[node name="Blue_Spectre16" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(1951, 483)
+
+[node name="Blue_Spectre6" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(656, 768)
+
+[node name="Blue_Spectre7" parent="Nivel_Set/Enemies" instance=ExtResource("8_noq3x")]
+position = Vector2(813, 952)
+
+[node name="Eye_Enemy" parent="Nivel_Set/Enemies" instance=ExtResource("9_q4r1e")]
+position = Vector2(615, 155)
+
+[node name="Eye_Enemy2" parent="Nivel_Set/Enemies" instance=ExtResource("9_q4r1e")]
+position = Vector2(618, 464)
+
+[node name="Eye_Enemy3" parent="Nivel_Set/Enemies" instance=ExtResource("9_q4r1e")]
+position = Vector2(619, 369)
+
+[node name="Eye_Enemy4" parent="Nivel_Set/Enemies" instance=ExtResource("9_q4r1e")]
+position = Vector2(998, 357)
+
+[node name="Eye_Enemy5" parent="Nivel_Set/Enemies" instance=ExtResource("9_q4r1e")]
+position = Vector2(1841, 479)
+
+[node name="Eye_Enemy6" parent="Nivel_Set/Enemies" instance=ExtResource("9_q4r1e")]
+position = Vector2(2025, 479)
+
+[node name="Eye_Enemy7" parent="Nivel_Set/Enemies" instance=ExtResource("9_q4r1e")]
+position = Vector2(1836, 357)
+
+[node name="Eye_Enemy8" parent="Nivel_Set/Enemies" instance=ExtResource("9_q4r1e")]
+position = Vector2(2023, 357)
+
+[node name="Eye_Enemy9" parent="Nivel_Set/Enemies" instance=ExtResource("9_q4r1e")]
+position = Vector2(1835, 737)
+
+[node name="Eye_Enemy10" parent="Nivel_Set/Enemies" instance=ExtResource("9_q4r1e")]
+position = Vector2(2018, 739)
+
+[node name="Eye_Enemy11" parent="Nivel_Set/Enemies" instance=ExtResource("9_q4r1e")]
+position = Vector2(2908, 745)
+
+[node name="RatEnemy" parent="Nivel_Set/Enemies" instance=ExtResource("10_0qs8q")]
+position = Vector2(531, 733)
+
+[node name="RatEnemy2" parent="Nivel_Set/Enemies" instance=ExtResource("10_0qs8q")]
+position = Vector2(760, 742)
+
+[node name="RatEnemy3" parent="Nivel_Set/Enemies" instance=ExtResource("10_0qs8q")]
+position = Vector2(536, 903)
+
+[node name="RatEnemy4" parent="Nivel_Set/Enemies" instance=ExtResource("10_0qs8q")]
+position = Vector2(1141, 1008)
+
+[node name="RatEnemy5" parent="Nivel_Set/Enemies" instance=ExtResource("10_0qs8q")]
+position = Vector2(1521, 910)
+
+[node name="RatEnemy6" parent="Nivel_Set/Enemies" instance=ExtResource("10_0qs8q")]
+position = Vector2(1522, 1009)
+
+[node name="RatEnemy7" parent="Nivel_Set/Enemies" instance=ExtResource("10_0qs8q")]
+position = Vector2(1416, 1006)
+
+[node name="RatEnemy8" parent="Nivel_Set/Enemies" instance=ExtResource("10_0qs8q")]
+position = Vector2(1414, 913)
+
+[node name="RatEnemy9" parent="Nivel_Set/Enemies" instance=ExtResource("10_0qs8q")]
+position = Vector2(1616, 1009)
+
+[node name="RatEnemy10" parent="Nivel_Set/Enemies" instance=ExtResource("10_0qs8q")]
+position = Vector2(1620, 911)
+
+[node name="RatEnemy11" parent="Nivel_Set/Enemies" instance=ExtResource("10_0qs8q")]
+position = Vector2(1893, 1009)
+
+[node name="RatEnemy12" parent="Nivel_Set/Enemies" instance=ExtResource("10_0qs8q")]
+position = Vector2(1955, 656)
+
+[node name="RatEnemy13" parent="Nivel_Set/Enemies" instance=ExtResource("10_0qs8q")]
+position = Vector2(1452, 413)
+
+[node name="RatEnemy14" parent="Nivel_Set/Enemies" instance=ExtResource("10_0qs8q")]
+position = Vector2(1188, 358)
+
+[node name="Red_Spectre" parent="Nivel_Set/Enemies" instance=ExtResource("11_8nwwx")]
+position = Vector2(634, 88)
+
+[node name="Red_Spectre2" parent="Nivel_Set/Enemies" instance=ExtResource("11_8nwwx")]
+position = Vector2(1009, 468)
+
+[node name="Red_Spectre3" parent="Nivel_Set/Enemies" instance=ExtResource("11_8nwwx")]
+position = Vector2(1628, 364)
+
+[node name="Red_Spectre4" parent="Nivel_Set/Enemies" instance=ExtResource("11_8nwwx")]
+position = Vector2(2497, 634)
+
+[node name="Red_Spectre5" parent="Nivel_Set/Enemies" instance=ExtResource("11_8nwwx")]
+position = Vector2(2493, 757)
+
+[node name="Red_Spectre6" parent="Nivel_Set/Enemies" instance=ExtResource("11_8nwwx")]
+position = Vector2(2385, 678)
+
+[node name="Red_Spectre7" parent="Nivel_Set/Enemies" instance=ExtResource("11_8nwwx")]
+position = Vector2(2272, 627)
+
+[node name="Red_Spectre8" parent="Nivel_Set/Enemies" instance=ExtResource("11_8nwwx")]
+position = Vector2(2275, 751)
+
+[node name="Red_Spectre9" parent="Nivel_Set/Enemies" instance=ExtResource("11_8nwwx")]
+position = Vector2(2815, 692)
+
+[node name="Red_Spectre10" parent="Nivel_Set/Enemies" instance=ExtResource("11_8nwwx")]
+position = Vector2(2042, 965)
+
+[node name="Red_Spectre11" parent="Nivel_Set/Enemies" instance=ExtResource("11_8nwwx")]
+position = Vector2(655, 954)
+
+[node name="Recolectables" type="Node2D" parent="Nivel_Set"]
+position = Vector2(472, 344)
+
+[node name="RecolectableItem" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(-369, -210)
+idItem = 1
+
+[node name="RecolectableItem2" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(-133, -201)
+idItem = 1
+
+[node name="RecolectableItem3" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(58, -261)
+idItem = 1
+
+[node name="RecolectableItem4" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(303, -142)
+idItem = 1
+
+[node name="RecolectableItem5" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(301, -252)
+idItem = 1
+
+[node name="RecolectableItem6" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(72, 64)
+idItem = 1
+
+[node name="RecolectableItem7" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(271, 66)
+idItem = 1
+
+[node name="RecolectableItem8" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(61, 285)
+idItem = 1
+
+[node name="RecolectableItem9" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(301, 290)
+idItem = 1
+
+[node name="RecolectableItem10" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(285, 556)
+idItem = 1
+
+[node name="RecolectableItem11" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(180, 673)
+idItem = 1
+
+[node name="RecolectableItem12" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(66, 557)
+idItem = 1
+
+[node name="RecolectableItem13" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(515, 554)
+idItem = 1
+
+[node name="RecolectableItem14" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(513, 636)
+idItem = 1
+
+[node name="RecolectableItem15" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(720, 556)
+idItem = 1
+
+[node name="RecolectableItem16" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(719, 634)
+idItem = 1
+
+[node name="RecolectableItem17" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1107, 582)
+idItem = 1
+
+[node name="RecolectableItem18" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1109, 636)
+idItem = 1
+
+[node name="RecolectableItem19" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(965, 580)
+idItem = 1
+
+[node name="RecolectableItem20" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(965, 634)
+idItem = 1
+
+[node name="RecolectableItem21" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1538, 612)
+idItem = 1
+
+[node name="RecolectableItem22" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1403, 612)
+idItem = 1
+
+[node name="RecolectableItem23" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1418, 339)
+idItem = 1
+
+[node name="RecolectableItem24" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1540, 343)
+idItem = 1
+
+[node name="RecolectableItem25" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1443, 64)
+idItem = 1
+
+[node name="RecolectableItem26" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1500, 65)
+idItem = 1
+
+[node name="RecolectableItem27" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1474, 41)
+idItem = 1
+
+[node name="RecolectableItem28" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1010, 71)
+idItem = 1
+
+[node name="RecolectableItem29" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1073, 43)
+idItem = 1
+
+[node name="RecolectableItem30" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(654, 41)
+idItem = 1
+
+[node name="RecolectableItem31" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(566, 87)
+idItem = 1
+
+[node name="RecolectableItem32" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1907, 290)
+idItem = 1
+
+[node name="RecolectableItem33" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1852, 372)
+idItem = 1
+
+[node name="RecolectableItem34" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1961, 378)
+idItem = 1
+
+[node name="RecolectableItem35" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(2338, 280)
+idItem = 1
+
+[node name="RecolectableItem36" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(2338, 387)
+idItem = 1
+
+[node name="RecolectableItem37" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(2467, 339)
+idItem = 1
+
+[node name="RecolectableItem38" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(338, 125)
+idItem = 2
+
+[node name="RecolectableItem39" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(12, 121)
+idItem = 2
+
+[node name="RecolectableItem40" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(19, 689)
+idItem = 2
+
+[node name="RecolectableItem41" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(609, 679)
+idItem = 2
+
+[node name="RecolectableItem42" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1644, 258)
+idItem = 2
+
+[node name="RecolectableItem43" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1640, 418)
+idItem = 2
+
+[node name="RecolectableItem44" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1207, -29)
+idItem = 2
+
+[node name="RecolectableItem45" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1615, 63)
+idItem = 2
+
+[node name="RecolectableItem46" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(2506, 254)
+idItem = 2
+
+[node name="RecolectableItem47" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(2504, 416)
+idItem = 2
+
+[node name="RecolectableItem48" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(-257, -134)
+idItem = 3
+
+[node name="Traps" type="Node2D" parent="Nivel_Set"]
+
+[node name="Fire_Trap" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(627, 126)
+
+[node name="Fire_Trap2" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(682, 126)
+
+[node name="Fire_Trap3" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(509, 416)
+
+[node name="Fire_Trap4" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(534, 687)
+
+[node name="Fire_Trap5" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(776, 685)
+
+[node name="Fire_Trap6" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(658, 965)
+
+[node name="Fire_Trap7" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(658, 938)
+
+[node name="Fire_Trap8" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(1058, 872)
+
+[node name="Fire_Trap9" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(1115, 872)
+
+[node name="Fire_Trap10" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(1520, 956)
+
+[node name="Fire_Trap11" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(1951, 1030)
+
+[node name="Fire_Trap12" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(2986, 622)
+
+[node name="Fire_Trap13" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(2971, 608)
+
+[node name="Fire_Trap15" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(2741, 960)
+
+[node name="Fire_Trap16" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(2885, 960)
+
+[node name="Fire_Trap14" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
+position = Vector2(2971, 622)
