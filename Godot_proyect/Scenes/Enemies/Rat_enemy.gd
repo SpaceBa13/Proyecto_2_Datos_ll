@@ -75,7 +75,5 @@ func animate():
 func _on_hitbox_area_entered(area):
 	if area.name == "Swordbox":
 		currentHealth -= 1
-		if currentHealth < 0:
-			currentHealth = maxHealth
-		print_debug(currentHealth)
-		print_debug(maxHealth)
+		if currentHealth == 0:
+			queue_free()

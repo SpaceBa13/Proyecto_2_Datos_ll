@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb3mf1qlbt3ue"]
+[gd_scene load_steps=6 format=3 uid="uid://cb3mf1qlbt3ue"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy/enemy.gd" id="1_getaq"]
 [ext_resource type="Texture2D" uid="uid://bjvu2cv7c5bie" path="res://Resources/Enemies/Spectral_Eye_Right.png" id="2_vohen"]
+[ext_resource type="Script" path="res://Scripts/Enemy/Astar.gd" id="3_ia2cq"]
+[ext_resource type="Script" path="res://Scripts/Enemy/Backtraking_path.gd" id="4_672om"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4b4ml"]
 radius = 23.79
@@ -24,5 +26,11 @@ shape = SubResource("CircleShape2D_4b4ml")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.137
 autostart = true
+
+[node name="Astar" type="Node" parent="."]
+script = ExtResource("3_ia2cq")
+
+[node name="Backtraking_path" type="Node" parent="."]
+script = ExtResource("4_672om")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

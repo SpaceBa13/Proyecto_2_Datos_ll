@@ -9,6 +9,9 @@ var player: Player
 const speed = 1.2
 var current_id_path: Array
 
+@export var maxHealth = 2
+@onready var currentHealth: int = maxHealth
+
 func _ready():
 	tile_map = $"../../DungeonRoom"
 	player = $"../../Player"
@@ -20,8 +23,11 @@ func _physics_process(delta):
 	var own_position = tile_map.local_to_map(global_position)
 	var target_position = player.bresenham
 	var tile_data = tile_map.get_cell_tile_data(0, target_position)
-	if tile_data != null and tile_data.get_custom_data("safe_zone") == false:
-		current_id_path = Astar_path.get_id_path(own_position, target_position, tile_map)
+	if tile_data != null:
+		if tile_data.get_custom_data("safe_zone") == false:
+			var heuristic = Astar_path.heuristic(own_position, target_position)
+			if heuristic < 40:
+				current_id_path = Astar_path.get_id_path(own_position, target_position, tile_map)
 	if !current_id_path.is_empty():
 		move()
 
@@ -51,3 +57,10 @@ func animate(direction: Vector2):
 	elif direction.y < 0: 
 		animated_sprite_2d.play("Animation_Up")
 		animated_sprite_2d.rotation = 0
+		
+		
+func _on_hitbox_area_entered(area):
+	if area.name == "Swordbox":
+		currentHealth -= 1
+		if currentHealth == 0:
+			queue_free()

@@ -2,6 +2,7 @@ extends Control
 
 var dataNode
 
+
 @onready var lbCoin = $UIStats/Panel/Label
 @onready var health = $UIHealthContainer/FullLife
 func _ready():

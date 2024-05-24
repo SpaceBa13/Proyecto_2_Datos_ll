@@ -1,5 +1,6 @@
 extends Node
 signal dataChange
+@onready var player = $"../Nivel_Set/Player"
 
 var coins: int = 000:
 	get:

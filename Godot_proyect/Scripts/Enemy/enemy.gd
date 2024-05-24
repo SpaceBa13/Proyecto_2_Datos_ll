@@ -1,26 +1,29 @@
 extends CharacterBody2D
 
+class_name Spectre
+
 @onready var tile_map = $"../../DungeonRoom"
 @onready var player = $"../../Player"
 var current_id_path: Array
 const speed = 1.3
 var spawn_position = Vector2i(0,0)
 var chasing: bool
-@onready var Astar = $Astar
+@onready var Astar_path = $Astar
 @onready var Backtrack_path = $Backtraking_path 
 
 func _ready():
 	spawn_position = tile_map.local_to_map(global_position)
 	chasing = false
-	Astar.tile_map = tile_map
+	Astar_path.tile_map = tile_map
 	Backtrack_path.tile_map = tile_map
 
 func make_astar_path():
 	var own_position = tile_map.local_to_map(global_position)
 	var player_position = tile_map.local_to_map(player.global_position)
-	
-	var id_path = Astar.get_id_path(own_position, player_position, tile_map).slice(1)
-	#print(id_path)
+	var heuristic = Astar_path.heuristic(own_position, player_position)
+	var id_path = []
+	if heuristic < 40:
+		id_path = Astar_path.get_id_path(own_position, player_position, tile_map).slice(1)
 	
 	if id_path.is_empty() == false:
 		current_id_path = id_path
