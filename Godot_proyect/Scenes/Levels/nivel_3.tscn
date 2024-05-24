@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/Playerpointer.gd" id="6_bidsh"]
 [ext_resource type="PackedScene" uid="uid://cwim8ftyaeoh6" path="res://Scenes/Enemies/Chocobo_enemy.tscn" id="8_bpx4a"]
 [ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="9_87qsu"]
-[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/Room/enemy.tscn" id="12_7rgpe"]
+[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/enemy.tscn" id="12_7rgpe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0vll"]
 texture = ExtResource("2_bgyvv")

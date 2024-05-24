@@ -11,8 +11,10 @@ var chasing: bool
 var teleport = false
 @export var maxHealth = 2
 @onready var currentHealth: int = maxHealth
+@export var fire_ball : PackedScene
 
-func _ready():
+
+func _ready(): 
 	spawn_position = tile_map.local_to_map(global_position)
 	chasing = false
 	Astar_path.tile_map = tile_map
@@ -87,10 +89,18 @@ func make_backtrack_path(own_position):
 	# Resuelve el laberinto desde la posición inicial
 	current_id_path = Backtrack_path.get_backtrack_path(own_position, spawn_position)
 
-
-
 func _on_hitbox_area_entered(area):
 	if area.name == "Swordbox":
 		currentHealth -= 1
 		if currentHealth == 0:
 			queue_free()
+
+
+func _on_timer_timeout():
+	var instance = fire_ball.instantiate()
+	add_sibling(instance)
+	instance.global_position = global_position
+	var fire_ball = Fire_Ball.new(Vector2i(1,0), tile_map)
+	add_child(fire_ball)
+	print(fire_ball.global_position)
+	
