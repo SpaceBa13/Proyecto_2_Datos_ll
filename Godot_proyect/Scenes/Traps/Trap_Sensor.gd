@@ -6,6 +6,8 @@ var player_detected: bool
 @onready var Spike_Trap = $".."
 @onready var animation = $"../AnimatedSprite2D"
 @onready var dataNode = get_node("../../../../DataController")
+@onready var timer = $Timer
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player_detected = false
@@ -24,6 +26,10 @@ func set_player_detected_true(body):
 		#print("Hizo daño")
 
 func set_player_detected_false(body):
-	#print(body)
-	if body.name == "Player":
-		animation.stop()
+	animation.stop()
+	timer.start()
+	
+
+func _on_timer_timeout():
+	print("bye bye")
+	get_parent().queue_free()

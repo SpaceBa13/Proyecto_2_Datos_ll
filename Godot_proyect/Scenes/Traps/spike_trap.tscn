@@ -74,3 +74,9 @@ script = ExtResource("2_cypn8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_b0avq")
+
+[node name="Timer" type="Timer" parent="Area2D"]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]
