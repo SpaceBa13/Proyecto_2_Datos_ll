@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://brv2pjx8luurg"]
+[gd_scene load_steps=55 format=3 uid="uid://brv2pjx8luurg"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_q4phd"]
 [ext_resource type="Texture2D" uid="uid://c1sns0r3g5koe" path="res://Resources/tiles/Tileset/Alter/Secrets.png" id="2_bgyvv"]
@@ -12,7 +12,9 @@
 [ext_resource type="Script" path="res://Scripts/UI/Playerpointer.gd" id="6_bidsh"]
 [ext_resource type="PackedScene" uid="uid://cwim8ftyaeoh6" path="res://Scenes/Enemies/Chocobo_enemy.tscn" id="8_bpx4a"]
 [ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="9_87qsu"]
-[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/Room/enemy.tscn" id="12_7rgpe"]
+[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/enemy.tscn" id="12_7rgpe"]
+[ext_resource type="PackedScene" uid="uid://ddli300bkguue" path="res://Scenes/Enemies/Eye_enemy.tscn" id="13_lepf2"]
+[ext_resource type="PackedScene" uid="uid://deod04gpnqvqj" path="res://Scenes/Enemies/Rat_enemy.tscn" id="14_j0amg"]
 [ext_resource type="PackedScene" uid="uid://slfcn16p57eu" path="res://Scenes/Objects/mega_torch.tscn" id="14_vtm2s"]
 [ext_resource type="AudioStream" uid="uid://dmliubtm6lpdv" path="res://music/music.mp3" id="15_rx2su"]
 [ext_resource type="PackedScene" uid="uid://cd0k5sh4urhgb" path="res://pausa.tscn" id="16_yq6t5"]
@@ -2755,6 +2757,29 @@ script = null
 [node name="Espectral_eye5" parent="Nivel_Set/Enemies" instance=ExtResource("12_7rgpe")]
 position = Vector2(248, 240)
 script = null
+
+[node name="Chocobo_Enemy2" parent="Nivel_Set/Enemies" instance=ExtResource("8_bpx4a")]
+position = Vector2(-834, -350)
+
+[node name="Eye_Enemy8" parent="Nivel_Set/Enemies" instance=ExtResource("13_lepf2")]
+z_index = 5
+position = Vector2(-834, -302)
+
+[node name="Eye_Enemy9" parent="Nivel_Set/Enemies" instance=ExtResource("13_lepf2")]
+z_index = 5
+position = Vector2(-650, -126)
+
+[node name="RatEnemy" parent="Nivel_Set/Enemies" instance=ExtResource("14_j0amg")]
+position = Vector2(-802, -214)
+
+[node name="RatEnemy2" parent="Nivel_Set/Enemies" instance=ExtResource("14_j0amg")]
+position = Vector2(-170, 234)
+
+[node name="RatEnemy3" parent="Nivel_Set/Enemies" instance=ExtResource("14_j0amg")]
+position = Vector2(262, -174)
+
+[node name="RatEnemy4" parent="Nivel_Set/Enemies" instance=ExtResource("14_j0amg")]
+position = Vector2(446, -30)
 
 [node name="Spectres" type="Node2D" parent="Nivel_Set"]
 position = Vector2(71, 286)
