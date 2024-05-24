@@ -78,7 +78,7 @@ size = Vector2(24, 31)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3j016"]
 size = Vector2(17, 23)
 
-[node name="Node2D" type="Node2D"]
+[node name="Jarron" type="Node2D"]
 script = ExtResource("1_lfqy2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
