@@ -19,7 +19,6 @@ func set_player_detected_true(body):
 			get_tree().quit()
 		animation.play("default")
 		body.currentHealth = body.currentHealth - 1
-		dataNode.set_health(body.currentHealth)
 		print(body.currentHealth)
 		#print("Hizo daño")
 

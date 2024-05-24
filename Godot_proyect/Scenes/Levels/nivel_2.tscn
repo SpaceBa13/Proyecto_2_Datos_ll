@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://bwswl0vfwhbqg"]
+[gd_scene load_steps=68 format=3 uid="uid://bwswl0vfwhbqg"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_7khhh"]
 [ext_resource type="Texture2D" uid="uid://bpmj2qhrdd7a6" path="res://Resources/tiles/Brayan level/Dungeon/luxa.org-opacity-changed-Water_50.png" id="2_7a66l"]
@@ -19,8 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://css1uf2p3235j" path="res://Scenes/Traps/fire_trap.tscn" id="15_xwkn2"]
 [ext_resource type="PackedScene" uid="uid://deuob4bl8wc3r" path="res://Scenes/Traps/spike_trap.tscn" id="16_57qo6"]
 [ext_resource type="PackedScene" uid="uid://q7cvmif46wjl" path="res://Scenes/Enemies/blue_spectre.tscn" id="17_05e7y"]
-[ext_resource type="PackedScene" uid="uid://betskp6y3f52w" path="res://Scenes/Enemies/red_spectre.tscn" id="17_duc2l"]
 [ext_resource type="PackedScene" uid="uid://b24fereqlah55" path="res://Scenes/Objects/torch.tscn" id="17_lvd8a"]
+[ext_resource type="AudioStream" uid="uid://dmliubtm6lpdv" path="res://music/music.mp3" id="21_baqbf"]
+[ext_resource type="PackedScene" path="res://pausa.tscn" id="22_mbb7f"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_i17j4"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -3057,9 +3058,6 @@ position = Vector2(776, 1406)
 [node name="Blue_Spectre2" parent="Nivel_Set/Spectres" instance=ExtResource("17_05e7y")]
 position = Vector2(357, 1108)
 
-[node name="Red_Spectre" parent="Nivel_Set/Spectres" instance=ExtResource("17_duc2l")]
-position = Vector2(1071, 1177)
-
 [node name="Traps" type="Node2D" parent="Nivel_Set"]
 
 [node name="Fire_Trap" parent="Nivel_Set/Traps" instance=ExtResource("15_xwkn2")]
@@ -3247,3 +3245,11 @@ position = Vector2(1440, 920)
 
 [node name="Torch14" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(1488, 920)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_baqbf")
+volume_db = -21.956
+pitch_scale = 1.22
+autoplay = true
+
+[node name="pausa" parent="." instance=ExtResource("22_mbb7f")]
