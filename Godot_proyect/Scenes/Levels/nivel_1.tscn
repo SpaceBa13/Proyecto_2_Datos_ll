@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://co0fr6v7d4vk"]
+[gd_scene load_steps=15 format=3 uid="uid://co0fr6v7d4vk"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_5tp01"]
 [ext_resource type="PackedScene" uid="uid://bb7e5iidudlea" path="res://Scenes/tilemap/dari_tile_map.tscn" id="2_ab6vv"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://q7cvmif46wjl" path="res://Scenes/Enemies/blue_spectre.tscn" id="10_h7pj2"]
 [ext_resource type="PackedScene" uid="uid://b1gtoh642r0qu" path="res://Scenes/Importants/Ladder.tscn" id="10_ofl4a"]
 [ext_resource type="PackedScene" uid="uid://dwcgn1pshovcx" path="res://Scenes/Items/chest.tscn" id="11_peoyd"]
+[ext_resource type="PackedScene" uid="uid://bstolt21qnsmp" path="res://Scenes/Items/Jarron.tscn" id="14_gg27h"]
 
 [node name="Nivel_1" type="Node2D"]
 
@@ -109,16 +110,14 @@ position = Vector2(982, 1237)
 position = Vector2(472, 344)
 
 [node name="RecolectableItem" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
-position = Vector2(-165, -160)
+position = Vector2(-181, -231)
 idItem = 1
 
 [node name="RecolectableItem2" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(284, 130)
-idItem = 2
 
 [node name="RecolectableItem3" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(560, 1194)
-idItem = 2
 
 [node name="RecolectableItem4" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(70, -264)
@@ -138,7 +137,6 @@ idItem = 1
 
 [node name="RecolectableItem8" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(595, 288)
-idItem = 2
 
 [node name="RecolectableItem9" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(735, 1075)
@@ -155,5 +153,8 @@ position = Vector2(1468, 1359)
 
 [node name="Chest" parent="." instance=ExtResource("11_peoyd")]
 position = Vector2(271, 74)
+
+[node name="Node2D" parent="." instance=ExtResource("14_gg27h")]
+position = Vector2(299, 117)
 
 [connection signal="body_entered" from="Nivel_Set/Ladder" to="Nivel_Set/Ladder" method="_on_body_entered"]
