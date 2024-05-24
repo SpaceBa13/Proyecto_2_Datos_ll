@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://q7cvmif46wjl" path="res://Scenes/Enemies/blue_spectre.tscn" id="17_05e7y"]
 [ext_resource type="PackedScene" uid="uid://b24fereqlah55" path="res://Scenes/Objects/torch.tscn" id="17_lvd8a"]
 [ext_resource type="AudioStream" uid="uid://dmliubtm6lpdv" path="res://music/music.mp3" id="21_baqbf"]
-[ext_resource type="PackedScene" path="res://pausa.tscn" id="22_mbb7f"]
+[ext_resource type="PackedScene" uid="uid://cd0k5sh4urhgb" path="res://pausa.tscn" id="22_mbb7f"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_i17j4"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)

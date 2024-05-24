@@ -157,11 +157,13 @@ idItem = 2
 [node name="Ladder" parent="Nivel_Set" instance=ExtResource("10_ofl4a")]
 position = Vector2(1468, 1359)
 
-[node name="Spike_Trap" parent="Nivel_Set" instance=ExtResource("13_5go1q")]
-position = Vector2(317, 140)
+[node name="Traps" type="Node2D" parent="Nivel_Set"]
 
-[node name="Fire_Trap" parent="Nivel_Set" instance=ExtResource("14_bv1f4")]
+[node name="Fire_Trap" parent="Nivel_Set/Traps" instance=ExtResource("14_bv1f4")]
 position = Vector2(134, 144)
+
+[node name="Spike_Trap" parent="Nivel_Set/Traps" instance=ExtResource("13_5go1q")]
+position = Vector2(317, 140)
 
 [node name="Chest" parent="." instance=ExtResource("11_peoyd")]
 position = Vector2(271, 74)

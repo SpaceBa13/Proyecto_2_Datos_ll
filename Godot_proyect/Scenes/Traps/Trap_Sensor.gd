@@ -5,7 +5,7 @@ class_name Trap_Sensor
 var player_detected: bool
 @onready var Spike_Trap = $".."
 @onready var animation = $"../AnimatedSprite2D"
-@onready var dataNode = get_node("../../../DataController")
+@onready var dataNode = get_node("../../../../DataController")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player_detected = false
@@ -19,6 +19,7 @@ func set_player_detected_true(body):
 			get_tree().quit()
 		animation.play("default")
 		body.currentHealth = body.currentHealth - 1
+		dataNode.set_health(body.currentHealth)
 		print(body.currentHealth)
 		#print("Hizo daño")
 
