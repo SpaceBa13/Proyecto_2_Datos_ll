@@ -28,7 +28,7 @@ func make_astar_path():
 	var player_position = tile_map.local_to_map(player.global_position)
 	var heuristic = Astar_path.heuristic(own_position, player_position)
 	var id_path = []
-	if heuristic < 40:
+	if heuristic < 50:
 		id_path = Astar_path.get_id_path(own_position, player_position, tile_map).slice(1)
 	
 	if id_path.is_empty() == false:
