@@ -17,6 +17,7 @@ var nearestActionable: ActionArea
 @onready var hitboxDamage = $hurtbox
 var moveDirection = Vector2.ZERO
 var canMove = true
+var hitbox = true
 var direccionHitDamage = "DOWN"
 var hitboxDamageScript: PlayerHitboxDamage = PlayerHitboxDamage.new()
 
@@ -39,7 +40,10 @@ func animateMovement():
 	if velocity.length() == 0:
 		animationTree["parameters/conditions/Idleing"] = true
 		animationTree["parameters/conditions/Walking"] = false
+		animationTree["parameters/conditions/Shielding"] = false
 	else:
+		animationTree["parameters/conditions/Idleing"] = false
+		animationTree["parameters/conditions/Walking"] = true
 		if velocity.y > 0: 
 			direccionHitDamage = "DOWN"
 			interactionmarker.rotation = deg_to_rad(0)
@@ -54,10 +58,8 @@ func animateMovement():
 			interactionmarker.rotation = deg_to_rad(180)
 		animationTree["parameters/Idle/blend_position"] = moveDirection
 		animationTree["parameters/Walk/blend_position"] = moveDirection
+		animationTree["parameters/Shield/blend_position"] = moveDirection
 		animationTree["parameters/Attack/blend_position"] = moveDirection
-		animationTree["parameters/conditions/Idleing"] = false
-		animationTree["parameters/conditions/Walking"] = true
-
 func _physics_process(delta):
 	var position = tile_map.local_to_map(global_position)
 	var tile_data = tile_map.get_cell_tile_data(0, position)
@@ -101,6 +103,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.is_action_pressed("ui_accept") && nearestActionable != null:
 			if is_instance_valid(nearestActionable):
 				nearestActionable.emit_signal("actionated")
+		if event.is_action_pressed("ui_shield"):
+			hitbox = false
+			shield_animation()
 		
 			
 func attack_animation(): 
@@ -112,12 +117,21 @@ func attack_animation():
 	animationTree["parameters/conditions/Attacking"] = false
 	canMove = true
 
+func shield_animation(): 
+	animationTree["parameters/conditions/Shielding"] = true
+	animationTree["parameters/conditions/Idleing"] = false
+	animationTree["parameters/conditions/Walking"] = false
+	canMove = false
+	await get_tree().create_timer(0.7).timeout
+	animationTree["parameters/conditions/Shielding"] = false
+	canMove = true
 
 
 
 func _on_hurtbox_area_entered(area):
-	if area.name == "hitbox":
-		currentHealth -= 1
-		if currentHealth < 0:
-			currentHealth = maxHealth
-		print_debug(currentHealth)
+	if hitbox == true:
+		if area.name == "hitbox":
+			currentHealth -= 1
+			if currentHealth < 0:
+				currentHealth = maxHealth
+			print_debug(currentHealth)
