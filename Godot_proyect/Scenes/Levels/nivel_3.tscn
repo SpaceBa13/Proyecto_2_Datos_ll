@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/Playerpointer.gd" id="6_bidsh"]
 [ext_resource type="PackedScene" uid="uid://cwim8ftyaeoh6" path="res://Scenes/Enemies/Chocobo_enemy.tscn" id="8_bpx4a"]
 [ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="9_87qsu"]
-[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/Room/enemy.tscn" id="12_7rgpe"]
+[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/enemy.tscn" id="12_7rgpe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0vll"]
 texture = ExtResource("2_bgyvv")
@@ -2394,54 +2394,43 @@ position = Vector2(472, 344)
 [node name="RecolectableItem" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(-276, 126)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem2" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(-780, -146)
 idItem = 2
-value = 1
 
 [node name="RecolectableItem3" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(-308, -226)
 idItem = 2
-value = 1
 
 [node name="RecolectableItem4" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(-156, -18)
 idItem = 3
-value = 1
 
 [node name="RecolectableItem5" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(436, 238)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem6" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(-28, 326)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem7" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(188, -106)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem8" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(-332, 262)
 idItem = 2
-value = 1
 
 [node name="RecolectableItem9" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(516, 62)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem10" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(-796, 78)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem11" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(68, 118)
 idItem = 2
-value = 1

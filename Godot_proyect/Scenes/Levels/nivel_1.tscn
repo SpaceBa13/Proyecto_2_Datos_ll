@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://co0fr6v7d4vk"]
+[gd_scene load_steps=16 format=3 uid="uid://co0fr6v7d4vk"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_5tp01"]
 [ext_resource type="PackedScene" uid="uid://bb7e5iidudlea" path="res://Scenes/tilemap/dari_tile_map.tscn" id="2_ab6vv"]
@@ -7,10 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://bwbyik1tvdhki" path="res://Resources/UI/cursor.png" id="5_re7sp"]
 [ext_resource type="Script" path="res://Scripts/UI/Playerpointer.gd" id="6_t58sf"]
 [ext_resource type="PackedScene" uid="uid://cwim8ftyaeoh6" path="res://Scenes/Enemies/Chocobo_enemy.tscn" id="7_nktad"]
-[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/Room/enemy.tscn" id="8_y0tyx"]
+[ext_resource type="PackedScene" uid="uid://ddli300bkguue" path="res://Scenes/Enemies/Eye_enemy.tscn" id="8_p2dea"]
+[ext_resource type="PackedScene" uid="uid://deod04gpnqvqj" path="res://Scenes/Enemies/Rat_enemy.tscn" id="9_3s5fr"]
 [ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="9_13d8b"]
+[ext_resource type="PackedScene" uid="uid://q7cvmif46wjl" path="res://Scenes/Enemies/blue_spectre.tscn" id="10_h7pj2"]
 [ext_resource type="PackedScene" uid="uid://b1gtoh642r0qu" path="res://Scenes/Importants/Ladder.tscn" id="10_ofl4a"]
 [ext_resource type="PackedScene" uid="uid://dwcgn1pshovcx" path="res://Scenes/Items/chest.tscn" id="11_peoyd"]
+[ext_resource type="PackedScene" uid="uid://deuob4bl8wc3r" path="res://Scenes/Traps/spike_trap.tscn" id="13_5go1q"]
+[ext_resource type="PackedScene" uid="uid://css1uf2p3235j" path="res://Scenes/Traps/fire_trap.tscn" id="14_bv1f4"]
 
 [node name="Nivel_1" type="Node2D"]
 
@@ -68,27 +72,40 @@ offset = Vector2(464, 336)
 [node name="Enemies" type="Node2D" parent="Nivel_Set"]
 
 [node name="Chocobo_Enemy" parent="Nivel_Set/Enemies" instance=ExtResource("7_nktad")]
-position = Vector2(1619, 743)
+position = Vector2(1473, 741)
 
-[node name="Espectral_eye" parent="Nivel_Set/Enemies" instance=ExtResource("8_y0tyx")]
-position = Vector2(731, 94)
-script = null
+[node name="Chocobo_Enemy2" parent="Nivel_Set/Enemies" instance=ExtResource("7_nktad")]
+position = Vector2(723, 99)
 
-[node name="Espectral_eye2" parent="Nivel_Set/Enemies" instance=ExtResource("8_y0tyx")]
-position = Vector2(540, 632)
-script = null
+[node name="Chocobo_Enemy3" parent="Nivel_Set/Enemies" instance=ExtResource("7_nktad")]
+position = Vector2(1037, 1497)
 
-[node name="Espectral_eye3" parent="Nivel_Set/Enemies" instance=ExtResource("8_y0tyx")]
-position = Vector2(952, 1261)
-script = null
+[node name="Chocobo_Enemy4" parent="Nivel_Set/Enemies" instance=ExtResource("7_nktad")]
+position = Vector2(1199, 1226)
 
-[node name="Espectral_eye4" parent="Nivel_Set/Enemies" instance=ExtResource("8_y0tyx")]
-position = Vector2(1401, 390)
-script = null
+[node name="Eye_Enemy" parent="Nivel_Set/Enemies" instance=ExtResource("8_p2dea")]
+position = Vector2(91, 462)
 
-[node name="Espectral_eye5" parent="Nivel_Set/Enemies" instance=ExtResource("8_y0tyx")]
-position = Vector2(93, 462)
-script = null
+[node name="RatEnemy" parent="Nivel_Set/Enemies" instance=ExtResource("9_3s5fr")]
+position = Vector2(563, 457)
+
+[node name="RatEnemy2" parent="Nivel_Set/Enemies" instance=ExtResource("9_3s5fr")]
+position = Vector2(1179, 691)
+
+[node name="RatEnemy3" parent="Nivel_Set/Enemies" instance=ExtResource("9_3s5fr")]
+position = Vector2(969, 687)
+
+[node name="Blue_Spectre" parent="Nivel_Set/Enemies" instance=ExtResource("10_h7pj2")]
+position = Vector2(994, 959)
+
+[node name="Blue_Spectre2" parent="Nivel_Set/Enemies" instance=ExtResource("10_h7pj2")]
+position = Vector2(1152, 961)
+
+[node name="Blue_Spectre3" parent="Nivel_Set/Enemies" instance=ExtResource("10_h7pj2")]
+position = Vector2(1072, 992)
+
+[node name="Blue_Spectre4" parent="Nivel_Set/Enemies" instance=ExtResource("10_h7pj2")]
+position = Vector2(982, 1237)
 
 [node name="Recolectables" type="Node2D" parent="Nivel_Set"]
 position = Vector2(472, 344)
@@ -96,55 +113,55 @@ position = Vector2(472, 344)
 [node name="RecolectableItem" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(-165, -160)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem2" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(284, 130)
 idItem = 2
-value = 1
 
 [node name="RecolectableItem3" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(560, 1194)
 idItem = 2
-value = 1
 
 [node name="RecolectableItem4" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(70, -264)
 idItem = 3
-value = 1
 
 [node name="RecolectableItem5" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(-131, 26)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem6" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(1136, 117)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem7" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(279, 406)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem8" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(595, 288)
 idItem = 2
-value = 1
 
 [node name="RecolectableItem9" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(735, 1075)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem10" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(1149, 290)
 idItem = 1
-value = 1
+
+[node name="RecolectableItem11" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
+position = Vector2(-323, -155)
+idItem = 2
 
 [node name="Ladder" parent="Nivel_Set" instance=ExtResource("10_ofl4a")]
 position = Vector2(1468, 1359)
+
+[node name="Spike_Trap" parent="Nivel_Set" instance=ExtResource("13_5go1q")]
+position = Vector2(317, 140)
+
+[node name="Fire_Trap" parent="Nivel_Set" instance=ExtResource("14_bv1f4")]
+position = Vector2(134, 144)
 
 [node name="Chest" parent="." instance=ExtResource("11_peoyd")]
 position = Vector2(271, 74)

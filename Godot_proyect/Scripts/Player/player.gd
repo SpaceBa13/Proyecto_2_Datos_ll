@@ -4,32 +4,34 @@ class_name Player
 
 @export var speed: int = 100
 @export var typeDamage = 1
+@export var maxHealth = 5
 
 @onready var animation = $AnimationPlayer
 @onready var sprite = $PlayerSprite
 @onready var animationTree = $AnimationTree
-
 @onready var interactionmarker = $Marker2D
 @onready var actionArea = $Marker2D/Area2D
-var nearestActionable: ActionArea
-
 @onready var tile_map = $"../DungeonRoom"
 @onready var hitboxDamage = $hurtbox
+@onready var currentHealth: int = maxHealth
+@onready var dataNode = get_node("../../DataController")
+
+var nearestActionable: ActionArea
 var moveDirection = Vector2.ZERO
 var canMove = true
 var direccionHitDamage = "DOWN"
 var hitboxDamageScript: PlayerHitboxDamage = PlayerHitboxDamage.new()
-
-@export var maxHealth = 5
-@onready var currentHealth: int = maxHealth
-
-
 var bresenham: Vector2
 var seen: bool
 
 func _ready():
 	animationTree.active = true
 	bresenham = tile_map.local_to_map(global_position)
+	dataNode.dataChange.connect(_on_data_change)
+	_on_data_change()
+
+func _on_data_change():
+	currentHealth = dataNode.health
 
 func validateInput():
 	moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -91,7 +93,6 @@ func check_accionables() -> void:
 	else: 
 		nearestActionable = null
 
-
 func _unhandled_input(event: InputEvent) -> void:
 	if canMove == true:
 		if event.is_action_pressed("ui_select"):
@@ -101,8 +102,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.is_action_pressed("ui_accept") && nearestActionable != null:
 			if is_instance_valid(nearestActionable):
 				nearestActionable.emit_signal("actionated")
-		
-			
+
 func attack_animation(): 
 	animationTree["parameters/conditions/Attacking"] = true
 	animationTree["parameters/conditions/Idleing"] = false
@@ -112,11 +112,11 @@ func attack_animation():
 	animationTree["parameters/conditions/Attacking"] = false
 	canMove = true
 
-
-
 func _on_hurtbox_area_entered(area):
 	if area.name == "hitbox":
-		currentHealth -= 1
+		if currentHealth == 1:
+			get_tree().quit()
+		dataNode.set_health(dataNode.health - 1)
 		if currentHealth < 0:
 			currentHealth = maxHealth
 		print_debug(currentHealth)
