@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bwswl0vfwhbqg"]
+[gd_scene load_steps=67 format=3 uid="uid://bwswl0vfwhbqg"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_7khhh"]
 [ext_resource type="Texture2D" uid="uid://bpmj2qhrdd7a6" path="res://Resources/tiles/Brayan level/Dungeon/luxa.org-opacity-changed-Water_50.png" id="2_7a66l"]
@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://drxyd11sv7n0v" path="res://Scenes/Player/player.tscn" id="6_7sjm3"]
 [ext_resource type="PackedScene" uid="uid://ui7euo81all" path="res://Scenes/UI/ui_general.tscn" id="7_621as"]
 [ext_resource type="Texture2D" uid="uid://bwbyik1tvdhki" path="res://Resources/UI/cursor.png" id="8_osnuw"]
-[ext_resource type="Script" path="res://Scripts/UI/Playerpointer.gd" id="9_5w2fj"]
 [ext_resource type="PackedScene" uid="uid://bi88wpwagvvax" path="res://Scenes/tilemap/dungeon_room.tscn" id="10_8dfh3"]
+[ext_resource type="Script" path="res://Scripts/UI/minimap.gd" id="11_wm6jc"]
 [ext_resource type="PackedScene" uid="uid://slfcn16p57eu" path="res://Scenes/Objects/mega_torch.tscn" id="13_bmpxr"]
 [ext_resource type="PackedScene" uid="uid://ddli300bkguue" path="res://Scenes/Enemies/Eye_enemy.tscn" id="13_dtbev"]
 [ext_resource type="PackedScene" uid="uid://deod04gpnqvqj" path="res://Scenes/Enemies/Rat_enemy.tscn" id="14_b4qek"]
@@ -2888,10 +2888,6 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.2, 0.9)
 metadata/_snap_enabled = true
 
-[sub_resource type="GDScript" id="GDScript_o3rea"]
-script/source = "extends SubViewport
-"
-
 [node name="Nivel 2" type="Node2D"]
 
 [node name="DataController" parent="." instance=ExtResource("1_7khhh")]
@@ -2946,13 +2942,12 @@ self_modulate = Color(0.990041, 0.134757, 0.094839, 1)
 position = Vector2(464, 336)
 scale = Vector2(2, 2)
 texture = ExtResource("8_osnuw")
-script = ExtResource("9_5w2fj")
 
 [node name="SubViewport" type="SubViewport" parent="Nivel_Set/Mini Map/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(924, 669)
 render_target_update_mode = 4
-script = SubResource("GDScript_o3rea")
+script = ExtResource("11_wm6jc")
 
 [node name="Minimap" parent="Nivel_Set/Mini Map/SubViewportContainer/SubViewport" instance=ExtResource("10_8dfh3")]
 

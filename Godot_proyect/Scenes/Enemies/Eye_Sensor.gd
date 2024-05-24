@@ -14,12 +14,12 @@ func _ready():
 
 
 func set_player_detected_true(body):
-	print(body)
+	#print(body)
 	if body.name == "Player":
 		body.seen = true
 		enemy_eye.blink = true
 
 func set_player_detected_false(body):
-	print(body)
+	#print(body)
 	if body.name == "Player":
 		enemy_eye.blink = false
