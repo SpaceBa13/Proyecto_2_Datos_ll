@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://cruanbkyhpcxv"]
+
+[ext_resource type="Script" path="res://Fire_ball.gd" id="1_6q4aq"]
+[ext_resource type="Texture2D" uid="uid://cpp3oilypvyf" path="res://Resources/tiles/Brayan level/Particles/Fire Effect and Bullet 16x16.png" id="2_wayc3"]
+[ext_resource type="Script" path="res://Scenes/Objects/Fire_ball_Sensor.gd" id="3_m4oiy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt16e"]
+atlas = ExtResource("2_wayc3")
+region = Rect2(480, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4ods"]
+atlas = ExtResource("2_wayc3")
+region = Rect2(496, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bid00"]
+atlas = ExtResource("2_wayc3")
+region = Rect2(512, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hdmh"]
+atlas = ExtResource("2_wayc3")
+region = Rect2(528, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78v0m"]
+atlas = ExtResource("2_wayc3")
+region = Rect2(544, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4ki5"]
+atlas = ExtResource("2_wayc3")
+region = Rect2(560, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tim4b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yt16e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4ods")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bid00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hdmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78v0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4ki5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_555ki"]
+size = Vector2(13.75, 11.9375)
+
+[node name="Mega_Fire_ball" type="CharacterBody2D"]
+z_index = 5
+script = ExtResource("1_6q4aq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.53674e-07, 9.53674e-07)
+scale = Vector2(1.375, 1.375)
+sprite_frames = SubResource("SpriteFrames_tim4b")
+frame_progress = 0.850716
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_m4oiy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.125, 0.03125)
+shape = SubResource("RectangleShape2D_555ki")
+
+[node name="Timer" type="Timer" parent="Area2D"]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]
