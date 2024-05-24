@@ -114,6 +114,7 @@ func attack_animation():
 
 
 
+
 func _on_hurtbox_area_entered(area):
 	if area.name == "hitbox":
 		currentHealth -= 1

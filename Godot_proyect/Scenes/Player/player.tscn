@@ -1,7 +1,8 @@
-[gd_scene load_steps=52 format=3 uid="uid://drxyd11sv7n0v"]
+[gd_scene load_steps=57 format=3 uid="uid://drxyd11sv7n0v"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_5511m"]
 [ext_resource type="Texture2D" uid="uid://blklggocd1c3y" path="res://Resources/Player/lonk-Sheet.png" id="2_516jd"]
+[ext_resource type="Texture2D" uid="uid://dcgbcqbmuvnsj" path="res://Resources/Player/lonk(shieldchange)-Sheet.png" id="2_dr4d3"]
 
 [sub_resource type="Animation" id="Animation_7pohx"]
 resource_name = "Attack_Down"
@@ -195,7 +196,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [18]
+"values": [19]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -361,7 +362,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id="Animation_hfe8u"]
 resource_name = "idle"
-length = 0.2
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -370,7 +371,7 @@ tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
@@ -390,7 +391,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ojw84"]
 resource_name = "Idle_Left"
-length = 0.2
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -399,7 +400,7 @@ tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [12, 13]
@@ -419,7 +420,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_1pb7i"]
 resource_name = "Idle_Right"
-length = 0.2
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -428,10 +429,10 @@ tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [16, 17]
+"values": [17, 18]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -448,7 +449,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_27mn3"]
 resource_name = "Idle_Up"
-length = 0.2
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -457,7 +458,7 @@ tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [7, 8]
@@ -569,7 +570,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [12, 15]
+"values": [12, 16]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -598,7 +599,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [16, 19]
+"values": [17, 21]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -642,6 +643,70 @@ tracks/1/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_ak5f7"]
+resource_name = "Shield_up"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [28]
+}
+
+[sub_resource type="Animation" id="Animation_0n2g1"]
+resource_name = "Shield_down"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [26]
+}
+
+[sub_resource type="Animation" id="Animation_nh0k5"]
+resource_name = "Shield_left"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [29]
+}
+
+[sub_resource type="Animation" id="Animation_22471"]
+resource_name = "Shield_right"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [27]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ap1lp"]
 _data = {
 "Attack_Down": SubResource("Animation_7pohx"),
@@ -653,6 +718,10 @@ _data = {
 "Idle_Right": SubResource("Animation_1pb7i"),
 "Idle_Up": SubResource("Animation_27mn3"),
 "RESET": SubResource("Animation_vl6cq"),
+"Shield_down": SubResource("Animation_0n2g1"),
+"Shield_left": SubResource("Animation_nh0k5"),
+"Shield_right": SubResource("Animation_22471"),
+"Shield_up": SubResource("Animation_ak5f7"),
 "Walk_down": SubResource("Animation_k3a0i"),
 "Walk_left": SubResource("Animation_r83vg"),
 "Walk_right": SubResource("Animation_vc8ls"),
@@ -830,9 +899,9 @@ visibility_layer = 64
 z_index = 2
 position = Vector2(7.62939e-06, 7.62939e-06)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_516jd")
+texture = ExtResource("2_dr4d3")
 hframes = 6
-vframes = 5
+vframes = 6
 
 [node name="Swordsprite" type="Sprite2D" parent="."]
 visible = false
