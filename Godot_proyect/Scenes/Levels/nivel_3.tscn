@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://brv2pjx8luurg"]
+[gd_scene load_steps=59 format=3 uid="uid://brv2pjx8luurg"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_q4phd"]
 [ext_resource type="Texture2D" uid="uid://c1sns0r3g5koe" path="res://Resources/tiles/Tileset/Alter/Secrets.png" id="2_bgyvv"]
@@ -12,13 +12,17 @@
 [ext_resource type="Script" path="res://Scripts/UI/Playerpointer.gd" id="6_bidsh"]
 [ext_resource type="PackedScene" uid="uid://cwim8ftyaeoh6" path="res://Scenes/Enemies/Chocobo_enemy.tscn" id="8_bpx4a"]
 [ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="9_87qsu"]
-[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/Room/enemy.tscn" id="12_7rgpe"]
+[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/enemy.tscn" id="12_7rgpe"]
 [ext_resource type="PackedScene" uid="uid://ddli300bkguue" path="res://Scenes/Enemies/Eye_enemy.tscn" id="13_lepf2"]
 [ext_resource type="PackedScene" uid="uid://deod04gpnqvqj" path="res://Scenes/Enemies/Rat_enemy.tscn" id="14_j0amg"]
 [ext_resource type="PackedScene" uid="uid://slfcn16p57eu" path="res://Scenes/Objects/mega_torch.tscn" id="14_vtm2s"]
 [ext_resource type="AudioStream" uid="uid://dmliubtm6lpdv" path="res://music/music.mp3" id="15_rx2su"]
+[ext_resource type="PackedScene" uid="uid://q7cvmif46wjl" path="res://Scenes/Enemies/blue_spectre.tscn" id="15_s52i2"]
+[ext_resource type="PackedScene" uid="uid://betskp6y3f52w" path="res://Scenes/Enemies/red_spectre.tscn" id="16_2kppv"]
 [ext_resource type="PackedScene" uid="uid://cd0k5sh4urhgb" path="res://pausa.tscn" id="16_yq6t5"]
 [ext_resource type="PackedScene" uid="uid://css1uf2p3235j" path="res://Scenes/Traps/fire_trap.tscn" id="17_g02v2"]
+[ext_resource type="PackedScene" uid="uid://b1gtoh642r0qu" path="res://Scenes/Importants/Ladder.tscn" id="18_ewim8"]
+[ext_resource type="PackedScene" uid="uid://bstolt21qnsmp" path="res://Scenes/Items/Jarron.tscn" id="22_kya6o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0vll"]
 texture = ExtResource("2_bgyvv")
@@ -2784,6 +2788,36 @@ position = Vector2(446, -30)
 [node name="Spectres" type="Node2D" parent="Nivel_Set"]
 position = Vector2(71, 286)
 
+[node name="Blue_Spectre" parent="Nivel_Set/Spectres" instance=ExtResource("15_s52i2")]
+position = Vector2(237, 96)
+
+[node name="Blue_Spectre2" parent="Nivel_Set/Spectres" instance=ExtResource("15_s52i2")]
+position = Vector2(541, 208)
+
+[node name="Blue_Spectre3" parent="Nivel_Set/Spectres" instance=ExtResource("15_s52i2")]
+position = Vector2(-715, -8)
+
+[node name="Blue_Spectre4" parent="Nivel_Set/Spectres" instance=ExtResource("15_s52i2")]
+position = Vector2(469, -64)
+
+[node name="Red_Spectre" parent="Nivel_Set/Spectres" instance=ExtResource("16_2kppv")]
+position = Vector2(765, 208)
+
+[node name="Red_Spectre2" parent="Nivel_Set/Spectres" instance=ExtResource("16_2kppv")]
+position = Vector2(125, 216)
+
+[node name="Red_Spectre3" parent="Nivel_Set/Spectres" instance=ExtResource("16_2kppv")]
+position = Vector2(333, -200)
+
+[node name="Blue_Spectre5" parent="Nivel_Set/Spectres" instance=ExtResource("15_s52i2")]
+position = Vector2(-427, -232)
+
+[node name="Blue_Spectre6" parent="Nivel_Set/Spectres" instance=ExtResource("15_s52i2")]
+position = Vector2(-659, -336)
+
+[node name="Red_Spectre4" parent="Nivel_Set/Spectres" instance=ExtResource("16_2kppv")]
+position = Vector2(765, 32)
+
 [node name="Recolectables" type="Node2D" parent="Nivel_Set"]
 position = Vector2(338, 246)
 
@@ -2792,7 +2826,7 @@ position = Vector2(-276, 126)
 idItem = 1
 
 [node name="RecolectableItem2" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
-position = Vector2(-950, -56)
+position = Vector2(-582, 32)
 idItem = 2
 
 [node name="RecolectableItem3" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
@@ -2808,7 +2842,7 @@ position = Vector2(436, 238)
 idItem = 1
 
 [node name="RecolectableItem6" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
-position = Vector2(-28, 326)
+position = Vector2(34, 344)
 idItem = 1
 
 [node name="RecolectableItem7" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
@@ -2836,8 +2870,11 @@ position = Vector2(274, -368)
 idItem = 1
 
 [node name="RecolectableItem13" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
-position = Vector2(-654, -168)
+position = Vector2(-654, -272)
 idItem = 1
+
+[node name="Ladder" parent="Nivel_Set" instance=ExtResource("18_ewim8")]
+position = Vector2(712, 294)
 
 [node name="Torchs" type="Node2D" parent="."]
 z_index = 7
@@ -2858,7 +2895,7 @@ position = Vector2(392, 360)
 position = Vector2(192, 16)
 
 [node name="MegaTorch33" parent="Torchs" instance=ExtResource("14_vtm2s")]
-position = Vector2(0, 360)
+position = Vector2(-24, 360)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_rx2su")
@@ -2885,3 +2922,20 @@ position = Vector2(-392, -200)
 
 [node name="Fire_Trap5" parent="Fire_Trap" instance=ExtResource("17_g02v2")]
 position = Vector2(-1136, -624)
+
+[node name="Node2D" parent="." instance=ExtResource("22_kya6o")]
+position = Vector2(536, 144)
+
+[node name="Node2D2" parent="." instance=ExtResource("22_kya6o")]
+position = Vector2(-304, -24)
+
+[node name="Node2D3" parent="." instance=ExtResource("22_kya6o")]
+position = Vector2(-232, 288)
+
+[node name="Node2D4" parent="." instance=ExtResource("22_kya6o")]
+position = Vector2(864, 312)
+
+[node name="Node2D5" parent="." instance=ExtResource("22_kya6o")]
+position = Vector2(384, 592)
+
+[connection signal="body_entered" from="Nivel_Set/Ladder" to="Nivel_Set/Ladder" method="_on_body_entered"]

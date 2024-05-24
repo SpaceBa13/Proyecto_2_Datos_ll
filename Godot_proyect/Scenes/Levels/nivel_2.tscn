@@ -3255,7 +3255,7 @@ position = Vector2(1488, 920)
 z_index = 5
 
 [node name="Ladder" parent="Nivel_Set/Recolectables" instance=ExtResource("23_7qmlf")]
-position = Vector2(371, 184)
+position = Vector2(373, 184)
 
 [node name="RecolectableItem9" parent="Nivel_Set/Recolectables" instance=ExtResource("24_n015f")]
 position = Vector2(553, 1113)

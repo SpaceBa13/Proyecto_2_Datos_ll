@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bn4rkqpxq2rhu"]
+[gd_scene load_steps=32 format=3 uid="uid://bn4rkqpxq2rhu"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_kpran"]
 [ext_resource type="Texture2D" uid="uid://ddwdgonn7ev16" path="res://Resources/tiles/Tileset/Abyss/Tiles.png" id="2_20b5f"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://ddli300bkguue" path="res://Scenes/Enemies/Eye_enemy.tscn" id="13_l4dga"]
 [ext_resource type="PackedScene" uid="uid://deod04gpnqvqj" path="res://Scenes/Enemies/Rat_enemy.tscn" id="14_1nxxl"]
 [ext_resource type="AudioStream" uid="uid://dmliubtm6lpdv" path="res://music/music.mp3" id="15_pms4e"]
+[ext_resource type="PackedScene" uid="uid://b1gtoh642r0qu" path="res://Scenes/Importants/Ladder.tscn" id="17_n7anb"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_w5sox"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -5553,6 +5554,9 @@ position = Vector2(2127, 781)
 [node name="Torchs" type="Node2D" parent="Nivel_Set"]
 z_index = 7
 
+[node name="Ladder" parent="Nivel_Set" instance=ExtResource("17_n7anb")]
+position = Vector2(1098, 1744)
+
 [node name="Recolectables" type="Node2D" parent="."]
 position = Vector2(2, 13)
 
@@ -5567,3 +5571,5 @@ stream = ExtResource("15_pms4e")
 volume_db = -21.956
 pitch_scale = 1.22
 autoplay = true
+
+[connection signal="body_entered" from="Nivel_Set/Ladder" to="Nivel_Set/Ladder" method="_on_body_entered"]

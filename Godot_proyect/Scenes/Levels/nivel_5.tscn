@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://7578chpe75pt"]
+[gd_scene load_steps=15 format=3 uid="uid://7578chpe75pt"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_bwd7u"]
 [ext_resource type="PackedScene" uid="uid://b2mb1mi2wd3gc" path="res://Scenes/tilemap/nivel5_tile_map.tscn" id="2_spxmu"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://deod04gpnqvqj" path="res://Scenes/Enemies/Rat_enemy.tscn" id="10_0qs8q"]
 [ext_resource type="PackedScene" uid="uid://betskp6y3f52w" path="res://Scenes/Enemies/red_spectre.tscn" id="11_8nwwx"]
 [ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="12_6bqgh"]
+[ext_resource type="PackedScene" uid="uid://cjb7nmfiwxy8g" path="res://Scenes/Final Boss/final_boss.tscn" id="12_s6d62"]
 [ext_resource type="PackedScene" uid="uid://css1uf2p3235j" path="res://Scenes/Traps/fire_trap.tscn" id="13_r5lsj"]
 
 [node name="Nivel_5" type="Node2D"]
@@ -23,7 +24,7 @@
 [node name="DungeonRoom" parent="Nivel_Set" instance=ExtResource("2_spxmu")]
 
 [node name="Player" parent="Nivel_Set" instance=ExtResource("2_x7k4w")]
-position = Vector2(224, 139)
+position = Vector2(2846, 737)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Nivel_Set"]
 
@@ -246,6 +247,9 @@ position = Vector2(2042, 965)
 [node name="Red_Spectre11" parent="Nivel_Set/Enemies" instance=ExtResource("11_8nwwx")]
 position = Vector2(655, 954)
 
+[node name="Final_Boss" parent="Nivel_Set/Enemies" instance=ExtResource("12_s6d62")]
+position = Vector2(2806, 1217)
+
 [node name="Recolectables" type="Node2D" parent="Nivel_Set"]
 position = Vector2(472, 344)
 
@@ -437,6 +441,26 @@ idItem = 2
 position = Vector2(2504, 416)
 idItem = 2
 
+[node name="RecolectableItem49" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1985, 562)
+idItem = 2
+
+[node name="RecolectableItem50" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(2690, 558)
+idItem = 2
+
+[node name="RecolectableItem51" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(2697, 956)
+idItem = 2
+
+[node name="RecolectableItem52" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(1984, 945)
+idItem = 2
+
+[node name="RecolectableItem53" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
+position = Vector2(2346, 749)
+idItem = 2
+
 [node name="RecolectableItem48" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
 position = Vector2(-257, -134)
 idItem = 3
@@ -483,10 +507,10 @@ position = Vector2(2986, 622)
 position = Vector2(2971, 608)
 
 [node name="Fire_Trap15" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
-position = Vector2(2741, 960)
+position = Vector2(2614, 1107)
 
 [node name="Fire_Trap16" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
-position = Vector2(2885, 960)
+position = Vector2(3044, 1111)
 
 [node name="Fire_Trap14" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
 position = Vector2(2971, 622)

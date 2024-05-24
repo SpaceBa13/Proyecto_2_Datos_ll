@@ -114,7 +114,7 @@ position = Vector2(-181, -231)
 idItem = 1
 
 [node name="RecolectableItem2" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
-position = Vector2(284, 130)
+position = Vector2(294, -7)
 
 [node name="RecolectableItem3" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(560, 1194)
@@ -143,7 +143,11 @@ position = Vector2(735, 1075)
 idItem = 1
 
 [node name="RecolectableItem10" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
-position = Vector2(1149, 290)
+position = Vector2(869, 254)
+idItem = 1
+
+[node name="RecolectableItem12" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
+position = Vector2(869, 254)
 idItem = 1
 
 [node name="RecolectableItem11" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
@@ -151,7 +155,7 @@ position = Vector2(-196, -174)
 idItem = 2
 
 [node name="Ladder" parent="Nivel_Set" instance=ExtResource("10_ofl4a")]
-position = Vector2(1468, 1359)
+position = Vector2(1467, 1359)
 
 [node name="Traps" type="Node2D" parent="Nivel_Set"]
 
@@ -160,5 +164,14 @@ position = Vector2(271, 74)
 
 [node name="Node2D" parent="." instance=ExtResource("14_gg27h")]
 position = Vector2(299, 117)
+
+[node name="Node2D2" parent="." instance=ExtResource("14_gg27h")]
+position = Vector2(773, 340)
+
+[node name="Node2D3" parent="." instance=ExtResource("14_gg27h")]
+position = Vector2(1214, 1422)
+
+[node name="Node2D4" parent="." instance=ExtResource("14_gg27h")]
+position = Vector2(1349, 603)
 
 [connection signal="body_entered" from="Nivel_Set/Ladder" to="Nivel_Set/Ladder" method="_on_body_entered"]
