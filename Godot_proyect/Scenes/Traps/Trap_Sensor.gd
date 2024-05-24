@@ -19,7 +19,7 @@ func set_player_detected_true(body):
 	print(body)
 	if body.name == "Player" and activate == false:
 		if body.currentHealth == 1:
-			get_tree().quit()
+			get_tree().reload_current_scene()
 		animation.play("default")
 		body.currentHealth = body.currentHealth - 1
 		dataNode.set_health(body.currentHealth)

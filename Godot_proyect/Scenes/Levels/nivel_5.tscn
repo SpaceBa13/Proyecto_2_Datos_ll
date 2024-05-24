@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7578chpe75pt"]
+[gd_scene load_steps=17 format=3 uid="uid://7578chpe75pt"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_bwd7u"]
 [ext_resource type="PackedScene" uid="uid://b2mb1mi2wd3gc" path="res://Scenes/tilemap/nivel5_tile_map.tscn" id="2_spxmu"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="12_6bqgh"]
 [ext_resource type="PackedScene" uid="uid://cjb7nmfiwxy8g" path="res://Scenes/Final Boss/final_boss.tscn" id="12_s6d62"]
 [ext_resource type="PackedScene" uid="uid://css1uf2p3235j" path="res://Scenes/Traps/fire_trap.tscn" id="13_r5lsj"]
+[ext_resource type="PackedScene" uid="uid://dwcgn1pshovcx" path="res://Scenes/Items/chest.tscn" id="15_71qra"]
+[ext_resource type="PackedScene" uid="uid://bstolt21qnsmp" path="res://Scenes/Items/Jarron.tscn" id="16_ors24"]
 
 [node name="Nivel_5" type="Node2D"]
 
@@ -24,7 +26,7 @@
 [node name="DungeonRoom" parent="Nivel_Set" instance=ExtResource("2_spxmu")]
 
 [node name="Player" parent="Nivel_Set" instance=ExtResource("2_x7k4w")]
-position = Vector2(2846, 737)
+position = Vector2(224, 137)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Nivel_Set"]
 
@@ -262,15 +264,15 @@ position = Vector2(-133, -201)
 idItem = 1
 
 [node name="RecolectableItem3" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
-position = Vector2(58, -261)
+position = Vector2(20, -287)
 idItem = 1
 
 [node name="RecolectableItem4" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
-position = Vector2(303, -142)
+position = Vector2(19, -287)
 idItem = 1
 
 [node name="RecolectableItem5" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
-position = Vector2(301, -252)
+position = Vector2(20, -288)
 idItem = 1
 
 [node name="RecolectableItem6" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
@@ -286,7 +288,7 @@ position = Vector2(61, 285)
 idItem = 1
 
 [node name="RecolectableItem9" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
-position = Vector2(301, 290)
+position = Vector2(323, 257)
 idItem = 1
 
 [node name="RecolectableItem10" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
@@ -394,7 +396,7 @@ position = Vector2(2338, 280)
 idItem = 1
 
 [node name="RecolectableItem36" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
-position = Vector2(2338, 387)
+position = Vector2(2213, 399)
 idItem = 1
 
 [node name="RecolectableItem37" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
@@ -402,11 +404,11 @@ position = Vector2(2467, 339)
 idItem = 1
 
 [node name="RecolectableItem38" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
-position = Vector2(338, 125)
+position = Vector2(334, 117)
 idItem = 2
 
 [node name="RecolectableItem39" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
-position = Vector2(12, 121)
+position = Vector2(18, 113)
 idItem = 2
 
 [node name="RecolectableItem40" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
@@ -434,11 +436,11 @@ position = Vector2(1615, 63)
 idItem = 2
 
 [node name="RecolectableItem46" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
-position = Vector2(2506, 254)
-idItem = 2
+position = Vector2(2499, 257)
+idItem = 1
 
 [node name="RecolectableItem47" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
-position = Vector2(2504, 416)
+position = Vector2(2497, 410)
 idItem = 2
 
 [node name="RecolectableItem49" parent="Nivel_Set/Recolectables" instance=ExtResource("12_6bqgh")]
@@ -501,10 +503,10 @@ position = Vector2(1520, 956)
 position = Vector2(1951, 1030)
 
 [node name="Fire_Trap12" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
-position = Vector2(2986, 622)
+position = Vector2(2984, 628)
 
 [node name="Fire_Trap13" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
-position = Vector2(2971, 608)
+position = Vector2(2955, 606)
 
 [node name="Fire_Trap15" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
 position = Vector2(2614, 1107)
@@ -513,4 +515,37 @@ position = Vector2(2614, 1107)
 position = Vector2(3044, 1111)
 
 [node name="Fire_Trap14" parent="Nivel_Set/Traps" instance=ExtResource("13_r5lsj")]
-position = Vector2(2971, 622)
+position = Vector2(2964, 626)
+
+[node name="Chest" parent="Nivel_Set" instance=ExtResource("15_71qra")]
+position = Vector2(500, 64)
+
+[node name="Chest2" parent="Nivel_Set" instance=ExtResource("15_71qra")]
+position = Vector2(804, 609)
+
+[node name="Chest3" parent="Nivel_Set" instance=ExtResource("15_71qra")]
+position = Vector2(2979, 607)
+
+[node name="Jarron" parent="Nivel_Set" instance=ExtResource("16_ors24")]
+position = Vector2(498, 461)
+
+[node name="Jarron2" parent="Nivel_Set" instance=ExtResource("16_ors24")]
+position = Vector2(813, 461)
+
+[node name="Jarron3" parent="Nivel_Set" instance=ExtResource("16_ors24")]
+position = Vector2(2977, 756)
+
+[node name="Jarron4" parent="Nivel_Set" instance=ExtResource("16_ors24")]
+position = Vector2(2464, 907)
+
+[node name="Jarron5" parent="Nivel_Set" instance=ExtResource("16_ors24")]
+position = Vector2(2464, 1293)
+
+[node name="Jarron6" parent="Nivel_Set" instance=ExtResource("16_ors24")]
+position = Vector2(3177, 1303)
+
+[node name="Jarron7" parent="Nivel_Set" instance=ExtResource("16_ors24")]
+position = Vector2(3170, 907)
+
+[node name="Jarron8" parent="Nivel_Set" instance=ExtResource("16_ors24")]
+position = Vector2(2823, 1100)

@@ -136,7 +136,7 @@ func stop_shield_animation():
 func _on_hurtbox_area_entered(area):
 	if area.name == "hitbox":
 		if currentHealth == 1:
-			get_tree().quit()
+			get_tree().reload_current_scene()
 		dataNode.set_health(dataNode.health - 1)
 		if currentHealth < 0:
 			currentHealth = maxHealth

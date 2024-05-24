@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://bwswl0vfwhbqg"]
+[gd_scene load_steps=71 format=3 uid="uid://bwswl0vfwhbqg"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_7khhh"]
 [ext_resource type="Texture2D" uid="uid://bpmj2qhrdd7a6" path="res://Resources/tiles/Brayan level/Dungeon/luxa.org-opacity-changed-Water_50.png" id="2_7a66l"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b8vbmyy2xrfq5" path="res://Resources/tiles/Brayan level/Dungeon/Set 1.png" id="5_yjtvr"]
 [ext_resource type="PackedScene" uid="uid://drxyd11sv7n0v" path="res://Scenes/Player/player.tscn" id="6_7sjm3"]
 [ext_resource type="PackedScene" uid="uid://ui7euo81all" path="res://Scenes/UI/ui_general.tscn" id="7_621as"]
+[ext_resource type="PackedScene" uid="uid://bstolt21qnsmp" path="res://Scenes/Items/Jarron.tscn" id="8_o2ufo"]
 [ext_resource type="Texture2D" uid="uid://bwbyik1tvdhki" path="res://Resources/UI/cursor.png" id="8_osnuw"]
 [ext_resource type="Script" path="res://Scripts/UI/minimap.gd" id="11_wm6jc"]
 [ext_resource type="PackedScene" uid="uid://slfcn16p57eu" path="res://Scenes/Objects/mega_torch.tscn" id="13_bmpxr"]
@@ -24,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://dved8oj1afhss" path="res://music/Level_2_Music.mp3" id="21_o5m8q"]
 [ext_resource type="PackedScene" uid="uid://b1gtoh642r0qu" path="res://Scenes/Importants/Ladder.tscn" id="23_7qmlf"]
 [ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="24_n015f"]
+[ext_resource type="PackedScene" uid="uid://dwcgn1pshovcx" path="res://Scenes/Items/chest.tscn" id="26_562cb"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_i17j4"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -3252,10 +3254,13 @@ position = Vector2(1440, 920)
 position = Vector2(1488, 920)
 
 [node name="Recolectables" type="Node2D" parent="Nivel_Set"]
-z_index = 5
+
+[node name="RecolectableItem4" parent="Nivel_Set/Recolectables" instance=ExtResource("24_n015f")]
+position = Vector2(1248, 1120)
+idItem = 3
 
 [node name="Ladder" parent="Nivel_Set/Recolectables" instance=ExtResource("23_7qmlf")]
-position = Vector2(373, 184)
+position = Vector2(371, 196)
 
 [node name="RecolectableItem9" parent="Nivel_Set/Recolectables" instance=ExtResource("24_n015f")]
 position = Vector2(553, 1113)
@@ -3274,7 +3279,7 @@ position = Vector2(1029, 345)
 idItem = 1
 
 [node name="RecolectableItem11" parent="Nivel_Set/Recolectables" instance=ExtResource("24_n015f")]
-position = Vector2(700, 259)
+position = Vector2(698, 305)
 idItem = 1
 
 [node name="RecolectableItem12" parent="Nivel_Set/Recolectables" instance=ExtResource("24_n015f")]
@@ -3298,19 +3303,15 @@ position = Vector2(383, 409)
 idItem = 1
 
 [node name="RecolectableItem13" parent="Nivel_Set/Recolectables" instance=ExtResource("24_n015f")]
-position = Vector2(700, 358)
+position = Vector2(699, 307)
 idItem = 1
-
-[node name="RecolectableItem4" parent="Nivel_Set/Recolectables" instance=ExtResource("24_n015f")]
-position = Vector2(1261, 1169)
-idItem = 3
 
 [node name="RecolectableItem2" parent="Nivel_Set/Recolectables" instance=ExtResource("24_n015f")]
 position = Vector2(575, 1136)
 idItem = 2
 
 [node name="RecolectableItem3" parent="Nivel_Set/Recolectables" instance=ExtResource("24_n015f")]
-position = Vector2(1258, 1113)
+position = Vector2(1256, 1188)
 idItem = 2
 
 [node name="RecolectableItem23" parent="Nivel_Set/Recolectables" instance=ExtResource("24_n015f")]
@@ -3318,7 +3319,7 @@ position = Vector2(1477, 405)
 idItem = 2
 
 [node name="RecolectableItem5" parent="Nivel_Set/Recolectables" instance=ExtResource("24_n015f")]
-position = Vector2(1159, 1225)
+position = Vector2(1257, 1187)
 idItem = 2
 
 [node name="RecolectableItem6" parent="Nivel_Set/Recolectables" instance=ExtResource("24_n015f")]
@@ -3344,6 +3345,27 @@ idItem = 2
 [node name="RecolectableItem18" parent="Nivel_Set/Recolectables" instance=ExtResource("24_n015f")]
 position = Vector2(750, 246)
 idItem = 2
+
+[node name="Jarron" parent="Nivel_Set" instance=ExtResource("8_o2ufo")]
+position = Vector2(1263, 1189)
+
+[node name="Jarron2" parent="Nivel_Set" instance=ExtResource("8_o2ufo")]
+position = Vector2(582, 1139)
+
+[node name="Jarron3" parent="Nivel_Set" instance=ExtResource("8_o2ufo")]
+position = Vector2(758, 307)
+
+[node name="Jarron4" parent="Nivel_Set" instance=ExtResource("8_o2ufo")]
+position = Vector2(758, 250)
+
+[node name="Jarron5" parent="Nivel_Set" instance=ExtResource("8_o2ufo")]
+position = Vector2(758, 364)
+
+[node name="Chest" parent="Nivel_Set" instance=ExtResource("26_562cb")]
+position = Vector2(1253, 1127)
+
+[node name="Chest2" parent="Nivel_Set" instance=ExtResource("26_562cb")]
+position = Vector2(706, 313)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_o5m8q")

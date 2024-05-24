@@ -77,7 +77,13 @@ position = Vector2(1473, 741)
 position = Vector2(723, 99)
 
 [node name="Chocobo_Enemy3" parent="Nivel_Set/Enemies" instance=ExtResource("7_nktad")]
-position = Vector2(1037, 1497)
+position = Vector2(1032, 1491)
+
+[node name="Chocobo_Enemy6" parent="Nivel_Set/Enemies" instance=ExtResource("7_nktad")]
+position = Vector2(1588, 1526)
+
+[node name="Chocobo_Enemy5" parent="Nivel_Set/Enemies" instance=ExtResource("7_nktad")]
+position = Vector2(1588, 1442)
 
 [node name="Chocobo_Enemy4" parent="Nivel_Set/Enemies" instance=ExtResource("7_nktad")]
 position = Vector2(1199, 1226)
@@ -110,14 +116,14 @@ position = Vector2(982, 1237)
 position = Vector2(472, 344)
 
 [node name="RecolectableItem" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
-position = Vector2(-110, -278)
+position = Vector2(-390, -175)
 idItem = 2
 
 [node name="RecolectableItem2" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
 position = Vector2(284, 130)
 
 [node name="RecolectableItem3" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
-position = Vector2(560, 1194)
+position = Vector2(444, 1061)
 idItem = 1
 
 [node name="RecolectableItem4" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
@@ -144,11 +150,11 @@ position = Vector2(735, 1075)
 idItem = 2
 
 [node name="RecolectableItem10" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
-position = Vector2(1149, 290)
+position = Vector2(1142, 258)
 idItem = 1
 
 [node name="RecolectableItem11" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
-position = Vector2(-210, -286)
+position = Vector2(-210, -284)
 idItem = 1
 
 [node name="Ladder" parent="Nivel_Set" instance=ExtResource("10_ofl4a")]
@@ -157,10 +163,16 @@ position = Vector2(1468, 1359)
 [node name="Traps" type="Node2D" parent="Nivel_Set"]
 
 [node name="Chest" parent="." instance=ExtResource("11_peoyd")]
-position = Vector2(269, 65)
+position = Vector2(270, 66)
+
+[node name="Chest2" parent="." instance=ExtResource("11_peoyd")]
+position = Vector2(1622, 609)
+
+[node name="Chest3" parent="." instance=ExtResource("11_peoyd")]
+position = Vector2(923, 1411)
 
 [node name="Node2D" parent="." instance=ExtResource("14_gg27h")]
-position = Vector2(371, 70)
+position = Vector2(92, 173)
 
 [node name="Node2D2" parent="." instance=ExtResource("14_gg27h")]
 position = Vector2(763, 476)

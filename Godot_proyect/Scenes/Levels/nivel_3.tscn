@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://brv2pjx8luurg"]
+[gd_scene load_steps=59 format=3 uid="uid://brv2pjx8luurg"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_q4phd"]
 [ext_resource type="Texture2D" uid="uid://c1sns0r3g5koe" path="res://Resources/tiles/Tileset/Alter/Secrets.png" id="2_bgyvv"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://css1uf2p3235j" path="res://Scenes/Traps/fire_trap.tscn" id="17_g02v2"]
 [ext_resource type="PackedScene" uid="uid://b1gtoh642r0qu" path="res://Scenes/Importants/Ladder.tscn" id="18_ewim8"]
 [ext_resource type="PackedScene" uid="uid://bstolt21qnsmp" path="res://Scenes/Items/Jarron.tscn" id="22_kya6o"]
+[ext_resource type="PackedScene" uid="uid://dwcgn1pshovcx" path="res://Scenes/Items/chest.tscn" id="24_csprd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0vll"]
 texture = ExtResource("2_bgyvv")
@@ -2817,7 +2818,7 @@ position = Vector2(765, 32)
 position = Vector2(338, 246)
 
 [node name="RecolectableItem" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
-position = Vector2(-276, 126)
+position = Vector2(-238, 160)
 idItem = 1
 
 [node name="RecolectableItem2" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
@@ -2841,19 +2842,19 @@ position = Vector2(34, 344)
 idItem = 1
 
 [node name="RecolectableItem7" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
-position = Vector2(188, -106)
+position = Vector2(218, -16)
 idItem = 1
 
 [node name="RecolectableItem8" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
-position = Vector2(-332, 262)
+position = Vector2(522, 64)
 idItem = 2
 
 [node name="RecolectableItem9" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
-position = Vector2(516, 62)
+position = Vector2(-62, 344)
 idItem = 1
 
 [node name="RecolectableItem10" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
-position = Vector2(-796, 78)
+position = Vector2(-310, 360)
 idItem = 1
 
 [node name="RecolectableItem11" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
@@ -2867,6 +2868,14 @@ idItem = 1
 [node name="RecolectableItem13" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(-654, -272)
 idItem = 1
+
+[node name="RecolectableItem14" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
+position = Vector2(-966, 104)
+idItem = 1
+
+[node name="RecolectableItem15" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
+position = Vector2(194, -136)
+idItem = 2
 
 [node name="Ladder" parent="Nivel_Set" instance=ExtResource("18_ewim8")]
 position = Vector2(712, 294)
@@ -2919,18 +2928,33 @@ position = Vector2(-392, -200)
 position = Vector2(-1136, -624)
 
 [node name="Node2D" parent="." instance=ExtResource("22_kya6o")]
-position = Vector2(536, 144)
+position = Vector2(544, 112)
 
 [node name="Node2D2" parent="." instance=ExtResource("22_kya6o")]
-position = Vector2(-304, -24)
+position = Vector2(416, 368)
 
 [node name="Node2D3" parent="." instance=ExtResource("22_kya6o")]
 position = Vector2(-232, 288)
 
 [node name="Node2D4" parent="." instance=ExtResource("22_kya6o")]
-position = Vector2(864, 312)
+position = Vector2(872, 312)
 
 [node name="Node2D5" parent="." instance=ExtResource("22_kya6o")]
 position = Vector2(384, 592)
+
+[node name="Chest" parent="." instance=ExtResource("24_csprd")]
+position = Vector2(-304, -16)
+
+[node name="Chest2" parent="." instance=ExtResource("24_csprd")]
+position = Vector2(40, 616)
+
+[node name="Chest3" parent="." instance=ExtResource("24_csprd")]
+position = Vector2(-616, 360)
+
+[node name="Chest4" parent="." instance=ExtResource("24_csprd")]
+position = Vector2(112, 416)
+
+[node name="Chest5" parent="." instance=ExtResource("24_csprd")]
+position = Vector2(288, 600)
 
 [connection signal="body_entered" from="Nivel_Set/Ladder" to="Nivel_Set/Ladder" method="_on_body_entered"]
