@@ -32,30 +32,30 @@ func get_backtrack_path_aux(pos: Vector2i, goal: Vector2i , current_path: Array,
 		path.append(pos)
 		return true
 	
-	if is_valid_move(pos):
+	if is_valid_move(pos) and !(pos in current_path):
 		current_path.append(pos)
-		if  pos.x < goal.x and pos.y < pos.y:
+		if  pos.x < goal.x and pos.y < goal.y:
 			if get_backtrack_path_aux(pos + Vector2i(1,1), goal, current_path, path):
 				return true
-		if  pos.x > goal.x and pos.y > pos.y:
+		if  pos.x > goal.x and pos.y > goal.y:
 			if get_backtrack_path_aux(pos + Vector2i(-1,-1), goal, current_path, path):
 				return true
-		if  pos.x > goal.x and pos.y < pos.y:
+		if  pos.x > goal.x and pos.y < goal.y:
 			if get_backtrack_path_aux(pos + Vector2i(-1,1), goal, current_path, path):
 				return true
-		if pos.x < goal.x and pos.y > pos.y:
+		if pos.x < goal.x and pos.y > goal.y:
 			if get_backtrack_path_aux(pos + Vector2i(1,-1), goal, current_path, path):
 				return true
 		if pos.x < goal.x:
 			if get_backtrack_path_aux(pos + Vector2i(1,0), goal, current_path, path):
 				return true
-		if pos.x > goal.x:
+		elif pos.x > goal.x:
 			if get_backtrack_path_aux(pos + Vector2i(-1,0), goal, current_path, path):
 				return true		
-		if pos.y > goal.y:
+		elif pos.y > goal.y:
 			if get_backtrack_path_aux(pos + Vector2i(0,-1), goal, current_path, path):
 				return true			
-		if pos.y < goal.y:
+		elif pos.y < goal.y:
 			if get_backtrack_path_aux(pos + Vector2i(0,1), goal, current_path, path):
 				return true
 

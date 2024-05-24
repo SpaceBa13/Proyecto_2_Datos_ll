@@ -11,12 +11,15 @@ var chasing: bool
 var teleport = false
 @export var maxHealth = 2
 @onready var currentHealth: int = maxHealth
+@onready var animation = $AnimatedSprite2D
+var direction: Vector2
 
 func _ready():
 	spawn_position = tile_map.local_to_map(global_position)
 	chasing = false
 	Astar_path.tile_map = tile_map
 	Backtrack_path.tile_map = tile_map
+	animation.play("default")
 
 func make_astar_path():
 	var own_position = tile_map.local_to_map(global_position)
@@ -64,6 +67,8 @@ func _physics_process(delta):
 			make_astar_path()
 			if heuristic > 1:
 				global_position = global_position.move_toward(target_position, speed)
+				direction = (target_position - global_position).normalized()
+				animate(direction)
 				if global_position.x == target_position.x and global_position.y == target_position.y:
 					print(current_id_path)
 					current_id_path.pop_front()
@@ -74,10 +79,14 @@ func _physics_process(delta):
 				current_id_path.clear()
 				make_backtrack_path(own_position)
 				global_position = global_position.move_toward(target_position, speed)
+				direction = (target_position - global_position).normalized()
+				animate(direction)
 				if global_position.x == target_position.x and global_position.y == target_position.y:
 					current_id_path.pop_front()
 			else:
 				global_position = global_position.move_toward(target_position, speed)
+				direction = (target_position - global_position).normalized()
+				animate(direction)
 				if global_position.x == target_position.x and global_position.y == target_position.y:
 					current_id_path.pop_front()
 
@@ -94,3 +103,12 @@ func _on_hitbox_area_entered(area):
 		currentHealth -= 1
 		if currentHealth == 0:
 			queue_free()
+
+func animate(direction: Vector2):
+	if direction.x > 0:
+			animation.play("default")
+			animation.flip_h = false
+			animation.rotation = 0
+	elif direction.x < 0: 
+			animation.play("default")
+			animation.flip_h = true

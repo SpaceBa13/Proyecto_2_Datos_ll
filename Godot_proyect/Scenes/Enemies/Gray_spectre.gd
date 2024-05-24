@@ -1,21 +1,28 @@
 extends CharacterBody2D
 
-class_name Spectre
+
+class_name Gray_Spectre
 
 @onready var tile_map = $"../../DungeonRoom"
 @onready var player = $"../../Player"
 var current_id_path: Array
-const speed = 1.3
+const speed = 1.5
 var spawn_position = Vector2i(0,0)
 var chasing: bool
 @onready var Astar_path = $Astar
 @onready var Backtrack_path = $Backtraking_path 
+@export var maxHealth = 2
+@export var fire_ball: PackedScene
+@onready var currentHealth: int = maxHealth
+var direction: Vector2
+@onready var animation = $AnimatedSprite2D
 
 func _ready():
 	spawn_position = tile_map.local_to_map(global_position)
 	chasing = false
 	Astar_path.tile_map = tile_map
 	Backtrack_path.tile_map = tile_map
+	animation.play("default")
 
 func make_astar_path():
 	var own_position = tile_map.local_to_map(global_position)
@@ -52,7 +59,8 @@ func _physics_process(delta):
 			chasing = true
 			make_astar_path()
 			global_position = global_position.move_toward(target_position, speed)
-			
+			direction = (target_position - global_position).normalized()
+			animate(direction)
 			if global_position.x == target_position.x and global_position.y == target_position.y:
 				print(current_id_path)
 				current_id_path.pop_front()
@@ -64,10 +72,14 @@ func _physics_process(delta):
 				var own_position = tile_map.local_to_map(global_position)
 				make_backtrack_path(own_position)
 				global_position = global_position.move_toward(target_position, speed)
+				direction = (target_position - global_position).normalized()
+				animate(direction)
 				if global_position.x == target_position.x and global_position.y == target_position.y:
 					current_id_path.pop_front()
 			else:
 				global_position = global_position.move_toward(target_position, speed)
+				direction = (target_position - global_position).normalized()
+				animate(direction)
 				if global_position.x == target_position.x and global_position.y == target_position.y:
 					current_id_path.pop_front()
 
@@ -76,3 +88,21 @@ func _physics_process(delta):
 func make_backtrack_path(own_position):
 	# Resuelve el laberinto desde la posición inicial
 	current_id_path = Backtrack_path.get_backtrack_path(own_position, spawn_position)
+
+
+
+func _on_hitbox_area_entered(area):
+	if area.name == "Swordbox":
+		currentHealth -= 1
+		if currentHealth == 0:
+			queue_free()
+
+
+func animate(direction: Vector2):
+	if direction.x > 0:
+			animation.play("default")
+			animation.flip_h = false
+			animation.rotation = 0
+	elif direction.x < 0: 
+			animation.play("default")
+			animation.flip_h = true

@@ -13,7 +13,7 @@ var teleport = false
 @export var fire_ball: PackedScene
 @onready var currentHealth: int = maxHealth
 var direction: Vector2
-
+@onready var animation = $AnimatedSprite2D
 
 
 func _ready(): 
@@ -21,6 +21,7 @@ func _ready():
 	chasing = false
 	Astar_path.tile_map = tile_map
 	Backtrack_path.tile_map = tile_map
+	animation.play("default")
 
 func make_astar_path():
 	var own_position = tile_map.local_to_map(global_position)
@@ -36,6 +37,9 @@ func make_astar_path():
 		
 
 func _physics_process(delta):
+	var own_position = tile_map.local_to_map(global_position)
+	var player_position = tile_map.local_to_map(player.global_position)
+	var heuristic = Astar_path.heuristic(own_position, player_position)
 	var tile_data = tile_map.get_cell_tile_data(0, tile_map.local_to_map(player.global_position))
 	if current_id_path.is_empty():
 		if tile_data != null:
@@ -56,28 +60,30 @@ func _physics_process(delta):
 		if tile_data.get_custom_data("safe_zone") != true and player.seen == true:
 			chasing = true
 			make_astar_path()
-			global_position = global_position.move_toward(target_position, speed)
-			direction = (target_position - global_position).normalized()
-			if global_position.x == target_position.x and global_position.y == target_position.y:
-				print(current_id_path)
-				print(direction)
-				current_id_path.pop_front()
+			if heuristic > 1:
+				global_position = global_position.move_toward(target_position, speed)
+				direction = (target_position - global_position).normalized()
+				animate(direction)
+				if global_position.x == target_position.x and global_position.y == target_position.y:
+					print(current_id_path)
+					print(direction)
+					current_id_path.pop_front()
 				
 		else:
 			if chasing == true:
 				chasing = false
 				current_id_path.clear()
-				var own_position = tile_map.local_to_map(global_position)
 				make_backtrack_path(own_position)
+				print(current_id_path)
 				global_position = global_position.move_toward(target_position, speed)
 				direction = (target_position - global_position).normalized()
-				print(direction)
+				animate(direction)
 				if global_position.x == target_position.x and global_position.y == target_position.y:
 					current_id_path.pop_front()
 			else:
 				global_position = global_position.move_toward(target_position, speed)
 				direction = (target_position - global_position).normalized()
-				
+				animate(direction)
 				if global_position.x == target_position.x and global_position.y == target_position.y:
 					current_id_path.pop_front()
 
@@ -112,3 +118,13 @@ func _on_timer_timeout():
 		add_sibling(instance)
 	else:
 		instance.queue_free()
+
+
+func animate(direction: Vector2):
+	if direction.x > 0:
+			animation.play("default")
+			animation.flip_h = false
+			animation.rotation = 0
+	elif direction.x < 0: 
+			animation.play("default")
+			animation.flip_h = true

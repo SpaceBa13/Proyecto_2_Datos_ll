@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://betskp6y3f52w"]
+[gd_scene load_steps=22 format=3 uid="uid://betskp6y3f52w"]
 
 [ext_resource type="PackedScene" uid="uid://hyfg4dysd7jj" path="res://Scenes/Objects/fire_ball.tscn" id="1_c0uoc"]
 [ext_resource type="Script" path="res://Scenes/Enemies/Red_spectre.gd" id="1_hlw3p"]
-[ext_resource type="Texture2D" uid="uid://bjvu2cv7c5bie" path="res://Resources/Enemies/Spectral_Eye_Right.png" id="2_7kntm"]
 [ext_resource type="Script" path="res://Scripts/Enemy/Astar.gd" id="3_jj2vc"]
+[ext_resource type="Texture2D" uid="uid://cdt6taq08u0dq" path="res://Resources/Spectres/Red_Spectre.png" id="3_ni7sy"]
 [ext_resource type="Script" path="res://Scripts/Enemy/Backtraking_path.gd" id="4_0aaom"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tua3s"]
@@ -21,24 +21,100 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.7, 0.2)
 metadata/_snap_enabled = true
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdxbk"]
+atlas = ExtResource("3_ni7sy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3ybv"]
+atlas = ExtResource("3_ni7sy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8rw0"]
+atlas = ExtResource("3_ni7sy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptvwx"]
+atlas = ExtResource("3_ni7sy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gub7"]
+atlas = ExtResource("3_ni7sy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lh60"]
+atlas = ExtResource("3_ni7sy")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n677w"]
+atlas = ExtResource("3_ni7sy")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_finac"]
+atlas = ExtResource("3_ni7sy")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juoo8"]
+atlas = ExtResource("3_ni7sy")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyaq4"]
+atlas = ExtResource("3_ni7sy")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jcto"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdxbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3ybv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8rw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptvwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gub7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lh60")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n677w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_finac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juoo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyaq4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_kkro7"]
-radius = 23.79
+radius = 26.9492
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_shsp5"]
-radius = 7.56637
+radius = 8.75
 
 [node name="Red_Spectre" type="CharacterBody2D"]
 script = ExtResource("1_hlw3p")
 fire_ball = ExtResource("1_c0uoc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_7kntm")
-offset = Vector2(-1, 2)
-hframes = 8
-vframes = 4
-frame = 2
-
-[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+[node name="PointLight2D" type="PointLight2D" parent="."]
 material = SubResource("CanvasItemMaterial_tua3s")
 position = Vector2(9.53674e-07, -4.76837e-07)
 scale = Vector2(0.723958, 0.760417)
@@ -46,6 +122,11 @@ color = Color(0.980392, 0.65098, 0.262745, 1)
 energy = 1.5
 texture = SubResource("GradientTexture2D_1oec1")
 texture_scale = 1.5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_1jcto")
+offset = Vector2(-2, -3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4.30271e-07, -2.23517e-08)
