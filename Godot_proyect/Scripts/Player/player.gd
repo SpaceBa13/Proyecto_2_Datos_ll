@@ -24,7 +24,6 @@ var hitboxDamageScript: PlayerHitboxDamage = PlayerHitboxDamage.new()
 @export var maxHealth = 5
 @onready var currentHealth: int = maxHealth
 
-
 var bresenham: Vector2
 var seen: bool
 
@@ -40,7 +39,6 @@ func animateMovement():
 	if velocity.length() == 0:
 		animationTree["parameters/conditions/Idleing"] = true
 		animationTree["parameters/conditions/Walking"] = false
-		animationTree["parameters/conditions/Shielding"] = false
 	else:
 		animationTree["parameters/conditions/Idleing"] = false
 		animationTree["parameters/conditions/Walking"] = true
@@ -60,6 +58,7 @@ func animateMovement():
 		animationTree["parameters/Walk/blend_position"] = moveDirection
 		animationTree["parameters/Shield/blend_position"] = moveDirection
 		animationTree["parameters/Attack/blend_position"] = moveDirection
+
 func _physics_process(delta):
 	var position = tile_map.local_to_map(global_position)
 	var tile_data = tile_map.get_cell_tile_data(0, position)
@@ -70,7 +69,7 @@ func _physics_process(delta):
 	if random_pos == 5:
 		bresenham = tile_map.local_to_map(global_position)
 	
-	if canMove == true: 
+	if canMove == true or Input.is_action_pressed("ui_shield"):
 		validateInput()
 		animateMovement()
 		move_and_slide()
@@ -93,21 +92,24 @@ func check_accionables() -> void:
 	else: 
 		nearestActionable = null
 
-
 func _unhandled_input(event: InputEvent) -> void:
 	if canMove == true:
 		if event.is_action_pressed("ui_select"):
 			attack_animation()
 			hitboxDamageScript.setup(self.get_parent(), hitboxDamage, direccionHitDamage, 1)
 			hitboxDamageScript.createDamage()
-		if event.is_action_pressed("ui_accept") && nearestActionable != null:
+		if event.is_action_pressed("ui_accept") and nearestActionable != null:
 			if is_instance_valid(nearestActionable):
 				nearestActionable.emit_signal("actionated")
 		if event.is_action_pressed("ui_shield"):
 			hitbox = false
 			shield_animation()
-		
-			
+			speed = 30
+		if event.is_action_released("ui_shield"):
+			hitbox = true
+			stop_shield_animation()
+			speed = 100
+
 func attack_animation(): 
 	animationTree["parameters/conditions/Attacking"] = true
 	animationTree["parameters/conditions/Idleing"] = false
@@ -121,12 +123,13 @@ func shield_animation():
 	animationTree["parameters/conditions/Shielding"] = true
 	animationTree["parameters/conditions/Idleing"] = false
 	animationTree["parameters/conditions/Walking"] = false
-	canMove = false
-	await get_tree().create_timer(0.7).timeout
+
+func stop_shield_animation(): 
 	animationTree["parameters/conditions/Shielding"] = false
-	canMove = true
-
-
+	if moveDirection == Vector2.ZERO:
+		animationTree["parameters/conditions/Idleing"] = true
+	else:
+		animationTree["parameters/conditions/Walking"] = true
 
 func _on_hurtbox_area_entered(area):
 	if hitbox == true:
