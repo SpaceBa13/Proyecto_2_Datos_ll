@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/Playerpointer.gd" id="6_bidsh"]
 [ext_resource type="PackedScene" uid="uid://cwim8ftyaeoh6" path="res://Scenes/Enemies/Chocobo_enemy.tscn" id="8_bpx4a"]
 [ext_resource type="PackedScene" uid="uid://b2s6a0yr8fdvr" path="res://Scenes/Items/recolectable_item.tscn" id="9_87qsu"]
-[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/enemy.tscn" id="12_7rgpe"]
+[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/Room/enemy.tscn" id="12_7rgpe"]
 [ext_resource type="PackedScene" uid="uid://ddli300bkguue" path="res://Scenes/Enemies/Eye_enemy.tscn" id="13_lepf2"]
 [ext_resource type="PackedScene" uid="uid://deod04gpnqvqj" path="res://Scenes/Enemies/Rat_enemy.tscn" id="14_j0amg"]
 [ext_resource type="PackedScene" uid="uid://slfcn16p57eu" path="res://Scenes/Objects/mega_torch.tscn" id="14_vtm2s"]

@@ -146,6 +146,10 @@ idItem = 1
 position = Vector2(1149, 290)
 idItem = 1
 
+[node name="RecolectableItem11" parent="Nivel_Set/Recolectables" instance=ExtResource("9_13d8b")]
+position = Vector2(-196, -174)
+idItem = 2
+
 [node name="Ladder" parent="Nivel_Set" instance=ExtResource("10_ofl4a")]
 position = Vector2(1468, 1359)
 

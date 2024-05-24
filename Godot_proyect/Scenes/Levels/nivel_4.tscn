@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bwbyik1tvdhki" path="res://Resources/UI/cursor.png" id="10_dpgiy"]
 [ext_resource type="Script" path="res://Scripts/UI/Playerpointer.gd" id="11_3od2c"]
 [ext_resource type="PackedScene" uid="uid://cwim8ftyaeoh6" path="res://Scenes/Enemies/Chocobo_enemy.tscn" id="11_nrhcc"]
-[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/Room/enemy.tscn" id="12_2v2ar"]
+[ext_resource type="PackedScene" uid="uid://cb3mf1qlbt3ue" path="res://Scenes/enemy.tscn" id="12_2v2ar"]
 [ext_resource type="PackedScene" uid="uid://css1uf2p3235j" path="res://Scenes/Traps/fire_trap.tscn" id="12_tgbgx"]
 [ext_resource type="PackedScene" uid="uid://bi88wpwagvvax" path="res://Scenes/tilemap/dungeon_room.tscn" id="12_tntaq"]
 [ext_resource type="PackedScene" uid="uid://deuob4bl8wc3r" path="res://Scenes/Traps/spike_trap.tscn" id="13_g7bfl"]
