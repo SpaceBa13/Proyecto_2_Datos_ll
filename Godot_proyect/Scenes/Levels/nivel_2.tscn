@@ -3059,7 +3059,6 @@ position = Vector2(357, 1108)
 
 [node name="Red_Spectre" parent="Nivel_Set/Spectres" instance=ExtResource("17_duc2l")]
 position = Vector2(1071, 1177)
-maxHealth = 2
 
 [node name="Traps" type="Node2D" parent="Nivel_Set"]
 

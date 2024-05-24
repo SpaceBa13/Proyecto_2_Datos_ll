@@ -2394,54 +2394,43 @@ position = Vector2(472, 344)
 [node name="RecolectableItem" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(-276, 126)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem2" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(-780, -146)
 idItem = 2
-value = 1
 
 [node name="RecolectableItem3" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(-308, -226)
 idItem = 2
-value = 1
 
 [node name="RecolectableItem4" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(-156, -18)
 idItem = 3
-value = 1
 
 [node name="RecolectableItem5" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(436, 238)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem6" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(-28, 326)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem7" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(188, -106)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem8" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(-332, 262)
 idItem = 2
-value = 1
 
 [node name="RecolectableItem9" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(516, 62)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem10" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(-796, 78)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem11" parent="Nivel_Set/Recolectables" instance=ExtResource("9_87qsu")]
 position = Vector2(68, 118)
 idItem = 2
-value = 1
