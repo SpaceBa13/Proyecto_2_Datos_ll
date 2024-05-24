@@ -34,12 +34,12 @@ animations = [{
 blend_mode = 1
 light_mode = 2
 
-[sub_resource type="Gradient" id="Gradient_ei2lu"]
+[sub_resource type="Gradient" id="Gradient_1w0dw"]
 offsets = PackedFloat32Array(0.0948276, 0.25, 0.37931, 0.474138, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.353448, 0.353448, 0.353448, 1, 0.292207, 0.292207, 0.292207, 1, 0.227563, 0.227563, 0.227563, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dp5dt"]
-gradient = SubResource("Gradient_ei2lu")
+gradient = SubResource("Gradient_1w0dw")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.7, 0.2)

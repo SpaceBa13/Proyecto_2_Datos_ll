@@ -100,27 +100,22 @@ position = Vector2(646, 272)
 [node name="RecolectableItem" parent="Recolectables" instance=ExtResource("5_32rle")]
 position = Vector2(407, 244)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem5" parent="Recolectables" instance=ExtResource("5_32rle")]
 position = Vector2(465, 248)
 idItem = 1
-value = 1
 
 [node name="RecolectableItem2" parent="Recolectables" instance=ExtResource("5_32rle")]
 position = Vector2(487, 374)
 idItem = 2
-value = 1
 
 [node name="RecolectableItem3" parent="Recolectables" instance=ExtResource("5_32rle")]
 position = Vector2(514, 317)
 idItem = 2
-value = 1
 
 [node name="RecolectableItem4" parent="Recolectables" instance=ExtResource("5_32rle")]
 position = Vector2(342, 294)
 idItem = 3
-value = 1
 
 [node name="Chest" parent="." instance=ExtResource("11_wiix4")]
 position = Vector2(375, 267)

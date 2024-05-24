@@ -1,7 +1,6 @@
 extends Area2D
 
 @export var idItem: int = 0
-@export var value: int = 0
 var minimap
 func _ready():
 	minimap = get_node("../../Mini Map")
@@ -20,9 +19,9 @@ func _on_body_entered(body:Node2D):
 	if(body.name == "Player"):
 		match idItem:
 			1:
-				dataNode.coins = value
+				dataNode.set_coins(dataNode.coins + 1)
 			2:
-				dataNode.health = value
+				dataNode.set_health(dataNode.health + 1)
 			3:
 				minimap.show()
 		queue_free()
