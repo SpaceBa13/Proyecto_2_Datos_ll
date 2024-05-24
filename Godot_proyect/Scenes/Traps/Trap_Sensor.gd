@@ -15,6 +15,9 @@ func set_player_detected_true(body):
 	print(body)
 	if body.name == "Player":
 		animation.play("default")
+		body.currentHealth = body.currentHealth - 1
+		print(body.currentHealth)
+		print("Hizo daño")
 
 func set_player_detected_false(body):
 	print(body)

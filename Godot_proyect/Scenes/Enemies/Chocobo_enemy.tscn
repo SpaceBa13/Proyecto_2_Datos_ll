@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cwim8ftyaeoh6"]
+[gd_scene load_steps=26 format=3 uid="uid://cwim8ftyaeoh6"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy/Chocobo_Enemy.gd" id="1_1iqaw"]
 [ext_resource type="Texture2D" uid="uid://co8cgdf35tv47" path="res://Resources/Enemies/Chocobo_Sprite_Sheet.png" id="2_qqmf1"]
@@ -193,6 +193,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_su6nm"]
+radius = 13.75
+
 [node name="Chocobo_Enemy" type="CharacterBody2D"]
 script = ExtResource("1_1iqaw")
 
@@ -206,3 +209,15 @@ frame_progress = 0.895394
 
 [node name="Astar" type="Node" parent="."]
 script = ExtResource("3_xdqcm")
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, 1)
+scale = Vector2(0.8, 1)
+shape = SubResource("CircleShape2D_su6nm")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
