@@ -7,6 +7,7 @@ var player_detected: bool
 @onready var animation = $"../AnimatedSprite2D"
 @onready var dataNode = get_node("../../../../DataController")
 @onready var timer = $Timer
+var activate = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,8 +16,8 @@ func _ready():
 	body_exited.connect(set_player_detected_false)
 
 func set_player_detected_true(body):
-	#print(body)
-	if body.name == "Player":
+	print(body)
+	if body.name == "Player" and activate == false:
 		if body.currentHealth == 1:
 			get_tree().quit()
 		animation.play("default")
@@ -24,12 +25,13 @@ func set_player_detected_true(body):
 		dataNode.set_health(body.currentHealth)
 		print(body.currentHealth)
 		#print("Hizo daño")
+		activate = true
 
 func set_player_detected_false(body):
-	animation.stop()
-	timer.start()
+	if body.name == "Player":
+		animation.stop()
+		timer.start()
 	
 
 func _on_timer_timeout():
-	print("bye bye")
 	get_parent().queue_free()

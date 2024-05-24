@@ -664,7 +664,7 @@ radius = 7.0
 height = 28.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vo4rv"]
-size = Vector2(20.5001, 22)
+size = Vector2(19.5, 22)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v72bm"]
 animation = &"Attack_Left"
@@ -864,7 +864,7 @@ position = Vector2(0, 0.9883)
 collision_mask = 3
 
 [node name="CollisionShape2Db" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(-1.07288e-06, 5.26169)
+position = Vector2(-1.90955e-05, 5.76174)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_vo4rv")
 debug_color = Color(0.623529, 0, 0.117647, 0.419608)

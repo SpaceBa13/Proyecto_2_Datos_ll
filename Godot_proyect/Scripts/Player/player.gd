@@ -5,7 +5,6 @@ class_name Player
 @export var speed: int = 100
 @export var typeDamage = 1
 @export var maxHealth = 5
-
 @onready var animation = $AnimationPlayer
 @onready var sprite = $PlayerSprite
 @onready var animationTree = $AnimationTree

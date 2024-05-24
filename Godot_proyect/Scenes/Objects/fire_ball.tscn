@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://hyfg4dysd7jj"]
+[gd_scene load_steps=12 format=3 uid="uid://hyfg4dysd7jj"]
 
 [ext_resource type="Script" path="res://Fire_ball.gd" id="1_gdvk5"]
 [ext_resource type="Texture2D" uid="uid://cpp3oilypvyf" path="res://Resources/tiles/Brayan level/Particles/Fire Effect and Bullet 16x16.png" id="2_5yyj1"]
+[ext_resource type="Script" path="res://Scenes/Objects/Fire_ball_Sensor.gd" id="3_xv8gh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yt16e"]
 atlas = ExtResource("2_5yyj1")
@@ -53,16 +54,32 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kp30j"]
-radius = 6.08276
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_555ki"]
+size = Vector2(13.5, 11.875)
 
 [node name="Fire_ball" type="CharacterBody2D"]
 z_index = 5
 script = ExtResource("1_gdvk5")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_tim4b")
 frame_progress = 0.850716
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_kp30j")
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_xv8gh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_555ki")
+
+[node name="Timer" type="Timer" parent="Area2D"]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]

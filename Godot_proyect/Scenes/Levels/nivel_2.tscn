@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bwswl0vfwhbqg"]
+[gd_scene load_steps=67 format=3 uid="uid://bwswl0vfwhbqg"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_7khhh"]
 [ext_resource type="Texture2D" uid="uid://bpmj2qhrdd7a6" path="res://Resources/tiles/Brayan level/Dungeon/luxa.org-opacity-changed-Water_50.png" id="2_7a66l"]
@@ -14,12 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://bi88wpwagvvax" path="res://Scenes/tilemap/dungeon_room.tscn" id="10_8dfh3"]
 [ext_resource type="PackedScene" uid="uid://slfcn16p57eu" path="res://Scenes/Objects/mega_torch.tscn" id="13_bmpxr"]
 [ext_resource type="PackedScene" uid="uid://ddli300bkguue" path="res://Scenes/Enemies/Eye_enemy.tscn" id="13_dtbev"]
-[ext_resource type="PackedScene" uid="uid://deod04gpnqvqj" path="res://Scenes/Enemies/Rat_enemy.tscn" id="14_b4qek"]
-[ext_resource type="PackedScene" uid="uid://cwim8ftyaeoh6" path="res://Scenes/Enemies/Chocobo_enemy.tscn" id="15_gfu6d"]
 [ext_resource type="PackedScene" uid="uid://css1uf2p3235j" path="res://Scenes/Traps/fire_trap.tscn" id="15_xwkn2"]
 [ext_resource type="PackedScene" uid="uid://deuob4bl8wc3r" path="res://Scenes/Traps/spike_trap.tscn" id="16_57qo6"]
 [ext_resource type="PackedScene" uid="uid://q7cvmif46wjl" path="res://Scenes/Enemies/blue_spectre.tscn" id="17_05e7y"]
 [ext_resource type="PackedScene" uid="uid://b24fereqlah55" path="res://Scenes/Objects/torch.tscn" id="17_lvd8a"]
+[ext_resource type="PackedScene" uid="uid://betskp6y3f52w" path="res://Scenes/Enemies/red_spectre.tscn" id="17_maymh"]
 [ext_resource type="AudioStream" uid="uid://dmliubtm6lpdv" path="res://music/music.mp3" id="21_baqbf"]
 [ext_resource type="PackedScene" uid="uid://cd0k5sh4urhgb" path="res://pausa.tscn" id="22_mbb7f"]
 
@@ -2916,7 +2915,7 @@ layer_3/tile_data = PackedInt32Array(2031694, 65553, 805306372, 2097230, 131089,
 
 [node name="Player" parent="Nivel_Set" instance=ExtResource("6_7sjm3")]
 z_index = 5
-position = Vector2(1247, 1216)
+position = Vector2(1474, 1244)
 scale = Vector2(1.02209, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="Nivel_Set/Player"]
@@ -2960,6 +2959,7 @@ script = SubResource("GDScript_o3rea")
 offset = Vector2(464, 336)
 
 [node name="Ilumination" type="Node2D" parent="Nivel_Set"]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Nivel_Set/Ilumination"]
 color = Color(0, 0, 0, 1)
@@ -3006,59 +3006,17 @@ position = Vector2(1664, 839)
 z_index = 5
 position = Vector2(255, 1422)
 
-[node name="RatEnemy" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
-z_index = 5
-position = Vector2(685, 1461)
-
-[node name="RatEnemy2" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
-z_index = 5
-position = Vector2(786, 1292)
-
-[node name="RatEnemy3" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
-z_index = 5
-position = Vector2(656, 1272)
-
-[node name="RatEnemy4" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
-z_index = 5
-position = Vector2(329, 1190)
-
-[node name="RatEnemy5" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
-z_index = 5
-position = Vector2(411, 1123)
-
-[node name="RatEnemy6" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
-z_index = 5
-position = Vector2(707, 369)
-
-[node name="RatEnemy7" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
-z_index = 5
-position = Vector2(1642, 610)
-
-[node name="RatEnemy8" parent="Nivel_Set/Enemies" instance=ExtResource("14_b4qek")]
-z_index = 5
-position = Vector2(716, 1133)
-
-[node name="Chocobo_Enemy" parent="Nivel_Set/Enemies" instance=ExtResource("15_gfu6d")]
-z_index = 5
-position = Vector2(1258, 1124)
-
-[node name="Chocobo_Enemy2" parent="Nivel_Set/Enemies" instance=ExtResource("15_gfu6d")]
-z_index = 5
-position = Vector2(449, 1090)
-
-[node name="Chocobo_Enemy3" parent="Nivel_Set/Enemies" instance=ExtResource("15_gfu6d")]
-z_index = 5
-position = Vector2(1061, 252)
-
 [node name="Spectres" type="Node2D" parent="Nivel_Set"]
 
-[node name="Blue_Spectre" parent="Nivel_Set/Spectres" instance=ExtResource("17_05e7y")]
-position = Vector2(776, 1406)
-
 [node name="Blue_Spectre2" parent="Nivel_Set/Spectres" instance=ExtResource("17_05e7y")]
+visible = false
 position = Vector2(357, 1108)
 
+[node name="Red_Spectre" parent="Nivel_Set/Spectres" instance=ExtResource("17_maymh")]
+position = Vector2(1470, 1156)
+
 [node name="Traps" type="Node2D" parent="Nivel_Set"]
+visible = false
 
 [node name="Fire_Trap" parent="Nivel_Set/Traps" instance=ExtResource("15_xwkn2")]
 position = Vector2(1175, 1156)
@@ -3106,6 +3064,7 @@ position = Vector2(758, 310)
 position = Vector2(759, 343)
 
 [node name="Torchs" type="Node2D" parent="Nivel_Set"]
+visible = false
 z_index = 7
 
 [node name="MegaTorch" parent="Nivel_Set/Torchs" instance=ExtResource("13_bmpxr")]
@@ -3245,6 +3204,8 @@ position = Vector2(1440, 920)
 
 [node name="Torch14" parent="Nivel_Set/Torchs" instance=ExtResource("17_lvd8a")]
 position = Vector2(1488, 920)
+
+[node name="Recolectables" type="Node2D" parent="Nivel_Set"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_baqbf")
