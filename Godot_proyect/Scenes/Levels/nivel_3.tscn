@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://brv2pjx8luurg"]
+[gd_scene load_steps=28 format=3 uid="uid://brv2pjx8luurg"]
 
 [ext_resource type="PackedScene" uid="uid://b3dp8ylayhynt" path="res://Scenes/Importants/data_controller.tscn" id="1_q4phd"]
 [ext_resource type="Texture2D" uid="uid://c1sns0r3g5koe" path="res://Resources/tiles/Tileset/Alter/Secrets.png" id="2_bgyvv"]
